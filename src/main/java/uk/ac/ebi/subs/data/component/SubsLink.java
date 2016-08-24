@@ -1,13 +1,11 @@
 package uk.ac.ebi.subs.data.component;
 
-import org.springframework.data.annotation.Id;
-
 public class SubsLink {
     String alias;
     String accession;
     String realm;
 
-    @Id String uuid;
+    String uuid;
 
     public String getRealm() {
         return realm;

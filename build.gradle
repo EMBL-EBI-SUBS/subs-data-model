@@ -1,38 +1,4 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url "https://plugins.gradle.org/m2/" }
-
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.6.RELEASE")
-        classpath("org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.6.3")
-        classpath("net.saliman:gradle-cobertura-plugin:2.3.2")
-    }
-}
-
-apply plugin: 'spring-boot'
-apply plugin: 'net.saliman.cobertura'
-apply plugin: "com.github.kt3k.coveralls"
-
-archivesBaseName = 'subs-data-model'
-
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
-jar {
-    baseName = archivesBaseName
-    version =  '1.0.0'
-}
+apply plugin: 'java'
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
-    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
-
-
-cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
-cobertura.coverageIgnoreTrivial = true // do not worry about getters and setters
