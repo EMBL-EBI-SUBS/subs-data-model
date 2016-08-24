@@ -11,4 +11,20 @@ public class Submitter {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Submitter submitter = (Submitter) o;
+
+        return email != null ? email.equals(submitter.email) : submitter.email == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return email != null ? email.hashCode() : 0;
+    }
 }
