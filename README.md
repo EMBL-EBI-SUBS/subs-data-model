@@ -1,4 +1,4 @@
-subs-data is the core API for the EMBL-EBI Unified submission interface (USI). 
+subs-data-model is the core object model for the EMBL-EBI Unified submission interface (USI). 
 
 ## Building
 
