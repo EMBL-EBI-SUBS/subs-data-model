@@ -4,9 +4,8 @@ import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.component.Submitter;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 import org.springframework.data.annotation.Id;
 
@@ -14,22 +13,28 @@ public class Submission {
 
     @Id
     String id;
-    List<Submittable> submissionItems = new ArrayList<Submittable>();
     Submitter submitter = new Submitter();
     Domain domain = new Domain();
     Date submissionDate = new Date();
     String status;
 
-    public String getId() {return id;}
+    List<Analysis> analyses = new ArrayList<>();
+    List<Assay> assays = new ArrayList<>();
+    List<AssayData> assayData = new ArrayList<>();
+    List<EgaDac> egaDacs = new ArrayList<>();
+    List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
+    List<EgaDataset> egaDatasets = new ArrayList<>();
+    List<Project> projects = new ArrayList<>();
+    List<Sample> samples = new ArrayList<>();
+    List<SampleGroup> sampleGroups = new ArrayList<>();
+    List<Study> studies = new ArrayList<>();
 
-    public void setId(String id) {this.id = id;}
-
-    public List<Submittable> getSubmissionItems() {
-        return submissionItems;
+    public String getId() {
+        return id;
     }
 
-    public void setSubmissionItems(List<Submittable> submissionItems) {
-        this.submissionItems = submissionItems;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public Submitter getSubmitter() {
@@ -64,44 +69,92 @@ public class Submission {
         this.status = status;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public List<Submittable> allSubmissionItems() {
+        List<Submittable> submittables = new ArrayList<>();
 
-        Submission that = (Submission) o;
-
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
-        if (submissionItems != null ? !submissionItems.equals(that.submissionItems) : that.submissionItems != null)
-            return false;
-        if (submitter != null ? !submitter.equals(that.submitter) : that.submitter != null) return false;
-        if (domain != null ? !domain.equals(that.domain) : that.domain != null) return false;
-        if (submissionDate != null ? !submissionDate.equals(that.submissionDate) : that.submissionDate != null)
-            return false;
-        return status != null ? status.equals(that.status) : that.status == null;
-
+        for (List<? extends AbstractSubsEntity> items : Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies)) {
+            submittables.addAll(items);
+        }
+        return Collections.unmodifiableList(submittables);
     }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (submissionItems != null ? submissionItems.hashCode() : 0);
-        result = 31 * result + (submitter != null ? submitter.hashCode() : 0);
-        result = 31 * result + (domain != null ? domain.hashCode() : 0);
-        result = 31 * result + (submissionDate != null ? submissionDate.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        return result;
+    public List<Analysis> getAnalyses() {
+        return analyses;
     }
 
-    @Override
-    public String toString() {
-        return "Submission{" +
-                "id='" + id + '\'' +
-                ", submissionItems=" + submissionItems +
-                ", submitter=" + submitter +
-                ", domain=" + domain +
-                ", submissionDate=" + submissionDate +
-                ", status='" + status + '\'' +
-                '}';
+    public void setAnalyses(List<Analysis> analyses) {
+        this.analyses = analyses;
+    }
+
+    public List<Assay> getAssays() {
+        return assays;
+    }
+
+    public void setAssays(List<Assay> assays) {
+        this.assays = assays;
+    }
+
+    public List<AssayData> getAssayData() {
+        return assayData;
+    }
+
+    public void setAssayData(List<AssayData> assayData) {
+        this.assayData = assayData;
+    }
+
+    public List<EgaDac> getEgaDacs() {
+        return egaDacs;
+    }
+
+    public void setEgaDacs(List<EgaDac> egaDacs) {
+        this.egaDacs = egaDacs;
+    }
+
+    public List<EgaDacPolicy> getEgaDacPolicies() {
+        return egaDacPolicies;
+    }
+
+    public void setEgaDacPolicies(List<EgaDacPolicy> egaDacPolicies) {
+        this.egaDacPolicies = egaDacPolicies;
+    }
+
+    public List<EgaDataset> getEgaDatasets() {
+        return egaDatasets;
+    }
+
+    public void setEgaDatasets(List<EgaDataset> egaDatasets) {
+        this.egaDatasets = egaDatasets;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+
+    public List<Sample> getSamples() {
+        return samples;
+    }
+
+    public void setSamples(List<Sample> samples) {
+        this.samples = samples;
+    }
+
+    public List<SampleGroup> getSampleGroups() {
+        return sampleGroups;
+    }
+
+    public void setSampleGroups(List<SampleGroup> sampleGroups) {
+        this.sampleGroups = sampleGroups;
+    }
+
+    public List<Study> getStudies() {
+        return studies;
+    }
+
+    public void setStudies(List<Study> studies) {
+        this.studies = studies;
     }
 }
