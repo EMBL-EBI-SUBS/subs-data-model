@@ -123,4 +123,9 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
         }
         return subsLink;
     }
+
+    @Override
+    public boolean isAccessioned(){
+        return (accession != null && !accession.isEmpty());
+    }
 }
