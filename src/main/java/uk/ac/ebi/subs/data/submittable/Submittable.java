@@ -25,4 +25,7 @@ public interface Submittable {
     String getStatus();
 
     Realm getRealm();
+
+    boolean isAccessioned();
+
 }
