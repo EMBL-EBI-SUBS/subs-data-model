@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SampleGroup extends AbstractSubsEntity {
+public class SampleGroup extends AbstractSubsEntity<SampleGroup> {
     List<SubsLink<Sample>> sampleRefs = new ArrayList<SubsLink<Sample>>();
     Date releaseDate = new Date();
 

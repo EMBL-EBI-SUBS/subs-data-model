@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Study extends AbstractSubsEntity implements Publications, Protocols, Contacts {
+public class Study extends AbstractSubsEntity<Study> implements Publications, Protocols, Contacts {
     List<Publication> publications = new ArrayList<Publication>();
     List<Protocol> protocols = new ArrayList<Protocol>();
     List<Contact> contacts = new ArrayList<Contact>();

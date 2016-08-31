@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Project extends AbstractSubsEntity implements Contacts, Publications {
+public class Project extends AbstractSubsEntity<Project> implements Contacts, Publications {
 
     List<Contact> contacts = new ArrayList<Contact>();
     List<Publication> publications = new ArrayList<Publication>();

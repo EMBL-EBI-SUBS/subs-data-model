@@ -6,7 +6,7 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EgaDataset extends AbstractSubsEntity {
+public class EgaDataset extends AbstractSubsEntity<EgaDataset> {
     List<SubsLink<AssayData>> dataRefs = new ArrayList<SubsLink<AssayData>>();
     List<SubsLink<Analysis>> analysisRefs = new ArrayList<SubsLink<Analysis>>();
 

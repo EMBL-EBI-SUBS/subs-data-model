@@ -8,7 +8,7 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssayData extends AbstractSubsEntity implements Files {
+public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
 
     SubsLink<Assay> assayRef = new SubsLink<Assay>();
     SubsLink<Sample> sampleRef = new SubsLink();

@@ -6,7 +6,7 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Analysis extends AbstractSubsEntity implements Files {
+public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
 
     List<AbstractSubsEntity> embeddedEntities  =  new ArrayList<AbstractSubsEntity>();
     List<SubsLink> references = new ArrayList<SubsLink>();

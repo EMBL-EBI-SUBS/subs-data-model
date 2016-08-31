@@ -7,7 +7,7 @@ import uk.ac.ebi.subs.data.submittable.Submittable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractSubsEntity implements Attributes, Submittable {
+public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable {
 
     String type;
     String uuid;
@@ -112,7 +112,7 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
         this.realm = realm;
     }
 
-    public SubsLink asLink(){
+    public SubsLink<T> asLink(){
         SubsLink subsLink = new SubsLink();
         subsLink.setAccession(this.accession);
         subsLink.setUuid(this.uuid);
@@ -121,6 +121,7 @@ public abstract class AbstractSubsEntity implements Attributes, Submittable {
         if (this.realm != null){
             subsLink.setRealm(this.realm.toString());
         }
+
         return subsLink;
     }
 

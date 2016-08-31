@@ -6,7 +6,7 @@ import uk.ac.ebi.subs.data.component.SampleLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sample extends AbstractSubsEntity {
+public class Sample extends AbstractSubsEntity<Sample> {
     List<SampleLink> sampleLinks = new ArrayList<>();
     Integer taxonId;
     String taxon;
