@@ -5,22 +5,22 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 
 public class Assay extends AbstractSubsEntity {
 
-    SubsLink studyRef = new SubsLink();
-    SubsLink sampleRef = new SubsLink();
+    SubsLink<Study> studyRef = new SubsLink<Study>();
+    SubsLink<Sample> sampleRef = new SubsLink<Sample>();
 
-    public SubsLink getStudyRef() {
+    public SubsLink<Study> getStudyRef() {
         return studyRef;
     }
 
-    public void setStudyRef(SubsLink studyRef) {
+    public void setStudyRef(SubsLink<Study> studyRef) {
         this.studyRef = studyRef;
     }
 
-    public SubsLink getSampleRef() {
+    public SubsLink<Sample> getSampleRef() {
         return sampleRef;
     }
 
-    public void setSampleRef(SubsLink sampleRef) {
+    public void setSampleRef(SubsLink<Sample> sampleRef) {
         this.sampleRef = sampleRef;
     }
 }

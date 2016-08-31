@@ -1,11 +1,26 @@
 package uk.ac.ebi.subs.data.component;
 
-public class SubsLink {
+import uk.ac.ebi.subs.data.submittable.Submittable;
+
+import java.util.Collection;
+import java.util.Optional;
+
+public class SubsLink<T extends Submittable> {
     String alias;
     String accession;
     String realm;
 
     String uuid;
+
+    T referencedObject;
+
+    public T getReferencedObject() {
+        return referencedObject;
+    }
+
+    public void setReferencedObject(T referencedObject) {
+        this.referencedObject = referencedObject;
+    }
 
     public String getRealm() {
         return realm;
@@ -39,6 +54,10 @@ public class SubsLink {
         this.accession = accession;
     }
 
+    public boolean isAccessioned(){
+        return (accession != null && accession.isEmpty());
+    }
+
     @Override
     public String toString() {
         return "SubsLink{" +
@@ -47,5 +66,30 @@ public class SubsLink {
                 ", realm='" + realm + '\'' +
                 ", uuid='" + uuid + '\'' +
                 '}';
+    }
+
+    public void fillIn(Collection<T> items){
+        Optional<T> optionalSubmittable = items.stream()
+                .filter(s -> this.isMatch(s))
+                .reduce((s1,s2) -> {
+                    throw new RuntimeException("Too many matches found for "+this.toString());
+                });
+
+        if (!optionalSubmittable.isPresent()){
+            throw new RuntimeException("No match found for "+this.toString());
+        }
+
+        T item = optionalSubmittable.get();
+
+        if (item.isAccessioned()){
+            this.setAccession(item.getAccession());
+        }
+        this.referencedObject = item;
+    }
+
+    public boolean isMatch(T submittable){
+        return (submittable.getAlias().equals(this.getAlias())
+                && this.getRealm().equals(submittable.getRealm().name())
+        );
     }
 }
