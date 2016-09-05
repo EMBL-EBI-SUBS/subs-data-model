@@ -10,12 +10,11 @@ import java.util.List;
 public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable {
 
     String type;
-    String uuid;
     String accession;
     String alias;
     String status;
     Domain domain;
-    Realm realm;
+    Archive archive;
 
     String title;
     String description;
@@ -27,16 +26,6 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    @Override
-    public String getUuid() {
-        return uuid;
-    }
-
-    @Override
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
     }
 
     @Override
@@ -62,6 +51,7 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
         return status;
     }
 
+    @Override
     public void setStatus(String status) {
         this.status = status;
     }
@@ -103,23 +93,25 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
         this.domain = domain;
     }
 
-    @Override
-    public Realm getRealm() {
-        return realm;
+    public Archive getArchive() {
+        return archive;
     }
 
-    public void setRealm(Realm realm) {
-        this.realm = realm;
+    public void setArchive(Archive archive) {
+        this.archive = archive;
     }
 
     public SubsLink<T> asLink(){
         SubsLink subsLink = new SubsLink();
         subsLink.setAccession(this.accession);
-        subsLink.setUuid(this.uuid);
+        subsLink.setDomain(this.getDomain().getName());
         subsLink.setAlias(this.alias);
 
-        if (this.realm != null){
-            subsLink.setRealm(this.realm.toString());
+        if (this.archive != null){
+            subsLink.setArchive(this.archive.name());
+        }
+        if (this.domain != null){
+            subsLink.setDomain(this.getDomain().getName());
         }
 
         return subsLink;

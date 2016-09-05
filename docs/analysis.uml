@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="19.841666666666583" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="0.0" y="377.0">uk.ac.ebi.subs.data.component.Files</node>
+    <node x="283.73749999999995" y="598.0">uk.ac.ebi.subs.data.submittable.Analysis</node>
+    <node x="575.9875" y="322.0">uk.ac.ebi.subs.data.component.File</node>
+    <node x="197.98749999999995" y="278.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
+    <node x="419.0041666666666" y="33.0">uk.ac.ebi.subs.data.component.SubsLink</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.File">
+      <point x="111.875" y="-48.0" />
+      <point x="574.6125" y="568.0" />
+      <point x="633.2375" y="568.0" />
+      <point x="-57.25" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
+      <point x="-86.5" y="-125.0" />
+      <point x="284.48749999999995" y="253.0" />
+      <point x="291.50833333333327" y="253.0" />
+      <point x="108.66666666666669" y="114.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.Files">
+      <point x="-156.625" y="-48.0" />
+      <point x="306.11249999999995" y="578.0" />
+      <point x="75.0" y="578.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.submittable.Submittable">
+      <point x="-67.125" y="-48.0" />
+      <point x="395.61249999999995" y="558.0" />
+      <point x="171.49999999999994" y="558.0" />
+      <point x="171.49999999999994" y="253.0" />
+      <point x="182.84166666666658" y="253.0" />
+      <point x="0.0" y="114.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="86.5" y="-125.0" />
+      <point x="457.48749999999995" y="253.0" />
+      <point x="459.0041666666666" y="253.0" />
+      <point x="-80.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="-22.375" y="-48.0" />
+      <point x="440.36249999999995" y="548.0" />
+      <point x="370.98749999999995" y="548.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="22.375" y="-48.0" />
+      <point x="485.11249999999995" y="568.0" />
+      <point x="554.4875" y="568.0" />
+      <point x="554.4875" y="253.0" />
+      <point x="539.0041666666666" y="253.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="402.5" y="347.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

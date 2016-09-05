@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="93.5" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="0.0" y="377.0">uk.ac.ebi.subs.data.component.Files</node>
+    <node x="603.703125" y="322.0">uk.ac.ebi.subs.data.component.File</node>
+    <node x="170.0" y="278.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
+    <node x="439.5" y="33.0">uk.ac.ebi.subs.data.component.SubsLink</node>
+    <node x="445.203125" y="578.0">uk.ac.ebi.subs.data.submittable.AssayData</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="23.75" y="-48.0" />
+      <point x="611.453125" y="558.0" />
+      <point x="593.203125" y="558.0" />
+      <point x="593.203125" y="253.0" />
+      <point x="639.5" y="253.0" />
+      <point x="80.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
+      <point x="-86.5" y="-125.0" />
+      <point x="0.0" y="114.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="-71.25" y="-48.0" />
+      <point x="516.453125" y="548.0" />
+      <point x="343.0" y="548.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.File">
+      <point x="71.25" y="-48.0" />
+      <point x="658.953125" y="558.0" />
+      <point x="660.953125" y="558.0" />
+      <point x="-57.25" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="86.5" y="-125.0" />
+      <point x="429.5" y="253.0" />
+      <point x="479.5" y="253.0" />
+      <point x="-80.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.Files">
+      <point x="-118.75" y="-48.0" />
+      <point x="468.953125" y="558.0" />
+      <point x="75.0" y="558.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="416.5" y="337.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

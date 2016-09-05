@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import uk.ac.ebi.subs.data.submittable.Project;
-import uk.ac.ebi.subs.data.submittable.Sample;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -60,14 +59,17 @@ public class SubsLinkTest {
         subsLink = new SubsLink<Project>();
         candidates = new LinkedList<>();
 
-        subsLink.setRealm(Realm.Usi.name());
+        subsLink.setArchive(Archive.Usi.name());
         subsLink.setAlias("unclebob");
+        subsLink.setDomain("testDomain");
     };
 
     private Project addCandidate(String alias){
         Project p = new Project();
         p.setAlias(alias);
-        p.setRealm(Realm.Usi);
+        p.setArchive(Archive.Usi);
+        p.setDomain(new Domain());
+        p.getDomain().setName("testDomain");
         candidates.add(p);
         return p;
     }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="344.21794871794873" y="702.0">uk.ac.ebi.subs.data.submittable.EgaDacPolicy</node>
+    <node x="76.5" y="278.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
+    <node x="483.58333333333337" y="33.0">uk.ac.ebi.subs.data.component.SubsLink</node>
+    <node x="370.08333333333337" y="578.0">uk.ac.ebi.subs.data.submittable.EgaDataset</node>
+    <node x="146.08333333333331" y="589.0">uk.ac.ebi.subs.data.submittable.EgaDac</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.submittable.EgaDac">
+      <point x="-27.875" y="-26.0" />
+      <point x="427.84294871794873" y="672.0" />
+      <point x="248.08333333333331" y="672.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="-109.66666666666669" y="-37.0" />
+      <point x="424.91666666666663" y="553.0" />
+      <point x="364.8333333333333" y="553.0" />
+      <point x="115.33333333333331" y="125.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="109.66666666666663" y="-37.0" />
+      <point x="644.25" y="553.0" />
+      <point x="598.0" y="553.0" />
+      <point x="598.0" y="258.0" />
+      <point x="603.5833333333334" y="258.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="-83.625" y="-26.0" />
+      <point x="372.09294871794873" y="682.0" />
+      <point x="135.58333333333331" y="682.0" />
+      <point x="135.58333333333331" y="553.0" />
+      <point x="134.16666666666669" y="553.0" />
+      <point x="-115.33333333333331" y="125.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="27.875" y="-26.0" />
+      <point x="483.59294871794873" y="672.0" />
+      <point x="709.5833333333334" y="672.0" />
+      <point x="709.5833333333334" y="258.0" />
+      <point x="651.5833333333334" y="258.0" />
+      <point x="48.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
+      <point x="-86.5" y="-125.0" />
+      <point x="0.0" y="114.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="86.5" y="-125.0" />
+      <point x="336.0" y="258.0" />
+      <point x="507.58333333333337" y="258.0" />
+      <point x="-96.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDac" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="0.0" y="-26.0" />
+      <point x="248.08333333333331" y="553.0" />
+      <point x="249.5" y="553.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="368.0" y="377.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

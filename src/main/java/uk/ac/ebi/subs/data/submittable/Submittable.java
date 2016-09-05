@@ -2,29 +2,34 @@ package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Domain;
-import uk.ac.ebi.subs.data.component.Realm;
+import uk.ac.ebi.subs.data.component.Archive;
 
 import java.util.List;
 
 public interface Submittable {
     String getAccession();
+    void setAccession(String accession);
 
     String getAlias();
+    void setAlias(String alias);
 
     Domain getDomain();
-
-    String getUuid();
-    void setUuid(String uuid);
+    void setDomain(Domain domain);
 
     String getTitle();
+    void setTitle(String title);
 
     String getDescription();
+    void setDescription(String description);
 
     List<Attribute> getAttributes();
+    void setAttributes(List<Attribute> attributes);
 
     String getStatus();
+    void setStatus(String status);
 
-    Realm getRealm();
+    Archive getArchive();
+    void setArchive(Archive archive);
 
     boolean isAccessioned();
 

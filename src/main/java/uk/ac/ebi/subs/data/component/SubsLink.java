@@ -8,9 +8,8 @@ import java.util.Optional;
 public class SubsLink<T extends Submittable> {
     String alias;
     String accession;
-    String realm;
-
-    String uuid;
+    String archive;
+    String domain;
 
     T referencedObject;
 
@@ -22,20 +21,20 @@ public class SubsLink<T extends Submittable> {
         this.referencedObject = referencedObject;
     }
 
-    public String getRealm() {
-        return realm;
+    public String getArchive() {
+        return archive;
     }
 
-    public void setRealm(String realm) {
-        this.realm = realm;
+    public void setArchive(String archive) {
+        this.archive = archive;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getDomain() {
+        return domain;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
     public String getAlias() {
@@ -63,10 +62,12 @@ public class SubsLink<T extends Submittable> {
         return "SubsLink{" +
                 "alias='" + alias + '\'' +
                 ", accession='" + accession + '\'' +
-                ", realm='" + realm + '\'' +
-                ", uuid='" + uuid + '\'' +
+                ", archive='" + archive + '\'' +
+                ", domain='" + domain + '\'' +
+                ", referencedObject=" + referencedObject +
                 '}';
     }
+
 
     public void fillIn(Collection<T> items) {
         Optional<T> optionalSubmittable = items.stream()
@@ -89,15 +90,20 @@ public class SubsLink<T extends Submittable> {
 
     public boolean isMatch(T submittable) {
         return
-                this.realm.equals(submittable.getRealm().name()) && // must always match realm
+                this.archive.equals(submittable.getArchive().name()) && // must always match archive
                         (//EITHER
                                 // BOTH are accessioned and the accession matches
-                                (this.isAccessioned() && submittable.isAccessioned() && this.accession.equals(submittable.getAccession()))
-                                ||
-                                        // OR the aliases match
-                                        (submittable.getAlias().equals(this.getAlias())
-                                                && this.getRealm().equals(submittable.getRealm().name())
-                                        )
+                                (
+                                        this.isAccessioned() &&
+                                                submittable.isAccessioned() &&
+                                                this.accession.equals(submittable.getAccession())
+                                ) ||
+                                // OR the aliases match
+                                (
+                                        submittable.getAlias().equals(this.getAlias()) &&
+                                                this.getArchive().equals(submittable.getArchive().name()) &&
+                                                this.getDomain().equals(submittable.getDomain().getName())
+                                )
                         );
     }
 }
