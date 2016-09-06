@@ -1,25 +1,25 @@
 package uk.ac.ebi.subs.data.component;
 
 public class Attribute {
-        String tagName;
-        String tagValue;
+        String name;
+        String value;
         String units;
         Term term;
 
-        public String getTagName() {
-                return tagName;
+        public String getName() {
+                return name;
         }
 
-        public void setTagName(String tagName) {
-                this.tagName = tagName;
+        public void setName(String name) {
+                this.name = name;
         }
 
-        public String getTagValue() {
-                return tagValue;
+        public String getValue() {
+                return value;
         }
 
-        public void setTagValue(String tagValue) {
-                this.tagValue = tagValue;
+        public void setValue(String value) {
+                this.value = value;
         }
 
         public String getUnits() {

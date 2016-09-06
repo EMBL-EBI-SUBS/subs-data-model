@@ -1,5 +1,7 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.component.Submitter;
@@ -9,11 +11,16 @@ import java.util.stream.Stream;
 
 import org.springframework.data.annotation.Id;
 
+@CompoundIndexes({
+        @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
+})
 public class Submission {
 
     @Id
     String id;
     Submitter submitter = new Submitter();
+
+
     Domain domain = new Domain();
     Date submissionDate = new Date();
     String status;
