@@ -8,7 +8,7 @@ import uk.ac.ebi.subs.data.component.Contacts;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EgaDac extends AbstractSubsEntity implements Contacts {
+public class EgaDac extends AbstractSubsEntity<EgaDac> implements Contacts {
     List<Contact> contacts = new ArrayList<Contact>();
 
     @Override

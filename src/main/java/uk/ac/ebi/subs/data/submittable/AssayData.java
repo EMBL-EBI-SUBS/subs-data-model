@@ -8,25 +8,25 @@ import uk.ac.ebi.subs.data.component.SubsLink;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssayData extends AbstractSubsEntity implements Files {
+public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
 
-    SubsLink assayRef = new SubsLink();
-    SubsLink sampleRef = new SubsLink();
+    SubsLink<Assay> assayRef = new SubsLink<Assay>();
+    SubsLink<Sample> sampleRef = new SubsLink();
     List<File> files = new ArrayList<File>();
 
-    public SubsLink getAssayRef() {
+    public SubsLink<Assay> getAssayRef() {
         return assayRef;
     }
 
-    public void setAssayRef(SubsLink assayRef) {
+    public void setAssayRef(SubsLink<Assay> assayRef) {
         this.assayRef = assayRef;
     }
 
-    public SubsLink getSampleRef() {
+    public SubsLink<Sample> getSampleRef() {
         return sampleRef;
     }
 
-    public void setSampleRef(SubsLink sampleRef) {
+    public void setSampleRef(SubsLink<Sample> sampleRef) {
         this.sampleRef = sampleRef;
     }
 

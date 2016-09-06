@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="269.0" y="617.0">uk.ac.ebi.subs.data.component.Attribute</node>
+    <node x="141.0" y="300.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
+    <node x="0.0" y="617.0">uk.ac.ebi.subs.data.component.SubsLink</node>
+    <node x="523.0" y="617.0">uk.ac.ebi.subs.data.component.Term</node>
+    <node x="366.0" y="99.0">uk.ac.ebi.subs.data.component.Attributes</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
+      <point x="-91.5" y="-136.0" />
+      <point x="232.5" y="275.0" />
+      <point x="173.0" y="275.0" />
+      <point x="0.0" y="125.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.Attribute" target="uk.ac.ebi.subs.data.component.Term">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.SubsLink">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.Attribute">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.Attributes">
+      <point x="91.5" y="-136.0" />
+      <point x="415.5" y="275.0" />
+      <point x="475.0" y="275.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6032540675844806" x="350.5" y="389.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

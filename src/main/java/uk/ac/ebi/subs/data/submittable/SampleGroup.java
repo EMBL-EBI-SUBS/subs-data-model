@@ -8,15 +8,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SampleGroup extends AbstractSubsEntity {
-    List<SubsLink> sampleRefs = new ArrayList<SubsLink>();
+public class SampleGroup extends AbstractSubsEntity<SampleGroup> {
+    List<SubsLink<Sample>> sampleRefs = new ArrayList<SubsLink<Sample>>();
     Date releaseDate = new Date();
 
-    public List<SubsLink> getSampleRefs() {
+    public List<SubsLink<Sample>> getSampleRefs() {
         return sampleRefs;
     }
 
-    public void setSampleRefs(List<SubsLink> sampleRefs) {
+    public void setSampleRefs(List<SubsLink<Sample>> sampleRefs) {
         this.sampleRefs = sampleRefs;
     }
 
