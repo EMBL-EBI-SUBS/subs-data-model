@@ -1,5 +1,8 @@
 package uk.ac.ebi.subs.data.component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by davidr on 08/08/2016.
  */
@@ -8,12 +11,13 @@ public class Contact {
     String middleInitials;
     String lastName;
     String email;
-    String role;
+    List<String> roles = new ArrayList<>();
     String address;
     String affiliation;
+    String phone;
+    String fax;
 
     public String getFirstName() {
-
         return firstName;
     }
 
@@ -45,12 +49,12 @@ public class Contact {
         this.email = email;
     }
 
-    public String getRole() {
-        return role;
+    public List<String> getRoles() {
+        return roles;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     public String getAddress() {
@@ -69,6 +73,22 @@ public class Contact {
         this.affiliation = affiliation;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFax() {
+        return fax;
+    }
+
+    public void setFax(String fax) {
+        this.fax = fax;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -81,9 +101,11 @@ public class Contact {
             return false;
         if (lastName != null ? !lastName.equals(contact.lastName) : contact.lastName != null) return false;
         if (email != null ? !email.equals(contact.email) : contact.email != null) return false;
-        if (role != null ? !role.equals(contact.role) : contact.role != null) return false;
+        if (roles != null ? !roles.equals(contact.roles) : contact.roles != null) return false;
         if (address != null ? !address.equals(contact.address) : contact.address != null) return false;
-        return affiliation != null ? affiliation.equals(contact.affiliation) : contact.affiliation == null;
+        if (affiliation != null ? !affiliation.equals(contact.affiliation) : contact.affiliation != null) return false;
+        if (phone != null ? !phone.equals(contact.phone) : contact.phone != null) return false;
+        return fax != null ? fax.equals(contact.fax) : contact.fax == null;
 
     }
 
@@ -93,9 +115,11 @@ public class Contact {
         result = 31 * result + (middleInitials != null ? middleInitials.hashCode() : 0);
         result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (role != null ? role.hashCode() : 0);
+        result = 31 * result + (roles != null ? roles.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (affiliation != null ? affiliation.hashCode() : 0);
+        result = 31 * result + (phone != null ? phone.hashCode() : 0);
+        result = 31 * result + (fax != null ? fax.hashCode() : 0);
         return result;
     }
 
@@ -106,9 +130,11 @@ public class Contact {
                 ", middleInitials='" + middleInitials + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
-                ", role='" + role + '\'' +
+                ", roles=" + roles +
                 ", address='" + address + '\'' +
                 ", affiliation='" + affiliation + '\'' +
+                ", phone='" + phone + '\'' +
+                ", fax='" + fax + '\'' +
                 '}';
     }
 }
