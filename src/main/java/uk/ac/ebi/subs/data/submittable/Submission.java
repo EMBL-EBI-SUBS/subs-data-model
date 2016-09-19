@@ -167,49 +167,14 @@ public class Submission {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Submission that = (Submission) o;
-
-        if (!id.equals(that.id)) return false;
-        if (submitter != null ? !submitter.equals(that.submitter) : that.submitter != null) return false;
-        if (domain != null ? !domain.equals(that.domain) : that.domain != null) return false;
-        if (submissionDate != null ? !submissionDate.equals(that.submissionDate) : that.submissionDate != null)
-            return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (analyses != null ? !analyses.equals(that.analyses) : that.analyses != null) return false;
-        if (assays != null ? !assays.equals(that.assays) : that.assays != null) return false;
-        if (assayData != null ? !assayData.equals(that.assayData) : that.assayData != null) return false;
-        if (egaDacs != null ? !egaDacs.equals(that.egaDacs) : that.egaDacs != null) return false;
-        if (egaDacPolicies != null ? !egaDacPolicies.equals(that.egaDacPolicies) : that.egaDacPolicies != null)
-            return false;
-        if (egaDatasets != null ? !egaDatasets.equals(that.egaDatasets) : that.egaDatasets != null) return false;
-        if (projects != null ? !projects.equals(that.projects) : that.projects != null) return false;
-        if (samples != null ? !samples.equals(that.samples) : that.samples != null) return false;
-        if (sampleGroups != null ? !sampleGroups.equals(that.sampleGroups) : that.sampleGroups != null) return false;
-        return studies != null ? studies.equals(that.studies) : that.studies == null;
-
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + (submitter != null ? submitter.hashCode() : 0);
-        result = 31 * result + (domain != null ? domain.hashCode() : 0);
-        result = 31 * result + (submissionDate != null ? submissionDate.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (analyses != null ? analyses.hashCode() : 0);
-        result = 31 * result + (assays != null ? assays.hashCode() : 0);
-        result = 31 * result + (assayData != null ? assayData.hashCode() : 0);
-        result = 31 * result + (egaDacs != null ? egaDacs.hashCode() : 0);
-        result = 31 * result + (egaDacPolicies != null ? egaDacPolicies.hashCode() : 0);
-        result = 31 * result + (egaDatasets != null ? egaDatasets.hashCode() : 0);
-        result = 31 * result + (projects != null ? projects.hashCode() : 0);
-        result = 31 * result + (samples != null ? samples.hashCode() : 0);
-        result = 31 * result + (sampleGroups != null ? sampleGroups.hashCode() : 0);
-        result = 31 * result + (studies != null ? studies.hashCode() : 0);
-        return result;
+        return Objects.hash(id);
     }
-
 
     @Override
     public String toString() {
