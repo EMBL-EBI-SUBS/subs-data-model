@@ -1,6 +1,7 @@
 package uk.ac.ebi.subs.data;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.component.*;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
@@ -118,6 +119,7 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
     }
 
     @Override
+    @JsonIgnore
     public boolean isAccessioned(){
         return (accession != null && !accession.isEmpty());
     }

@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
@@ -53,6 +54,7 @@ public class SubsLink<T extends Submittable> {
         this.accession = accession;
     }
 
+    @JsonIgnore
     public boolean isAccessioned() {
         return (accession != null && accession.isEmpty());
     }
