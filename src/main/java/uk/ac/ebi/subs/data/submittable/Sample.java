@@ -13,7 +13,7 @@ public class Sample extends AbstractSubsEntity {
     String id;
 
     List<SampleLink> sampleLinks = new ArrayList<>();
-    Integer taxonId;
+    Long taxonId;
     String taxon;
 
     public String getId() {
@@ -32,11 +32,11 @@ public class Sample extends AbstractSubsEntity {
         this.sampleLinks = sampleLinks;
     }
 
-    public Integer getTaxonId() {
+    public Long getTaxonId() {
         return taxonId;
     }
 
-    public void setTaxonId(Integer taxonId) {
+    public void setTaxonId(Long taxonId) {
         this.taxonId = taxonId;
     }
 
