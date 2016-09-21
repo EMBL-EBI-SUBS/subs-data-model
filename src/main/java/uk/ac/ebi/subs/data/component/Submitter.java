@@ -27,4 +27,12 @@ public class Submitter {
     public int hashCode() {
         return email != null ? email.hashCode() : 0;
     }
+
+
+    @Override
+    public String toString() {
+        return "Submitter{" +
+                "email='" + email + '\'' +
+                '}';
+    }
 }
