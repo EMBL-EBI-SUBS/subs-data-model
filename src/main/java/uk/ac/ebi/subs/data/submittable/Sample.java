@@ -47,4 +47,23 @@ public class Sample extends AbstractSubsEntity {
     public void setTaxon(String taxon) {
         this.taxon = taxon;
     }
+
+    @Override
+    public String toString() {
+        return "Sample{" +
+                "id='" + id + '\'' +
+                ", accession=" + this.getAccession() +
+                ", alias='" + this.getAlias() + '\'' +
+                ", status='" + this.getStatus() + '\'' +
+                ", domain=" + this.getDomain() +
+                ", archive=" + this.getArchive() +
+                ", title='" + this.getTitle() + '\'' +
+                ", description='" + this.getDescription() + '\'' +
+                ", attributes=" + this.getAttributes() +
+                ", sampleLinks=" + sampleLinks +
+                ", taxonId=" + taxonId +
+                ", taxon='" + taxon + '\'' +
+                '}';
+    }
+
 }

@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
@@ -7,9 +8,6 @@ import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.component.Submitter;
 
 import java.util.*;
-import java.util.stream.Stream;
-
-import org.springframework.data.annotation.Id;
 
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
@@ -163,5 +161,39 @@ public class Submission {
 
     public void setStudies(List<Study> studies) {
         this.studies = studies;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Submission that = (Submission) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Submission{" +
+                "id='" + id + '\'' +
+                ", submitter=" + submitter +
+                ", domain=" + domain +
+                ", submissionDate=" + submissionDate +
+                ", status='" + status + '\'' +
+                ", analyses=" + (analyses != null ? "[" + analyses.size() + "]" : "[0]") +
+                ", assays=" + (assays != null ? "[" + assays.size() + "]" : "[0]") +
+                ", assayData=" + (assayData != null ? "[" + assayData.size() + "]" : "[0]") +
+                ", egaDacs=" + (egaDacs != null ? "[" + egaDacs.size() + "]" : "[0]") +
+                ", egaDacPolicies=" + (egaDacPolicies != null ? "[" + egaDacPolicies.size() + "]" : "[0]") +
+                ", egaDatasets=" + (egaDatasets != null ? "[" + egaDatasets.size() + "]" : "[0]") +
+                ", projects=" + (projects != null ? "[" + projects.size() + "]" : "[0]") +
+                ", samples=" + (samples != null ? "[" + samples.size() + "]" : "[0]") +
+                ", sampleGroups=" + (sampleGroups != null ? "[" + sampleGroups.size() + "]" : "[0]") +
+                ", studies=" + (studies != null ? "[" + studies.size() + "]" : "[0]") +
+                '}';
     }
 }
