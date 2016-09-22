@@ -8,9 +8,27 @@ import java.util.List;
 
 public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
 
+    List<SubsLink<Analysis>> analysisRefs = new ArrayList<>();
+    List<SubsLink<AssayData>> assayDataRefs = new ArrayList<>();
+
     List<Analysis> embeddedEntities  =  new ArrayList<>();
-    List<SubsLink<Submittable>> references = new ArrayList<SubsLink<Submittable>>();
     List<File> files = new ArrayList<File>();
+
+    public List<SubsLink<Analysis>> getAnalysisRefs() {
+        return analysisRefs;
+    }
+
+    public void setAnalysisRefs(List<SubsLink<Analysis>> analysisRefs) {
+        this.analysisRefs = analysisRefs;
+    }
+
+    public List<SubsLink<AssayData>> getAssayDataRefs() {
+        return assayDataRefs;
+    }
+
+    public void setAssayDataRefs(List<SubsLink<AssayData>> assayDataRefs) {
+        this.assayDataRefs = assayDataRefs;
+    }
 
     public List<Analysis> getEmbeddedEntities() {
         return embeddedEntities;
@@ -18,14 +36,6 @@ public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
 
     public void setEmbeddedEntities(List<Analysis> embeddedEntities) {
         this.embeddedEntities = embeddedEntities;
-    }
-
-    public List<SubsLink<Submittable>> getReferences() {
-        return references;
-    }
-
-    public void setReferences(List<SubsLink<Submittable>> references) {
-        this.references = references;
     }
 
     @Override
