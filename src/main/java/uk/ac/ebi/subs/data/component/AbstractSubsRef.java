@@ -13,15 +13,10 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     String archive;
     String domain;
 
-    T referencedObject;
 
-    public T getReferencedObject() {
-        return referencedObject;
-    }
+    public abstract T getReferencedObject();
 
-    public void setReferencedObject(T referencedObject) {
-        this.referencedObject = referencedObject;
-    }
+    public abstract void setReferencedObject(T referencedObject);
 
     public String getArchive() {
         return archive;
@@ -67,7 +62,7 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
                 ", accession='" + accession + '\'' +
                 ", archive='" + archive + '\'' +
                 ", domain='" + domain + '\'' +
-                ", referencedObject=" + referencedObject +
+                ", referencedObject=" + this.getReferencedObject() +
                 '}';
     }
 
@@ -88,7 +83,7 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
         if (item.isAccessioned()) {
             this.setAccession(item.getAccession());
         }
-        this.referencedObject = item;
+        this.setReferencedObject(item);
     }
 
     public boolean isMatch(T submittable) {
