@@ -1,26 +1,34 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
-import uk.ac.ebi.subs.data.component.SubsLink;
+import uk.ac.ebi.subs.data.component.AbstractSubsRef;
+import uk.ac.ebi.subs.data.component.AssayRef;
+import uk.ac.ebi.subs.data.component.SampleRef;
+import uk.ac.ebi.subs.data.component.StudyRef;
 
 public class Assay extends AbstractSubsEntity<Assay> {
 
-    SubsLink<Study> studyRef = new SubsLink<Study>();
-    SubsLink<Sample> sampleRef = new SubsLink<Sample>();
+    StudyRef studyRef = new StudyRef();
+    SampleRef sampleRef = new SampleRef();
 
-    public SubsLink<Study> getStudyRef() {
+    public StudyRef getStudyRef() {
         return studyRef;
     }
 
-    public void setStudyRef(SubsLink<Study> studyRef) {
+    public void setStudyRef(StudyRef studyRef) {
         this.studyRef = studyRef;
     }
 
-    public SubsLink<Sample> getSampleRef() {
+    public SampleRef getSampleRef() {
         return sampleRef;
     }
 
-    public void setSampleRef(SubsLink<Sample> sampleRef) {
+    public void setSampleRef(SampleRef sampleRef) {
         this.sampleRef = sampleRef;
+    }
+
+    @Override
+    protected AbstractSubsRef<Assay> newRef() {
+        return new AssayRef();
     }
 }

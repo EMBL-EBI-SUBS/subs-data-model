@@ -1,10 +1,7 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
-import uk.ac.ebi.subs.data.component.Contact;
-import uk.ac.ebi.subs.data.component.Contacts;
-import uk.ac.ebi.subs.data.component.Publication;
-import uk.ac.ebi.subs.data.component.Publications;
+import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,5 +39,10 @@ public class Project extends AbstractSubsEntity<Project> implements Contacts, Pu
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @Override
+    protected AbstractSubsRef<Project> newRef() {
+        return new ProjectRef();
     }
 }

@@ -13,7 +13,7 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Pr
     List<Protocol> protocols = new ArrayList<Protocol>();
     List<Contact> contacts = new ArrayList<Contact>();
 
-    SubsLink<Project> projectRef = new SubsLink<Project>();
+    ProjectRef projectRef = new ProjectRef();
     Date releaseDate = new Date();
 
     @Override
@@ -46,11 +46,11 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Pr
         this.contacts = contacts;
     }
 
-    public SubsLink<Project> getProjectRef() {
+    public ProjectRef getProjectRef() {
         return projectRef;
     }
 
-    public void setProjectRef(SubsLink<Project> projectRef) {
+    public void setProjectRef(ProjectRef projectRef) {
         this.projectRef = projectRef;
     }
 
@@ -60,5 +60,10 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Pr
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @Override
+    protected AbstractSubsRef<Study> newRef() {
+        return new StudyRef();
     }
 }

@@ -2,7 +2,9 @@ package uk.ac.ebi.subs.data.submittable;
 
 import org.springframework.data.annotation.Id;
 import uk.ac.ebi.subs.data.AbstractSubsEntity;
-import uk.ac.ebi.subs.data.component.SampleLink;
+import uk.ac.ebi.subs.data.component.AbstractSubsRef;
+import uk.ac.ebi.subs.data.component.SampleRef;
+import uk.ac.ebi.subs.data.component.SampleRelationship;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ public class Sample extends AbstractSubsEntity {
     @Id
     String id;
 
-    List<SampleLink> sampleLinks = new ArrayList<>();
+    List<SampleRelationship> sampleRelationships = new ArrayList<>();
     Long taxonId;
     String taxon;
 
@@ -24,12 +26,12 @@ public class Sample extends AbstractSubsEntity {
         this.id = id;
     }
 
-    public List<SampleLink> getSampleLinks() {
-        return sampleLinks;
+    public List<SampleRelationship> getSampleRelationships() {
+        return sampleRelationships;
     }
 
-    public void setSampleLinks(List<SampleLink> sampleLinks) {
-        this.sampleLinks = sampleLinks;
+    public void setSampleRelationships(List<SampleRelationship> sampleRelationships) {
+        this.sampleRelationships = sampleRelationships;
     }
 
     public Long getTaxonId() {
@@ -60,10 +62,14 @@ public class Sample extends AbstractSubsEntity {
                 ", title='" + this.getTitle() + '\'' +
                 ", description='" + this.getDescription() + '\'' +
                 ", attributes=" + this.getAttributes() +
-                ", sampleLinks=" + sampleLinks +
+                ", sampleRelationships=" + sampleRelationships +
                 ", taxonId=" + taxonId +
                 ", taxon='" + taxon + '\'' +
                 '}';
     }
 
+    @Override
+    protected AbstractSubsRef newRef() {
+        return new SampleRef();
+    }
 }

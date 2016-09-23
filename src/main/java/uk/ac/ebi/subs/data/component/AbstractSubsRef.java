@@ -1,12 +1,13 @@
 package uk.ac.ebi.subs.data.component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Transient;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
 import java.util.Optional;
 
-public class SubsLink<T extends Submittable> {
+public abstract  class AbstractSubsRef<T extends Submittable> {
     String alias;
     String accession;
     String archive;
@@ -61,7 +62,7 @@ public class SubsLink<T extends Submittable> {
 
     @Override
     public String toString() {
-        return "SubsLink{" +
+        return "AbstractSubsRef{" +
                 "alias='" + alias + '\'' +
                 ", accession='" + accession + '\'' +
                 ", archive='" + archive + '\'' +

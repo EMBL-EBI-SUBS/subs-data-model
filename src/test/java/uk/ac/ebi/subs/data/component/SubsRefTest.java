@@ -12,9 +12,9 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
 
-public class SubsLinkTest {
+public class SubsRefTest {
 
-    SubsLink<Project> subsLink;
+    ProjectRef subsLink;
     List<Project> candidates;
 
 
@@ -56,7 +56,7 @@ public class SubsLinkTest {
 
     @Before
     public void setUp(){
-        subsLink = new SubsLink<Project>();
+        subsLink = new ProjectRef();
         candidates = new LinkedList<>();
 
         subsLink.setArchive(Archive.Usi.name());

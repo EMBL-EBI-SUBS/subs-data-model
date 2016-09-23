@@ -8,25 +8,25 @@ import java.util.List;
 
 public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
 
-    List<SubsLink<Analysis>> analysisRefs = new ArrayList<>();
-    List<SubsLink<AssayData>> assayDataRefs = new ArrayList<>();
+    List<AnalysisRef> analysisRefs = new ArrayList<>();
+    List<AssayDataRef> assayDataRefs = new ArrayList<>();
 
     List<Analysis> embeddedEntities  =  new ArrayList<>();
     List<File> files = new ArrayList<File>();
 
-    public List<SubsLink<Analysis>> getAnalysisRefs() {
+    public List<AnalysisRef> getAnalysisRefs() {
         return analysisRefs;
     }
 
-    public void setAnalysisRefs(List<SubsLink<Analysis>> analysisRefs) {
+    public void setAnalysisRefs(List<AnalysisRef> analysisRefs) {
         this.analysisRefs = analysisRefs;
     }
 
-    public List<SubsLink<AssayData>> getAssayDataRefs() {
+    public List<AssayDataRef> getAssayDataRefs() {
         return assayDataRefs;
     }
 
-    public void setAssayDataRefs(List<SubsLink<AssayData>> assayDataRefs) {
+    public void setAssayDataRefs(List<AssayDataRef> assayDataRefs) {
         this.assayDataRefs = assayDataRefs;
     }
 
@@ -46,5 +46,10 @@ public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
     @Override
     public void setFiles(List<File> files) {
         this.files = files;
+    }
+
+    @Override
+    protected AbstractSubsRef<Analysis> newRef() {
+        return new AnalysisRef();
     }
 }

@@ -102,8 +102,11 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
         this.archive = archive;
     }
 
-    public SubsLink<T> asLink(){
-        SubsLink subsLink = new SubsLink();
+    protected abstract AbstractSubsRef<T> newRef();
+
+    public AbstractSubsRef<T> asRef(){
+        AbstractSubsRef<T> subsLink = newRef();
+
         subsLink.setAccession(this.accession);
         subsLink.setDomain(this.getDomain().getName());
         subsLink.setAlias(this.alias);
