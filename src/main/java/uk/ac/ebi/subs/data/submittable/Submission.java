@@ -13,6 +13,15 @@ import java.util.*;
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
 })
 public class Submission {
+    public String getLastHandler() {
+        return lastHandler;
+    }
+
+    public void setLastHandler(String lastHandler) {
+        this.lastHandler = lastHandler;
+    }
+
+    String lastHandler;
 
     @Id
     String id;
