@@ -14,7 +14,7 @@ public class Sample extends AbstractSubsEntity {
     @Id
     String id;
 
-    List<SampleRelationship> sampleRelationships = new ArrayList<>();
+    List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
     Long taxonId;
     String taxon;
 
