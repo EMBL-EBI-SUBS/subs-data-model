@@ -3,52 +3,70 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="410.0">uk.ac.ebi.subs.data.component.Protocols</node>
-    <node x="243.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
-    <node x="619.0" y="410.0">uk.ac.ebi.subs.data.component.Contacts</node>
-    <node x="1052.0" y="344.0">uk.ac.ebi.subs.data.component.Contact</node>
-    <node x="843.0" y="377.0">uk.ac.ebi.subs.data.component.Protocol</node>
-    <node x="233.0" y="300.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
-    <node x="743.75" y="632.0">uk.ac.ebi.subs.data.submittable.Study</node>
+    <node x="467.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="233.0" y="377.0">uk.ac.ebi.subs.data.component.Contacts</node>
+    <node x="1157.0" y="377.0">uk.ac.ebi.subs.data.component.StudyRef</node>
+    <node x="926.0" y="598.0">uk.ac.ebi.subs.data.submittable.Study</node>
+    <node x="0.0" y="377.0">uk.ac.ebi.subs.data.component.Protocols</node>
+    <node x="1137.0" y="33.0">uk.ac.ebi.subs.data.component.AbstractSubsRef</node>
+    <node x="823.0" y="289.0">uk.ac.ebi.subs.data.component.Contact</node>
+    <node x="1377.0" y="344.0">uk.ac.ebi.subs.data.component.Protocol</node>
+    <node x="457.0" y="278.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
   </nodes>
   <notes />
   <edges>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.Contact">
-      <point x="125.57142857142856" y="-70.0" />
-      <point x="1015.8214285714286" y="612.0" />
-      <point x="1257.5" y="612.0" />
-      <point x="68.5" y="92.0" />
+      <point x="-29.444444444444457" y="-70.0" />
+      <point x="1029.0555555555557" y="548.0" />
+      <point x="901.5" y="548.0" />
+      <point x="-78.5" y="114.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.StudyRef" target="uk.ac.ebi.subs.data.component.AbstractSubsRef">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="81.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.StudyRef">
+      <point x="29.444444444444457" y="-70.0" />
+      <point x="1087.9444444444443" y="548.0" />
+      <point x="1207.0" y="548.0" />
+      <point x="-50.0" y="26.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.StudyRef" target="uk.ac.ebi.subs.data.submittable.Study">
+      <point x="50.0" y="26.0" />
+      <point x="1307.0" y="558.0" />
+      <point x="1117.388888888889" y="558.0" />
+      <point x="58.888888888888914" y="-70.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
-      <point x="0.0" y="-136.0" />
-      <point x="0.0" y="125.0" />
+      <point x="0.0" y="-125.0" />
+      <point x="0.0" y="114.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
-      <point x="-83.71428571428572" y="-70.0" />
-      <point x="806.5357142857142" y="602.0" />
-      <point x="416.0" y="602.0" />
-      <point x="0.0" y="136.0" />
+      <point x="-58.888888888888914" y="-70.0" />
+      <point x="999.6111111111111" y="558.0" />
+      <point x="630.0" y="558.0" />
+      <point x="0.0" y="125.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.Protocols">
-      <point x="-125.57142857142856" y="-70.0" />
-      <point x="764.6785714285714" y="612.0" />
-      <point x="106.5" y="612.0" />
+      <point x="-117.77777777777783" y="-70.0" />
+      <point x="940.7222222222222" y="578.0" />
+      <point x="106.5" y="578.0" />
       <point x="0.0" y="26.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.Contacts">
-      <point x="-41.85714285714289" y="-70.0" />
-      <point x="848.3928571428571" y="592.0" />
-      <point x="721.0" y="592.0" />
+      <point x="-88.33333333333337" y="-70.0" />
+      <point x="970.1666666666666" y="568.0" />
+      <point x="335.0" y="568.0" />
       <point x="0.0" y="26.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.Protocol">
-      <point x="41.85714285714283" y="-70.0" />
-      <point x="932.1071428571429" y="592.0" />
-      <point x="984.75" y="592.0" />
-      <point x="47.25" y="59.0" />
+      <point x="88.33333333333337" y="-70.0" />
+      <point x="1146.8333333333335" y="568.0" />
+      <point x="1424.25" y="568.0" />
+      <point x="-47.25" y="59.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5267459138187222" x="663.0" y="386.0" />
+  <settings layout="Hierarchic Group" zoom="0.9369482976040353" x="783.0" y="369.0" />
   <SelectedNodes />
   <Categories>
     <Category>Properties</Category>

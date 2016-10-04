@@ -3,63 +3,72 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="467.49999999999994" y="410.0">uk.ac.ebi.subs.data.component.SampleLink</node>
-    <node x="0.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
-    <node x="413.93181818181813" y="768.0">uk.ac.ebi.subs.data.submittable.SampleGroup</node>
-    <node x="81.49999999999994" y="300.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
-    <node x="509.72727272727263" y="44.0">uk.ac.ebi.subs.data.component.SubsLink</node>
-    <node x="354.4999999999999" y="622.0">uk.ac.ebi.subs.data.submittable.Sample</node>
+    <node x="175.375" y="790.0">uk.ac.ebi.subs.data.component.SampleRef</node>
+    <node x="441.0" y="0.0">uk.ac.ebi.subs.data.submittable.Submittable</node>
+    <node x="345.2416666666666" y="892.0">uk.ac.ebi.subs.data.submittable.SampleGroup</node>
+    <node x="0.0" y="578.0">uk.ac.ebi.subs.data.component.AbstractSubsRef</node>
+    <node x="198.99999999999997" y="377.0">uk.ac.ebi.subs.data.component.SampleRelationship</node>
+    <node x="431.0" y="278.0">uk.ac.ebi.subs.data.AbstractSubsEntity</node>
+    <node x="261.0" y="600.0">uk.ac.ebi.subs.data.submittable.Sample</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
-      <point x="-126.0" y="-37.0" />
-      <point x="445.43181818181813" y="748.0" />
-      <point x="172.99999999999994" y="748.0" />
-      <point x="-91.5" y="136.0" />
+    <edge source="uk.ac.ebi.subs.data.component.SampleRef" target="uk.ac.ebi.subs.data.component.AbstractSubsRef">
+      <point x="-78.75" y="-26.0" />
+      <point x="201.625" y="765.0" />
+      <point x="120.0" y="765.0" />
+      <point x="0.0" y="81.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Sample" target="uk.ac.ebi.subs.data.component.SampleLink">
-      <point x="73.00000000000006" y="-48.0" />
+    <edge source="uk.ac.ebi.subs.data.submittable.Sample" target="uk.ac.ebi.subs.data.component.SampleRelationship">
+      <point x="-65.66666666666669" y="-59.0" />
+      <point x="293.83333333333326" y="553.0" />
+      <point x="305.0" y="553.0" />
       <point x="0.0" y="26.0" />
     </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="-64.5" y="-37.0" />
+      <point x="409.7416666666666" y="867.0" />
+      <point x="280.375" y="867.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Sample" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="49.25" y="59.0" />
+      <point x="408.75" y="765.0" />
+      <point x="359.125" y="765.0" />
+      <point x="78.75" y="-26.0" />
+    </edge>
     <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.submittable.Submittable">
-      <point x="-91.5" y="-136.0" />
-      <point x="0.0" y="125.0" />
+      <point x="0.0" y="-125.0" />
+      <point x="0.0" y="114.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.AbstractSubsEntity" target="uk.ac.ebi.subs.data.component.SubsLink">
-      <point x="91.5" y="-136.0" />
-      <point x="355.99999999999994" y="275.0" />
-      <point x="537.7272727272726" y="275.0" />
-      <point x="-84.0" y="81.0" />
+    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
+      <point x="64.5" y="-37.0" />
+      <point x="538.7416666666666" y="867.0" />
+      <point x="690.5" y="867.0" />
+      <point x="86.5" y="125.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.submittable.Sample">
-      <point x="-63.0" y="-37.0" />
-      <point x="508.43181818181813" y="738.0" />
-      <point x="427.4999999999999" y="738.0" />
-      <point x="-73.0" y="48.0" />
+    <edge source="uk.ac.ebi.subs.data.component.SampleRef" target="uk.ac.ebi.subs.data.submittable.Sample">
+      <point x="26.25" y="-26.0" />
+      <point x="306.625" y="765.0" />
+      <point x="310.25" y="765.0" />
+      <point x="-49.25" y="59.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.component.SampleLink" target="uk.ac.ebi.subs.data.component.SubsLink">
-      <point x="0.0" y="-26.0" />
-      <point x="573.4999999999999" y="275.0" />
-      <point x="593.7272727272726" y="275.0" />
-      <point x="-28.0" y="81.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.component.SubsLink">
-      <point x="126.0" y="-37.0" />
-      <point x="697.4318181818181" y="748.0" />
-      <point x="701.0" y="748.0" />
-      <point x="701.0" y="275.0" />
-      <point x="705.7272727272726" y="275.0" />
-      <point x="84.0" y="81.0" />
+    <edge source="uk.ac.ebi.subs.data.component.SampleRelationship" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="-70.66666666666669" y="26.0" />
+      <point x="234.3333333333333" y="553.0" />
+      <point x="250.49999999999997" y="553.0" />
+      <point x="250.49999999999997" y="765.0" />
+      <point x="254.125" y="765.0" />
+      <point x="-26.25" y="-26.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Sample" target="uk.ac.ebi.subs.data.AbstractSubsEntity">
-      <point x="-72.99999999999994" y="-48.0" />
-      <point x="427.49999999999994" y="597.0" />
-      <point x="355.99999999999994" y="597.0" />
-      <point x="91.5" y="136.0" />
+      <point x="65.66666666666663" y="-59.0" />
+      <point x="425.16666666666663" y="553.0" />
+      <point x="517.5" y="553.0" />
+      <point x="-86.5" y="125.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.5591647331786543" x="367.0" y="420.99999999999994" />
+  <settings layout="Hierarchic Group" zoom="0.7565922920892495" x="388.70911528150134" y="443.0" />
   <SelectedNodes />
   <Categories>
     <Category>Properties</Category>
