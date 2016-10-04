@@ -1,7 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import org.springframework.data.annotation.Id;
-import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.AbstractSubsRef;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;

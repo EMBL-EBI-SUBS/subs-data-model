@@ -1,7 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
 
-import uk.ac.ebi.subs.data.AbstractSubsEntity;
 import uk.ac.ebi.subs.data.component.AbstractSubsRef;
 import uk.ac.ebi.subs.data.component.SampleGroupRef;
 import uk.ac.ebi.subs.data.component.SampleRef;

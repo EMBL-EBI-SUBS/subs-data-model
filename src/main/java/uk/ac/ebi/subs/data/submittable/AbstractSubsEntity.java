@@ -1,9 +1,8 @@
-package uk.ac.ebi.subs.data;
+package uk.ac.ebi.subs.data.submittable;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.component.*;
-import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.ArrayList;
 import java.util.List;
