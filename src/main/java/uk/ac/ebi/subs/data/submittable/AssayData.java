@@ -20,14 +20,6 @@ public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
         this.assayRef = assayRef;
     }
 
-    public SampleRef getSampleRef() {
-        return sampleRef;
-    }
-
-    public void setSampleRef(SampleRef sampleRef) {
-        this.sampleRef = sampleRef;
-    }
-
     @Override
     public List<File> getFiles() {
         return files;
