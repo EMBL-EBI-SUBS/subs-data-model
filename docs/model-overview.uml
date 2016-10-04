@@ -3,282 +3,304 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="325.5962264150942" y="160.0">uk.ac.ebi.subs.data.component.SampleRef</node>
-    <node x="441.7305031446539" y="250.0">uk.ac.ebi.subs.data.submittable.Assay</node>
-    <node x="110.16800314465394" y="580.0">uk.ac.ebi.subs.data.submittable.SampleGroup</node>
-    <node x="450.4805031446539" y="160.0">uk.ac.ebi.subs.data.component.StudyRef</node>
-    <node x="77.79300314465394" y="490.0">uk.ac.ebi.subs.data.component.SampleGroupRef</node>
-    <node x="688.4286163522013" y="490.0">uk.ac.ebi.subs.data.component.EgaDacPolicyRef</node>
-    <node x="429.8231132075474" y="690.0">uk.ac.ebi.subs.data.submittable.Submission</node>
-    <node x="530.7003930817608" y="580.0">uk.ac.ebi.subs.data.submittable.Analysis</node>
-    <node x="400.2930031446539" y="490.0">uk.ac.ebi.subs.data.component.AssayDataRef</node>
-    <node x="482.7305031446539" y="80.0">uk.ac.ebi.subs.data.submittable.Study</node>
-    <node x="341.8231132075474" y="580.0">uk.ac.ebi.subs.data.submittable.EgaDataset</node>
-    <node x="371.5337264150942" y="410.0">uk.ac.ebi.subs.data.submittable.AssayData</node>
-    <node x="256.29300314465394" y="490.0">uk.ac.ebi.subs.data.component.EgaDatasetRef</node>
-    <node x="0.0" y="80.0">uk.ac.ebi.subs.data.submittable.Project</node>
-    <node x="401.0337264150942" y="330.0">uk.ac.ebi.subs.data.component.AssayRef</node>
-    <node x="741.6545597484275" y="580.0">uk.ac.ebi.subs.data.submittable.EgaDacPolicy</node>
-    <node x="232.75550314465391" y="0.0">uk.ac.ebi.subs.data.component.ProjectRef</node>
-    <node x="540.2930031446539" y="490.0">uk.ac.ebi.subs.data.component.AnalysisRef</node>
-    <node x="316.73050314465394" y="80.0">uk.ac.ebi.subs.data.submittable.Sample</node>
-    <node x="851.1161163522013" y="490.0">uk.ac.ebi.subs.data.component.EgaDacRef</node>
-    <node x="886.1161163522013" y="580.0">uk.ac.ebi.subs.data.submittable.EgaDac</node>
+    <node x="266.1170445956161" y="160.0">uk.ac.ebi.subs.data.component.SampleRef</node>
+    <node x="71.875" y="250.0">uk.ac.ebi.subs.data.submittable.Assay</node>
+    <node x="910.6170445956161" y="600.0">uk.ac.ebi.subs.data.submittable.SampleGroup</node>
+    <node x="17.625" y="160.0">uk.ac.ebi.subs.data.component.StudyRef</node>
+    <node x="922.4166666666667" y="490.0">uk.ac.ebi.subs.data.component.SampleGroupRef</node>
+    <node x="590.1931689342406" y="710.0">uk.ac.ebi.subs.data.submittable.Submission</node>
+    <node x="611.1170445956161" y="490.0">uk.ac.ebi.subs.data.component.EgaDacPolicyRef</node>
+    <node x="148.13066893424053" y="600.0">uk.ac.ebi.subs.data.submittable.Analysis</node>
+    <node x="326.1170445956161" y="490.0">uk.ac.ebi.subs.data.component.AssayDataRef</node>
+    <node x="0.5" y="80.0">uk.ac.ebi.subs.data.submittable.Study</node>
+    <node x="399.5061791383224" y="600.0">uk.ac.ebi.subs.data.submittable.EgaDataset</node>
+    <node x="375.17284580498904" y="410.0">uk.ac.ebi.subs.data.submittable.AssayData</node>
+    <node x="466.1170445956161" y="490.0">uk.ac.ebi.subs.data.component.EgaDatasetRef</node>
+    <node x="1062.3765022675739" y="80.0">uk.ac.ebi.subs.data.submittable.Project</node>
+    <node x="86.92954459561616" y="330.0">uk.ac.ebi.subs.data.component.AssayRef</node>
+    <node x="650.3670445956161" y="600.0">uk.ac.ebi.subs.data.submittable.EgaDacPolicy</node>
+    <node x="512.5920445956161" y="0.0">uk.ac.ebi.subs.data.component.ProjectRef</node>
+    <node x="199.11704459561616" y="490.0">uk.ac.ebi.subs.data.component.AnalysisRef</node>
+    <node x="300.8670445956161" y="80.0">uk.ac.ebi.subs.data.submittable.Sample</node>
+    <node x="768.1170445956161" y="490.0">uk.ac.ebi.subs.data.component.EgaDacRef</node>
+    <node x="810.6170445956161" y="600.0">uk.ac.ebi.subs.data.submittable.EgaDac</node>
   </nodes>
   <notes />
   <edges>
+    <edge source="uk.ac.ebi.subs.data.component.SampleGroupRef" target="uk.ac.ebi.subs.data.submittable.SampleGroup">
+      <point x="34.25" y="15.0" />
+      <point x="1025.1666666666667" y="580.0" />
+      <point x="1008.1170445956161" y="580.0" />
+      <point x="39.0" y="-15.0" />
+    </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.SampleGroup">
-      <point x="-26.75" y="-15.0" />
-      <point x="456.5731132075474" y="650.0" />
-      <point x="168.66800314465394" y="650.0" />
+      <point x="26.75" y="-15.0" />
+      <point x="670.4431689342406" y="670.0" />
+      <point x="969.1170445956161" y="670.0" />
       <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Sample" target="uk.ac.ebi.subs.data.component.SampleRef">
-      <point x="26.333333333333314" y="15.0" />
-      <point x="382.56383647798725" y="135.0" />
-      <point x="399.8462264150942" y="135.0" />
+      <point x="0.0" y="15.0" />
       <point x="24.75" y="-15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.EgaDac">
-      <point x="48.14999999999998" y="-15.0" />
-      <point x="531.4731132075474" y="670.0" />
-      <point x="926.1161163522013" y="670.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.AssayDataRef">
-      <point x="-32.625" y="-15.0" />
-      <point x="541.5753930817608" y="550.0" />
-      <point x="490.2930031446539" y="550.0" />
-      <point x="30.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Analysis">
-      <point x="5.349999999999966" y="-15.0" />
-      <point x="488.6731132075473" y="630.0" />
-      <point x="574.2003930817608" y="630.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Assay" target="uk.ac.ebi.subs.data.component.SampleRef">
-      <point x="-26.625" y="-15.0" />
-      <point x="450.6055031446539" y="230.0" />
-      <point x="394.89622641509413" y="230.0" />
-      <point x="19.80000000000001" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Sample">
-      <point x="-37.450000000000045" y="-15.0" />
-      <point x="445.87311320754736" y="660.0" />
-      <point x="67.29300314465394" y="660.0" />
-      <point x="67.29300314465394" y="135.0" />
-      <point x="329.8971698113206" y="135.0" />
-      <point x="-26.333333333333314" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Study">
-      <point x="26.75" y="-15.0" />
-      <point x="510.0731132075474" y="650.0" />
-      <point x="677.9286163522013" y="650.0" />
-      <point x="677.9286163522013" y="135.0" />
-      <point x="540.2305031446539" y="135.0" />
-      <point x="23.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.AssayDataRef">
-      <point x="33.33333333333337" y="15.0" />
-      <point x="454.86705974842755" y="465.0" />
-      <point x="490.2930031446539" y="465.0" />
-      <point x="30.0" y="-15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.component.SampleRef">
-      <point x="39.0" y="-15.0" />
-      <point x="207.66800314465394" y="560.0" />
-      <point x="225.29300314465394" y="560.0" />
-      <point x="225.29300314465394" y="230.0" />
-      <point x="335.49622641509416" y="230.0" />
-      <point x="-39.60000000000002" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.AssayData">
-      <point x="-16.05000000000001" y="-15.0" />
-      <point x="467.27311320754734" y="640.0" />
-      <point x="245.79300314465394" y="640.0" />
-      <point x="245.79300314465394" y="465.0" />
-      <point x="388.2003930817608" y="465.0" />
-      <point x="-33.333333333333314" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.SampleRef">
-      <point x="-37.5" y="-15.0" />
-      <point x="384.0337264150942" y="390.0" />
-      <point x="364.0962264150942" y="390.0" />
-      <point x="364.0962264150942" y="230.0" />
-      <point x="355.2962264150941" y="230.0" />
-      <point x="-19.80000000000001" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.component.StudyRef" target="uk.ac.ebi.subs.data.submittable.Study">
-      <point x="-22.25" y="-15.0" />
-      <point x="472.7305031446539" y="135.0" />
-      <point x="494.2305031446539" y="135.0" />
-      <point x="-23.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Assay" target="uk.ac.ebi.subs.data.component.AssayRef">
-      <point x="0.0" y="15.0" />
-      <point x="477.2305031446539" y="305.0" />
-      <point x="469.2837264150942" y="305.0" />
-      <point x="22.75" y="-15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.component.EgaDacPolicyRef">
-      <point x="-43.875" y="-15.0" />
-      <point x="756.2795597484275" y="560.0" />
-      <point x="722.6786163522013" y="560.0" />
-      <point x="-34.25" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.component.EgaDatasetRef">
-      <point x="-39.0" y="-15.0" />
-      <point x="354.8231132075474" y="560.0" />
-      <point x="287.29300314465394" y="560.0" />
-      <point x="-31.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.component.EgaDacRef" target="uk.ac.ebi.subs.data.submittable.EgaDac">
-      <point x="37.5" y="15.0" />
-      <point x="938.6161163522013" y="560.0" />
-      <point x="946.1161163522013" y="560.0" />
-      <point x="20.0" y="-15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.EgaDacPolicy">
-      <point x="37.450000000000045" y="-15.0" />
-      <point x="520.7731132075475" y="660.0" />
-      <point x="800.1545597484275" y="660.0" />
-      <point x="0.0" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.component.EgaDacPolicyRef" target="uk.ac.ebi.subs.data.submittable.EgaDacPolicy">
-      <point x="34.25" y="15.0" />
-      <point x="791.1786163522013" y="560.0" />
-      <point x="785.5295597484275" y="560.0" />
-      <point x="-14.625" y="-15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Assay">
-      <point x="16.05000000000001" y="-15.0" />
-      <point x="499.37311320754736" y="640.0" />
-      <point x="657.7930031446539" y="640.0" />
-      <point x="657.7930031446539" y="305.0" />
-      <point x="500.8971698113206" y="305.0" />
-      <point x="23.666666666666686" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.AnalysisRef">
-      <point x="-10.875" y="-15.0" />
-      <point x="563.3253930817608" y="540.0" />
-      <point x="580.4180031446539" y="540.0" />
-      <point x="-13.375" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.component.EgaDacRef">
-      <point x="43.875" y="-15.0" />
-      <point x="844.0295597484275" y="560.0" />
-      <point x="888.6161163522013" y="560.0" />
-      <point x="-12.5" y="15.0" />
-    </edge>
-    <edge source="uk.ac.ebi.subs.data.component.SampleGroupRef" target="uk.ac.ebi.subs.data.submittable.SampleGroup">
-      <point x="34.25" y="15.0" />
-      <point x="180.54300314465394" y="560.0" />
-      <point x="168.66800314465394" y="560.0" />
-      <point x="0.0" y="-15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Project" target="uk.ac.ebi.subs.data.component.ProjectRef">
       <point x="-19.25" y="-15.0" />
-      <point x="19.25" y="50.0" />
-      <point x="244.88050314465391" y="50.0" />
-      <point x="-36.375" y="15.0" />
+      <point x="1081.6265022675739" y="60.0" />
+      <point x="573.2170445956161" y="60.0" />
+      <point x="12.125" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.EgaDac">
+      <point x="16.05000000000001" y="-15.0" />
+      <point x="659.7431689342407" y="660.0" />
+      <point x="850.6170445956161" y="660.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.EgaDataset">
-      <point x="-5.350000000000023" y="-15.0" />
-      <point x="477.9731132075474" y="630.0" />
-      <point x="393.8231132075474" y="630.0" />
+      <point x="-16.05000000000001" y="-15.0" />
+      <point x="627.6431689342405" y="660.0" />
+      <point x="451.5061791383224" y="660.0" />
       <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.AssayRef">
-      <point x="37.5" y="-15.0" />
-      <point x="459.0337264150942" y="390.0" />
-      <point x="469.2837264150942" y="390.0" />
-      <point x="22.75" y="15.0" />
+      <point x="-37.5" y="-15.0" />
+      <point x="387.67284580498904" y="390.0" />
+      <point x="132.42954459561616" y="390.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.AssayDataRef">
+      <point x="37.285714285714334" y="-15.0" />
+      <point x="228.91638321995487" y="580.0" />
+      <point x="356.1170445956161" y="580.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Analysis">
+      <point x="-26.75" y="-15.0" />
+      <point x="616.9431689342406" y="670.0" />
+      <point x="191.63066893424053" y="670.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Assay" target="uk.ac.ebi.subs.data.component.StudyRef">
-      <point x="8.875" y="-15.0" />
-      <point x="486.1055031446539" y="210.0" />
-      <point x="472.7305031446539" y="210.0" />
-      <point x="-22.25" y="15.0" />
+      <point x="-8.875" y="-15.0" />
+      <point x="98.5" y="230.0" />
+      <point x="91.79166666666663" y="230.0" />
+      <point x="29.66666666666663" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.component.AssayDataRef">
-      <point x="13.0" y="-15.0" />
-      <point x="406.8231132075474" y="550.0" />
-      <point x="430.2930031446539" y="550.0" />
-      <point x="-30.0" y="15.0" />
+      <point x="-13.0" y="-15.0" />
+      <point x="438.5061791383224" y="560.0" />
+      <point x="416.1170445956161" y="560.0" />
+      <point x="30.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.AssayRef">
+      <point x="-24.85714285714289" y="-15.0" />
+      <point x="166.77352607709764" y="570.0" />
+      <point x="113.03594104308428" y="570.0" />
+      <point x="113.03594104308428" y="390.0" />
+      <point x="102.0962112622828" y="390.0" />
+      <point x="-30.33333333333337" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Assay" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="8.875" y="-15.0" />
+      <point x="116.25" y="210.0" />
+      <point x="274.3670445956161" y="210.0" />
+      <point x="-41.25" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Sample">
+      <point x="37.44999999999999" y="-15.0" />
+      <point x="681.1431689342405" y="680.0" />
+      <point x="1069.9166666666667" y="680.0" />
+      <point x="1069.9166666666667" y="135.0" />
+      <point x="366.7003779289495" y="135.0" />
+      <point x="26.33333333333337" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Study">
+      <point x="-48.150000000000034" y="-15.0" />
+      <point x="595.5431689342406" y="690.0" />
+      <point x="7.125" y="690.0" />
+      <point x="7.125" y="135.0" />
+      <point x="12.0" y="135.0" />
+      <point x="-23.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.EgaDac" target="uk.ac.ebi.subs.data.component.EgaDacRef">
       <point x="-20.0" y="-15.0" />
-      <point x="906.1161163522013" y="560.0" />
-      <point x="913.6161163522013" y="560.0" />
       <point x="12.5" y="15.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.StudyRef">
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.AssayDataRef">
       <point x="0.0" y="15.0" />
+      <point x="425.17284580498904" y="465.0" />
+      <point x="416.1170445956161" y="465.0" />
+      <point x="30.0" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.StudyRef">
+      <point x="23.0" y="15.0" />
+      <point x="58.0" y="135.0" />
+      <point x="84.375" y="135.0" />
       <point x="22.25" y="-15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Study" target="uk.ac.ebi.subs.data.component.ProjectRef">
       <point x="-17.25" y="-15.0" />
-      <point x="499.9805031446539" y="60.0" />
-      <point x="293.3805031446539" y="60.0" />
-      <point x="12.125" y="15.0" />
+      <point x="17.75" y="50.0" />
+      <point x="524.7170445956161" y="50.0" />
+      <point x="-36.375" y="15.0" />
     </edge>
-    <edge source="uk.ac.ebi.subs.data.component.AnalysisRef" target="uk.ac.ebi.subs.data.submittable.Analysis">
-      <point x="40.125" y="15.0" />
-      <point x="633.9180031446539" y="560.0" />
-      <point x="606.8253930817608" y="560.0" />
-      <point x="32.625" y="-15.0" />
+    <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="-39.0" y="-15.0" />
+      <point x="930.1170445956161" y="580.0" />
+      <point x="889.0416666666667" y="580.0" />
+      <point x="889.0416666666667" y="210.0" />
+      <point x="356.8670445956161" y="210.0" />
+      <point x="41.25" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Project">
-      <point x="-48.150000000000034" y="-15.0" />
-      <point x="435.1731132075473" y="670.0" />
-      <point x="38.5" y="670.0" />
+      <point x="48.14999999999998" y="-15.0" />
+      <point x="691.8431689342406" y="690.0" />
+      <point x="1100.8765022675739" y="690.0" />
       <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.AnalysisRef" target="uk.ac.ebi.subs.data.submittable.Analysis">
+      <point x="13.375" y="15.0" />
+      <point x="265.99204459561616" y="570.0" />
+      <point x="216.48781179138342" y="570.0" />
+      <point x="24.85714285714289" y="-15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.component.AssayRef" target="uk.ac.ebi.subs.data.submittable.Assay">
       <point x="-22.75" y="-15.0" />
-      <point x="423.7837264150942" y="305.0" />
-      <point x="453.56383647798725" y="305.0" />
-      <point x="-23.666666666666686" y="15.0" />
+      <point x="109.67954459561616" y="305.0" />
+      <point x="107.375" y="305.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.AssayData">
+      <point x="-5.350000000000023" y="-15.0" />
+      <point x="638.3431689342406" y="650.0" />
+      <point x="600.6170445956161" y="650.0" />
+      <point x="600.6170445956161" y="465.0" />
+      <point x="458.5061791383224" y="465.0" />
+      <point x="33.33333333333337" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.component.ProjectRef" target="uk.ac.ebi.subs.data.submittable.Project">
-      <point x="-12.125" y="15.0" />
-      <point x="269.1305031446539" y="60.0" />
-      <point x="57.75" y="60.0" />
+      <point x="36.375" y="15.0" />
+      <point x="597.4670445956161" y="50.0" />
+      <point x="1120.1265022675739" y="50.0" />
       <point x="19.25" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.AssayData" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="37.5" y="-15.0" />
+      <point x="462.67284580498904" y="390.0" />
+      <point x="448.67284580498904" y="390.0" />
+      <point x="448.67284580498904" y="220.0" />
+      <point x="340.3670445956161" y="220.0" />
+      <point x="24.75" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.StudyRef" target="uk.ac.ebi.subs.data.submittable.Study">
+      <point x="-22.25" y="-15.0" />
+      <point x="39.875" y="135.0" />
+      <point x="35.0" y="135.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.component.AssayDataRef" target="uk.ac.ebi.subs.data.submittable.AssayData">
       <point x="-30.0" y="-15.0" />
-      <point x="430.2930031446539" y="465.0" />
-      <point x="421.5337264150942" y="465.0" />
-      <point x="0.0" y="15.0" />
+      <point x="356.1170445956161" y="465.0" />
+      <point x="391.83951247165567" y="465.0" />
+      <point x="-33.33333333333337" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.component.SampleRef" target="uk.ac.ebi.subs.data.submittable.Sample">
       <point x="-24.75" y="-15.0" />
-      <point x="350.3462264150942" y="135.0" />
-      <point x="356.23050314465394" y="135.0" />
-      <point x="0.0" y="15.0" />
+      <point x="290.8670445956161" y="135.0" />
+      <point x="314.03371126228274" y="135.0" />
+      <point x="-26.33333333333337" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.component.AnalysisRef">
-      <point x="39.0" y="-15.0" />
-      <point x="432.8231132075474" y="560.0" />
-      <point x="553.6680031446539" y="560.0" />
-      <point x="-40.125" y="15.0" />
+      <point x="-39.0" y="-15.0" />
+      <point x="412.5061791383224" y="570.0" />
+      <point x="292.74204459561616" y="570.0" />
+      <point x="40.125" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.submittable.SampleGroup" target="uk.ac.ebi.subs.data.component.SampleGroupRef">
-      <point x="-39.0" y="-15.0" />
-      <point x="129.66800314465394" y="560.0" />
-      <point x="112.04300314465394" y="560.0" />
+      <point x="0.0" y="-15.0" />
+      <point x="969.1170445956161" y="580.0" />
+      <point x="956.6666666666667" y="580.0" />
       <point x="-34.25" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.component.EgaDacPolicyRef">
+      <point x="-43.875" y="-15.0" />
+      <point x="664.9920445956161" y="580.0" />
+      <point x="645.3670445956161" y="580.0" />
+      <point x="-34.25" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Assay" target="uk.ac.ebi.subs.data.component.AssayRef">
+      <point x="23.66666666666663" y="15.0" />
+      <point x="131.04166666666663" y="305.0" />
+      <point x="155.17954459561616" y="305.0" />
+      <point x="22.75" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.StudyRef">
+      <point x="-37.28571428571422" y="-15.0" />
+      <point x="154.3449546485263" y="580.0" />
+      <point x="37.604166666666686" y="580.0" />
+      <point x="37.604166666666686" y="230.0" />
+      <point x="32.45833333333337" y="230.0" />
+      <point x="-29.66666666666663" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDataset" target="uk.ac.ebi.subs.data.component.EgaDatasetRef">
+      <point x="13.0" y="-15.0" />
+      <point x="464.5061791383224" y="570.0" />
+      <point x="497.1170445956161" y="570.0" />
+      <point x="-31.0" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.EgaDacRef" target="uk.ac.ebi.subs.data.submittable.EgaDac">
+      <point x="37.5" y="15.0" />
+      <point x="855.6170445956161" y="580.0" />
+      <point x="870.6170445956161" y="580.0" />
+      <point x="20.0" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.SampleRef">
+      <point x="-12.428571428571445" y="-15.0" />
+      <point x="179.2020975056691" y="540.0" />
+      <point x="188.61704459561616" y="540.0" />
+      <point x="188.61704459561616" y="230.0" />
+      <point x="307.3670445956161" y="230.0" />
+      <point x="-8.25" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.EgaDacPolicy">
+      <point x="5.349999999999966" y="-15.0" />
+      <point x="649.0431689342406" y="650.0" />
+      <point x="708.8670445956161" y="650.0" />
+      <point x="0.0" y="15.0" />
     </edge>
     <edge source="uk.ac.ebi.subs.data.component.EgaDatasetRef" target="uk.ac.ebi.subs.data.submittable.EgaDataset">
       <point x="31.0" y="15.0" />
-      <point x="349.29300314465394" y="550.0" />
-      <point x="380.8231132075474" y="550.0" />
-      <point x="-13.0" y="-15.0" />
+      <point x="559.1170445956161" y="580.0" />
+      <point x="490.5061791383224" y="580.0" />
+      <point x="39.0" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.component.EgaDacPolicyRef" target="uk.ac.ebi.subs.data.submittable.EgaDacPolicy">
+      <point x="34.25" y="15.0" />
+      <point x="713.8670445956161" y="580.0" />
+      <point x="694.2420445956161" y="580.0" />
+      <point x="-14.625" y="-15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Submission" target="uk.ac.ebi.subs.data.submittable.Assay">
+      <point x="-37.450000000000045" y="-15.0" />
+      <point x="606.2431689342405" y="680.0" />
+      <point x="63.242044595616164" y="680.0" />
+      <point x="63.242044595616164" y="305.0" />
+      <point x="83.70833333333337" y="305.0" />
+      <point x="-23.66666666666663" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.Analysis" target="uk.ac.ebi.subs.data.component.AnalysisRef">
+      <point x="0.0" y="-15.0" />
+      <point x="191.63066893424053" y="550.0" />
+      <point x="212.49204459561616" y="550.0" />
+      <point x="-40.125" y="15.0" />
+    </edge>
+    <edge source="uk.ac.ebi.subs.data.submittable.EgaDacPolicy" target="uk.ac.ebi.subs.data.component.EgaDacRef">
+      <point x="43.875" y="-15.0" />
+      <point x="752.7420445956161" y="580.0" />
+      <point x="805.6170445956161" y="580.0" />
+      <point x="-12.5" y="15.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9513513513513514" x="483.5" y="360.0" />
+  <settings layout="Hierarchic Group" zoom="0.6394736842105263" x="570.0" y="370.0" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>
