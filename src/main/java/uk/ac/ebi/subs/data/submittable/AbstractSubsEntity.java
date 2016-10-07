@@ -18,7 +18,7 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
 
     String title;
     String description;
-    List<Attribute> attributes = new ArrayList<Attribute>();
+    List<Attribute> attributes = new ArrayList<>();
 
     public String getType() {
         return type;
