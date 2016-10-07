@@ -70,6 +70,10 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     public void fillIn(Collection<T> items) {
         T match = this.findMatch(items);
         this.setReferencedObject(match);
+
+        if (match != null && !this.isAccessioned()){
+            this.accession = match.getAccession();
+        }
     }
 
     public T findMatch(Collection<T> items){
