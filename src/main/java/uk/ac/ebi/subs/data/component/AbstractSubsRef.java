@@ -68,7 +68,8 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
 
 
     public void fillIn(Collection<T> items) {
-        this.setReferencedObject(this.findMatch(items));
+        T match = this.findMatch(items);
+        this.setReferencedObject(match);
     }
 
     public T findMatch(Collection<T> items){

@@ -24,7 +24,7 @@ public class SubsRefTest {
 
         run();
 
-        assertThat("subs link accession", subsLink.getAccession(), equalTo("acc1"));
+        assertThat("subs ref filled in", subsLink.getReferencedObject(), notNullValue());
         assertThat("subs link ref", subsLink.getReferencedObject(), equalTo(candidates.get(0)));
     };
 
@@ -39,15 +39,17 @@ public class SubsRefTest {
     };
 
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void noMatch(){
         addCandidate("notunclebob");
 
         run();
+
+        assertThat("subs ref filled in", subsLink.getReferencedObject(), nullValue());
     }
 
-    @Test(expected = RuntimeException.class)
-    public void tooManyMatches(){
+    @Test
+    public void manyMatches(){
         addCandidate("unclebob");
         addCandidate("unclebob");
         run();
