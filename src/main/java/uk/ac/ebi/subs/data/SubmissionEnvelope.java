@@ -1,16 +1,19 @@
 package uk.ac.ebi.subs.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import uk.ac.ebi.subs.data.component.Archive;
 
-import java.util.ArrayList;
-import java.util.List;
+import uk.ac.ebi.subs.data.component.SampleRef;
+import uk.ac.ebi.subs.data.submittable.Sample;
+
+import java.util.*;
 
 public class SubmissionEnvelope {
 
     Submission submission;
 
     List<Class> handlerHistory = new ArrayList<>();
+
+    Set<SampleRef> supportingSamplesRequired = new HashSet<>();
+    List<Sample> supportingSamples = new ArrayList<>();
 
 
 
@@ -47,5 +50,21 @@ public class SubmissionEnvelope {
 
     public void setHandlerHistory(List<Class> handlerHistory) {
         this.handlerHistory = handlerHistory;
+    }
+
+    public Set<SampleRef> getSupportingSamplesRequired() {
+        return supportingSamplesRequired;
+    }
+
+    public void setSupportingSamplesRequired(Set<SampleRef> supportingSamplesRequired) {
+        this.supportingSamplesRequired = supportingSamplesRequired;
+    }
+
+    public List<Sample> getSupportingSamples() {
+        return supportingSamples;
+    }
+
+    public void setSupportingSamples(List<Sample> supportingSamples) {
+        this.supportingSamples = supportingSamples;
     }
 }

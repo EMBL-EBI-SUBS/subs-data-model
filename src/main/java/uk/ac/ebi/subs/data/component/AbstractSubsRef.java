@@ -68,22 +68,20 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
 
 
     public void fillIn(Collection<T> items) {
+        this.setReferencedObject(this.findMatch(items));
+    }
+
+    public T findMatch(Collection<T> items){
         Optional<T> optionalSubmittable = items.stream()
                 .filter(s -> this.isMatch(s))
-                .reduce((s1, s2) -> {
-                    throw new RuntimeException("Too many matches found for " + this.toString());
-                });
+                .findFirst();
 
-        if (!optionalSubmittable.isPresent()) {
-            throw new RuntimeException("No match found for " + this.toString());
+        if (optionalSubmittable.isPresent()) {
+            return optionalSubmittable.get();
         }
-
-        T item = optionalSubmittable.get();
-
-        if (item.isAccessioned()) {
-            this.setAccession(item.getAccession());
+        else {
+            return null;
         }
-        this.setReferencedObject(item);
     }
 
     public boolean isMatch(T submittable) {
