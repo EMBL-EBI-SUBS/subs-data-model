@@ -7,6 +7,7 @@ import uk.ac.ebi.subs.data.component.SampleRelationship;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Sample extends AbstractSubsEntity {
 
@@ -50,25 +51,35 @@ public class Sample extends AbstractSubsEntity {
     }
 
     @Override
-    public String toString() {
-        return "Sample{" +
-                "id='" + id + '\'' +
-                ", accession=" + this.getAccession() +
-                ", alias='" + this.getAlias() + '\'' +
-                ", status='" + this.getStatus() + '\'' +
-                ", domain=" + this.getDomain() +
-                ", archive=" + this.getArchive() +
-                ", title='" + this.getTitle() + '\'' +
-                ", description='" + this.getDescription() + '\'' +
-                ", attributes=" + this.getAttributes() +
-                ", sampleRelationships=" + sampleRelationships +
-                ", taxonId=" + taxonId +
-                ", taxon='" + taxon + '\'' +
-                '}';
+    protected AbstractSubsRef newRef() {
+        return new SampleRef();
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Sample sample = (Sample) o;
+        return Objects.equals(id, sample.id) &&
+                Objects.equals(sampleRelationships, sample.sampleRelationships) &&
+                Objects.equals(taxonId, sample.taxonId) &&
+                Objects.equals(taxon, sample.taxon);
     }
 
     @Override
-    protected AbstractSubsRef newRef() {
-        return new SampleRef();
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), id, sampleRelationships, taxonId, taxon);
+    }
+
+    @Override
+    public String toString() {
+        return "Sample{" +
+                "id='" + id + '\'' +
+                ", sampleRelationships=" + sampleRelationships +
+                ", taxonId=" + taxonId +
+                ", taxon='" + taxon + '\'' +
+                "} " + super.toString();
     }
 }
