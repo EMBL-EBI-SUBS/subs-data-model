@@ -30,7 +30,7 @@ public class SampleGroup extends AbstractSubsEntity<SampleGroup> {
     }
 
     @Override
-    protected AbstractSubsRef<SampleGroup> newRef() {
+    protected SampleGroupRef newRef() {
         return new SampleGroupRef();
     }
 }

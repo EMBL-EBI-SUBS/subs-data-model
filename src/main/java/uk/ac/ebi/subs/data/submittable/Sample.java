@@ -51,7 +51,7 @@ public class Sample extends AbstractSubsEntity {
     }
 
     @Override
-    protected AbstractSubsRef newRef() {
+    protected SampleRef newRef() {
         return new SampleRef();
     }
 

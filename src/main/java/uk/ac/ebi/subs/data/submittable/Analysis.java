@@ -75,7 +75,7 @@ public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
     }
 
     @Override
-    protected AbstractSubsRef<Analysis> newRef() {
+    protected AnalysisRef newRef() {
         return new AnalysisRef();
     }
 

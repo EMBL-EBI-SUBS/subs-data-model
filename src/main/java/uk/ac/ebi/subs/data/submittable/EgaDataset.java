@@ -29,7 +29,7 @@ public class EgaDataset extends AbstractSubsEntity<EgaDataset> {
     }
 
     @Override
-    protected AbstractSubsRef<EgaDataset> newRef() {
+    protected EgaDatasetRef newRef() {
         return new EgaDatasetRef();
     }
 }

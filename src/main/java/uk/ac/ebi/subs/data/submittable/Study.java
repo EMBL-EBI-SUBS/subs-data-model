@@ -61,7 +61,7 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Co
     }
 
     @Override
-    protected AbstractSubsRef<Study> newRef() {
+    protected StudyRef newRef() {
         return new StudyRef();
     }
 }

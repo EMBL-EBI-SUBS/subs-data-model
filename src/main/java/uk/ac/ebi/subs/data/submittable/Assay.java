@@ -27,7 +27,7 @@ public class Assay extends AbstractSubsEntity<Assay> {
     }
 
     @Override
-    protected AbstractSubsRef<Assay> newRef() {
+    protected AssayRef newRef() {
         return new AssayRef();
     }
 }
