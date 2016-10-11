@@ -1,9 +1,7 @@
-package uk.ac.ebi.subs.data.component;
+package uk.ac.ebi.subs.data.submittable;
 
-import uk.ac.ebi.subs.data.submittable.AbstractSubsEntity;
-
-import java.util.ArrayList;
-import java.util.List;
+import uk.ac.ebi.subs.data.component.AbstractSubsRef;
+import uk.ac.ebi.subs.data.component.ProtocolRef;
 
 public class Protocol extends AbstractSubsEntity<Protocol> {
     @Override

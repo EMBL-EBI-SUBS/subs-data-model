@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import uk.ac.ebi.subs.data.component.Domain;
-import uk.ac.ebi.subs.data.component.Protocol;
+import uk.ac.ebi.subs.data.submittable.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.submittable.*;
 
