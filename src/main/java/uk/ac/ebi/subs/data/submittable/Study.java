@@ -7,12 +7,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Study extends AbstractSubsEntity<Study> implements Publications, Protocols, Contacts {
-    List<Publication> publications = new ArrayList<Publication>();
-    List<Protocol> protocols = new ArrayList<Protocol>();
-    List<Contact> contacts = new ArrayList<Contact>();
+public class Study extends AbstractSubsEntity<Study> implements Publications, Contacts {
+    List<Publication> publications = new ArrayList<>();
+    List<Contact> contacts = new ArrayList<>();
 
+    List<ProtocolRef> protocolRefs = new ArrayList<>();
     ProjectRef projectRef = new ProjectRef();
+
     Date releaseDate = new Date();
 
     @Override
@@ -23,16 +24,6 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Pr
     @Override
     public void setPublications(List<Publication> publications) {
         this.publications = publications;
-    }
-
-    @Override
-    public List<Protocol> getProtocols() {
-        return protocols;
-    }
-
-    @Override
-    public void setProtocols(List<Protocol> protocols) {
-        this.protocols = protocols;
     }
 
     @Override
@@ -59,6 +50,14 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Pr
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<ProtocolRef> getProtocolRefs() {
+        return protocolRefs;
+    }
+
+    public void setProtocolRefs(List<ProtocolRef> protocolRefs) {
+        this.protocolRefs = protocolRefs;
     }
 
     @Override

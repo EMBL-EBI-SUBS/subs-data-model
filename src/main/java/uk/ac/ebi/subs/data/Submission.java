@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import uk.ac.ebi.subs.data.component.Domain;
+import uk.ac.ebi.subs.data.component.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.submittable.*;
 
@@ -32,6 +33,7 @@ public class Submission {
     List<Sample> samples = new ArrayList<>();
     List<SampleGroup> sampleGroups = new ArrayList<>();
     List<Study> studies = new ArrayList<>();
+    List<Protocol> protocols = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -160,6 +162,14 @@ public class Submission {
 
     public void setStudies(List<Study> studies) {
         this.studies = studies;
+    }
+
+    public List<Protocol> getProtocols() {
+        return protocols;
+    }
+
+    public void setProtocols(List<Protocol> protocols) {
+        this.protocols = protocols;
     }
 
     @Override
