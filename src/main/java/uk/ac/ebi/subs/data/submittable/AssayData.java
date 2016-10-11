@@ -30,7 +30,7 @@ public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
     }
 
     @Override
-    protected AbstractSubsRef<AssayData> newRef() {
+    protected AssayDataRef newRef() {
         return new AssayDataRef();
     }
 }

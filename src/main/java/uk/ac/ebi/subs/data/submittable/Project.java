@@ -41,7 +41,7 @@ public class Project extends AbstractSubsEntity<Project> implements Contacts, Pu
     }
 
     @Override
-    protected AbstractSubsRef<Project> newRef() {
+    protected ProjectRef newRef() {
         return new ProjectRef();
     }
 }

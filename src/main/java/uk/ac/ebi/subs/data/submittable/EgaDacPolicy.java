@@ -17,7 +17,7 @@ public class EgaDacPolicy extends AbstractSubsEntity<EgaDacPolicy> {
     }
 
     @Override
-    protected AbstractSubsRef<EgaDacPolicy> newRef() {
+    protected EgaDacPolicyRef newRef() {
         return new EgaDacPolicyRef();
     }
 }

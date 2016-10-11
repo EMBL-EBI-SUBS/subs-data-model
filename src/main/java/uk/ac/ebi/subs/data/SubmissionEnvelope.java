@@ -10,7 +10,7 @@ public class SubmissionEnvelope {
 
     Submission submission;
 
-    List<Class> handlerHistory = new ArrayList<>();
+    List<String> handlerHistory = new ArrayList<>();
 
     Set<SampleRef> supportingSamplesRequired = new HashSet<>();
     List<Sample> supportingSamples = new ArrayList<>();
@@ -23,7 +23,7 @@ public class SubmissionEnvelope {
         this.submission = submission;
     }
 
-    public Class mostRecentHandler(){
+    public String mostRecentHandler(){
         if (handlerHistory == null || handlerHistory.isEmpty()){
             return null;
         }
@@ -33,7 +33,7 @@ public class SubmissionEnvelope {
     }
 
     public void addHandler(Class handlerClass){
-        handlerHistory.add(handlerClass);
+        handlerHistory.add(handlerClass.toString());
     }
 
     public Submission getSubmission() {
@@ -44,11 +44,11 @@ public class SubmissionEnvelope {
         this.submission = submission;
     }
 
-    public List<Class> getHandlerHistory() {
+    public List<String> getHandlerHistory() {
         return handlerHistory;
     }
 
-    public void setHandlerHistory(List<Class> handlerHistory) {
+    public void setHandlerHistory(List<String> handlerHistory) {
         this.handlerHistory = handlerHistory;
     }
 

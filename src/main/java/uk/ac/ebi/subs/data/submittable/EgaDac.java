@@ -23,7 +23,7 @@ public class EgaDac extends AbstractSubsEntity<EgaDac> implements Contacts {
     }
 
     @Override
-    protected AbstractSubsRef<EgaDac> newRef() {
+    protected EgaDacRef newRef() {
         return new EgaDacRef();
     }
 }
