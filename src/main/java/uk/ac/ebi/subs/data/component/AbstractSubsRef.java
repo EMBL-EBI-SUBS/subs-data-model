@@ -67,12 +67,18 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     }
 
 
-    public void fillIn(Collection<T> items) {
-        T match = this.findMatch(items);
-        this.setReferencedObject(match);
+    public void fillIn(Collection<T>... itemSources) {
+        for (Collection<T> items : itemSources){
+            T match = this.findMatch(items);
+            this.setReferencedObject(match);
 
-        if (match != null && !this.isAccessioned()){
-            this.accession = match.getAccession();
+            if (match != null && !this.isAccessioned()){
+                this.accession = match.getAccession();
+            }
+
+            if (match != null) {
+                return;
+            }
         }
     }
 

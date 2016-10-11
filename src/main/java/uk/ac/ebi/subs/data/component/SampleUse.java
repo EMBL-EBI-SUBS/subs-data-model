@@ -7,6 +7,15 @@ import java.util.List;
  * Records the use of a sample
  */
 public class SampleUse implements Attributes {
+
+    public SampleUse() {
+    }
+
+
+    public SampleUse(SampleRef sampleRef) {
+        this.sampleRef = sampleRef;
+    }
+
     SampleRef sampleRef = new SampleRef();
     List<Attribute> attributes = new ArrayList<>();
 
