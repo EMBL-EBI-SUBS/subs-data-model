@@ -1,7 +1,6 @@
 package uk.ac.ebi.subs.data.component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.data.annotation.Transient;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
@@ -96,21 +95,25 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     }
 
     public boolean isMatch(T submittable) {
-        return
-                this.archive.equals(submittable.getArchive().name()) && // must always match archive
-                        (//EITHER
-                                // BOTH are accessioned and the accession matches
-                                (
-                                        this.isAccessioned() &&
-                                                submittable.isAccessioned() &&
-                                                this.accession.equals(submittable.getAccession())
-                                ) ||
-                                // OR the aliases match
-                                (
-                                        submittable.getAlias().equals(this.getAlias()) &&
-                                                this.getArchive().equals(submittable.getArchive().name()) &&
-                                                this.getDomain().equals(submittable.getDomain().getName())
-                                )
-                        );
+        Optional<Archive> optionalArchive = Optional.ofNullable(submittable.getArchive());
+        if(optionalArchive.isPresent()) {
+            return
+                    this.archive.equals(optionalArchive.get().name()) && // must always match archive
+                            (//EITHER
+                                    // BOTH are accessioned and the accession matches
+                                    (
+                                            this.isAccessioned() &&
+                                                    submittable.isAccessioned() &&
+                                                    this.accession.equals(submittable.getAccession())
+                                    ) ||
+                                    // OR the aliases match
+                                    (
+                                            submittable.getAlias().equals(this.getAlias()) &&
+                                                    this.getArchive().equals(submittable.getArchive().name()) &&
+                                                    this.getDomain().equals(submittable.getDomain().getName())
+                                    )
+                            );
+        }
+        return false;
     }
 }
