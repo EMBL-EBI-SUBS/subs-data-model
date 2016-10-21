@@ -26,7 +26,7 @@ public class Submission {
 
     List<Analysis> analyses = new ArrayList<>();
     @DBRef List<Assay> assays = new ArrayList<>();
-    List<AssayData> assayData = new ArrayList<>();
+    @DBRef List<AssayData> assayData = new ArrayList<>();
     List<EgaDac> egaDacs = new ArrayList<>();
     List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
     List<EgaDataset> egaDatasets = new ArrayList<>();
