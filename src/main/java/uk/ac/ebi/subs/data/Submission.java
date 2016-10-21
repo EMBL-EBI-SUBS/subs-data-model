@@ -3,6 +3,7 @@ package uk.ac.ebi.subs.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.submittable.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
@@ -24,13 +25,13 @@ public class Submission {
     String status;
 
     List<Analysis> analyses = new ArrayList<>();
-    List<Assay> assays = new ArrayList<>();
+    @DBRef List<Assay> assays = new ArrayList<>();
     List<AssayData> assayData = new ArrayList<>();
     List<EgaDac> egaDacs = new ArrayList<>();
     List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
     List<EgaDataset> egaDatasets = new ArrayList<>();
     List<Project> projects = new ArrayList<>();
-    List<Sample> samples = new ArrayList<>();
+    @DBRef List<Sample> samples = new ArrayList<>();
     List<SampleGroup> sampleGroups = new ArrayList<>();
     List<Study> studies = new ArrayList<>();
     List<Protocol> protocols = new ArrayList<>();
