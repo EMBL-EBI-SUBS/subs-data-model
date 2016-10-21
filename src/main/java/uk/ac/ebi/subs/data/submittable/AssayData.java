@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import org.springframework.data.annotation.Id;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
@@ -7,9 +8,30 @@ import java.util.List;
 
 public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
 
+    @Id
+    String id;
+
     AssayRef assayRef = new AssayRef();
     SampleRef sampleRef = new SampleRef();
     List<File> files = new ArrayList<File>();
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public SampleRef getSampleRef() {
+        return sampleRef;
+    }
+
+    public void setSampleRef(SampleRef sampleRef) {
+        this.sampleRef = sampleRef;
+    }
 
     public AssayRef getAssayRef() {
         return assayRef;
