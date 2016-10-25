@@ -24,17 +24,17 @@ public class Submission {
     Date submissionDate = new Date();
     String status;
 
-    @DBRef List<Analysis> analyses = new ArrayList<>();
-    @DBRef List<Assay> assays = new ArrayList<>();
-    @DBRef List<AssayData> assayData = new ArrayList<>();
-    @DBRef List<EgaDac> egaDacs = new ArrayList<>();
-    @DBRef List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
-    @DBRef List<EgaDataset> egaDatasets = new ArrayList<>();
-    @DBRef List<Project> projects = new ArrayList<>();
-    @DBRef List<Sample> samples = new ArrayList<>();
-    @DBRef List<SampleGroup> sampleGroups = new ArrayList<>();
-    @DBRef List<Study> studies = new ArrayList<>();
-    @DBRef List<Protocol> protocols = new ArrayList<>();
+    @DBRef(lazy = true) List<Analysis> analyses = new ArrayList<>();
+    @DBRef(lazy = true) List<Assay> assays = new ArrayList<>();
+    @DBRef(lazy = true) List<AssayData> assayData = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDac> egaDacs = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDataset> egaDatasets = new ArrayList<>();
+    @DBRef(lazy = true) List<Project> projects = new ArrayList<>();
+    @DBRef(lazy = true) List<Sample> samples = new ArrayList<>();
+    @DBRef(lazy = true) List<SampleGroup> sampleGroups = new ArrayList<>();
+    @DBRef(lazy = true) List<Study> studies = new ArrayList<>();
+    @DBRef(lazy = true) List<Protocol> protocols = new ArrayList<>();
 
     public String getId() {
         return id;
