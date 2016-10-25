@@ -24,17 +24,17 @@ public class Submission {
     Date submissionDate = new Date();
     String status;
 
-    List<Analysis> analyses = new ArrayList<>();
+    @DBRef List<Analysis> analyses = new ArrayList<>();
     @DBRef List<Assay> assays = new ArrayList<>();
     @DBRef List<AssayData> assayData = new ArrayList<>();
-    List<EgaDac> egaDacs = new ArrayList<>();
-    List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
-    List<EgaDataset> egaDatasets = new ArrayList<>();
-    List<Project> projects = new ArrayList<>();
+    @DBRef List<EgaDac> egaDacs = new ArrayList<>();
+    @DBRef List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
+    @DBRef List<EgaDataset> egaDatasets = new ArrayList<>();
+    @DBRef List<Project> projects = new ArrayList<>();
     @DBRef List<Sample> samples = new ArrayList<>();
-    List<SampleGroup> sampleGroups = new ArrayList<>();
-    List<Study> studies = new ArrayList<>();
-    List<Protocol> protocols = new ArrayList<>();
+    @DBRef List<SampleGroup> sampleGroups = new ArrayList<>();
+    @DBRef List<Study> studies = new ArrayList<>();
+    @DBRef List<Protocol> protocols = new ArrayList<>();
 
     public String getId() {
         return id;
