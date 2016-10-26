@@ -79,9 +79,7 @@ public class Submission {
     public List<Submittable> allSubmissionItems() {
         List<Submittable> submittables = new ArrayList<>();
 
-        for (List<? extends AbstractSubsEntity> items : Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies)) {
-            submittables.addAll(items);
-        }
+        Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies).forEach(submittables::addAll);
         return Collections.unmodifiableList(submittables);
     }
 
