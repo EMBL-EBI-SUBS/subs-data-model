@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import org.springframework.data.annotation.Id;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
@@ -8,10 +9,22 @@ import java.util.Objects;
 
 public class Assay extends AbstractSubsEntity<Assay> {
 
+    @Id
+    String id;
+
     StudyRef studyRef = new StudyRef();
     List<SampleUse> sampleUses = new ArrayList<>();
     List<ProtocolUse> protocolUses = new ArrayList<>();
 
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public StudyRef getStudyRef() {
         return studyRef;

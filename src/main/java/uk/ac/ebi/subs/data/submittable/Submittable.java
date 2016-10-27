@@ -33,4 +33,6 @@ public interface Submittable {
 
     boolean isAccessioned();
 
+    String getId();
+    void setId(String id);
 }

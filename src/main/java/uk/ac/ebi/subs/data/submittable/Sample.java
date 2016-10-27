@@ -1,7 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import org.springframework.data.annotation.Id;
-import uk.ac.ebi.subs.data.component.AbstractSubsRef;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;
 
@@ -18,10 +17,12 @@ public class Sample extends AbstractSubsEntity {
     Long taxonId;
     String taxon;
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public void setId(String id) {
         this.id = id;
     }

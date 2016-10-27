@@ -3,6 +3,7 @@ package uk.ac.ebi.subs.data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.submittable.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
@@ -23,17 +24,17 @@ public class Submission {
     Date submissionDate = new Date();
     String status;
 
-    List<Analysis> analyses = new ArrayList<>();
-    List<Assay> assays = new ArrayList<>();
-    List<AssayData> assayData = new ArrayList<>();
-    List<EgaDac> egaDacs = new ArrayList<>();
-    List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
-    List<EgaDataset> egaDatasets = new ArrayList<>();
-    List<Project> projects = new ArrayList<>();
-    List<Sample> samples = new ArrayList<>();
-    List<SampleGroup> sampleGroups = new ArrayList<>();
-    List<Study> studies = new ArrayList<>();
-    List<Protocol> protocols = new ArrayList<>();
+    @DBRef(lazy = true) List<Analysis> analyses = new ArrayList<>();
+    @DBRef(lazy = true) List<Assay> assays = new ArrayList<>();
+    @DBRef(lazy = true) List<AssayData> assayData = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDac> egaDacs = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
+    @DBRef(lazy = true) List<EgaDataset> egaDatasets = new ArrayList<>();
+    @DBRef(lazy = true) List<Project> projects = new ArrayList<>();
+    @DBRef(lazy = true) List<Sample> samples = new ArrayList<>();
+    @DBRef(lazy = true) List<SampleGroup> sampleGroups = new ArrayList<>();
+    @DBRef(lazy = true) List<Study> studies = new ArrayList<>();
+    @DBRef(lazy = true) List<Protocol> protocols = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -78,9 +79,7 @@ public class Submission {
     public List<Submittable> allSubmissionItems() {
         List<Submittable> submittables = new ArrayList<>();
 
-        for (List<? extends AbstractSubsEntity> items : Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies)) {
-            submittables.addAll(items);
-        }
+        Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies).forEach(submittables::addAll);
         return Collections.unmodifiableList(submittables);
     }
 
