@@ -71,12 +71,14 @@ public class Assay extends AbstractSubsEntity<Assay> {
         return Objects.hash(super.hashCode(), studyRef, sampleUses, protocolUses);
     }
 
+
     @Override
     public String toString() {
         return "Assay{" +
-                "studyRef=" + studyRef +
+                "id='" + id + '\'' +
+                ", studyRef=" + studyRef +
                 ", sampleUses=" + sampleUses +
                 ", protocolUses=" + protocolUses +
-                "} " + super.toString();
+                '}';
     }
 }
