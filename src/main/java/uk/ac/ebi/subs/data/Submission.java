@@ -95,6 +95,12 @@ public class Submission {
         return Collections.unmodifiableList(submittables);
     }
 
+    public List<Submittable> allAccessionableItems() {
+        List<Submittable> list = new ArrayList<>();
+        Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies).forEach(list::addAll);
+        return list;
+    }
+
     public List<Analysis> getAnalyses() {
         return analyses;
     }
