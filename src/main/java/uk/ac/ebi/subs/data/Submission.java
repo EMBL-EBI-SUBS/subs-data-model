@@ -20,32 +20,31 @@ public class Submission {
     String id;
     Submitter submitter = new Submitter();
 
-
     Domain domain = new Domain();
     Date submissionDate = new Date();
     String status;
 
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Analysis.class)
     List<Analysis> analyses = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Assay.class)
     List<Assay> assays = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = AssayData.class)
     List<AssayData> assayData = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = EgaDac.class)
     List<EgaDac> egaDacs = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = EgaDacPolicy.class)
     List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = EgaDataset.class)
     List<EgaDataset> egaDatasets = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Project.class)
     List<Project> projects = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Sample.class)
     List<Sample> samples = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = SampleGroup.class)
     List<SampleGroup> sampleGroups = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Study.class)
     List<Study> studies = new ArrayList<>();
-    @DBRef(lazy = true) @CascadeSave
+    @DBRef(lazy = true) @CascadeSave(classToSave = Protocol.class)
     List<Protocol> protocols = new ArrayList<>();
 
     public String getId() {
@@ -220,6 +219,7 @@ public class Submission {
                 ", samples=" + (samples != null ? "[" + samples.size() + "]" : "[0]") +
                 ", sampleGroups=" + (sampleGroups != null ? "[" + sampleGroups.size() + "]" : "[0]") +
                 ", studies=" + (studies != null ? "[" + studies.size() + "]" : "[0]") +
+                ", protocols=" + (protocols != null ? "[" + protocols.size() + "]" : "[0]") +
                 '}';
     }
 }
