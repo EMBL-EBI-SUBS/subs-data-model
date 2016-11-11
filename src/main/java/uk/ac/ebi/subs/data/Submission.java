@@ -11,6 +11,7 @@ import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.submittable.*;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
@@ -87,17 +88,25 @@ public class Submission {
         this.status = status;
     }
 
+    /**
+     * get a list of all the lists of objects implementing Submittable within the submission.
+     * @return
+     */
+    private List<List<Submittable>> allSubmittablesLists(){
+        List lists = Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies);
+        return (List<List<Submittable>>)lists;
+    }
+
     public List<Submittable> allSubmissionItems() {
         List<Submittable> submittables = new ArrayList<>();
 
-        Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies, protocols).forEach(submittables::addAll);
+        this.allSubmittablesLists().forEach(submittables::addAll);
+
         return Collections.unmodifiableList(submittables);
     }
 
-    public List<Submittable> allAccessionableItems() {
-        List<Submittable> list = new ArrayList<>();
-        Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies).forEach(list::addAll);
-        return list;
+    public Stream<Submittable> allSubmissionItemsStream(){
+        return allSubmittablesLists().stream().flatMap(l -> l.stream());
     }
 
     public List<Analysis> getAnalyses() {
