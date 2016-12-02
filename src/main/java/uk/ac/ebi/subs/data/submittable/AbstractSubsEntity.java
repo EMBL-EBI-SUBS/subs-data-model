@@ -4,6 +4,7 @@ package uk.ac.ebi.subs.data.submittable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}")
 })
-public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable {
+public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable, Identifiable<String> {
 
    String type;
    String accession;
