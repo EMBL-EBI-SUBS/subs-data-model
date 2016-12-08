@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.annotation.CascadeSave;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.submittable.Protocol;
@@ -16,7 +17,7 @@ import java.util.stream.Stream;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
 })
-public class Submission {
+public class Submission implements Identifiable<String>{
     @Id
     String id;
     Submitter submitter = new Submitter();
