@@ -12,26 +12,45 @@ import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}")
 })
 public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable, Identifiable<String> {
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractSubsEntity<?> that = (AbstractSubsEntity<?>) o;
+        return Objects.equals(type, that.type) &&
+                Objects.equals(accession, that.accession) &&
+                Objects.equals(alias, that.alias) &&
+                Objects.equals(status, that.status) &&
+                archive == that.archive &&
+                Objects.equals(domain, that.domain) &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(attributes, that.attributes) &&
+                Objects.equals(id, that.id);
+    }
 
-   @DBRef(lazy = true)
-   Submission submission;
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, accession, alias, status, archive, domain, title, description, attributes, id);
+    }
 
-   String type;
-   String accession;
-   String alias;
-   String status;
-   Archive archive;
-   Domain domain;
+    String type;
+    String accession;
+    String alias;
+    String status;
+    Archive archive;
+    Domain domain;
 
-   String title;
-   String description;
-   List<Attribute> attributes = new ArrayList<>();
+    String title;
+    String description;
+    List<Attribute> attributes = new ArrayList<>();
 
     @Id
     String id;
@@ -130,17 +149,17 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
 
     protected abstract AbstractSubsRef<T> newRef();
 
-    public AbstractSubsRef<T> asRef(){
+    public AbstractSubsRef<T> asRef() {
         AbstractSubsRef<T> subsLink = newRef();
 
         subsLink.setAccession(this.accession);
         subsLink.setDomain(this.getDomain().getName());
         subsLink.setAlias(this.alias);
 
-        if (this.archive != null){
+        if (this.archive != null) {
             subsLink.setArchive(this.archive.name());
         }
-        if (this.domain != null){
+        if (this.domain != null) {
             subsLink.setDomain(this.getDomain().getName());
         }
 
@@ -149,55 +168,23 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
 
     @Override
     @JsonIgnore
-    public boolean isAccessioned(){
+    public boolean isAccessioned() {
         return (accession != null && !accession.isEmpty());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        AbstractSubsEntity<?> that = (AbstractSubsEntity<?>) o;
-
-        if (type != null ? !type.equals(that.type) : that.type != null) return false;
-        if (accession != null ? !accession.equals(that.accession) : that.accession != null) return false;
-        if (alias != null ? !alias.equals(that.alias) : that.alias != null) return false;
-        if (status != null ? !status.equals(that.status) : that.status != null) return false;
-        if (domain != null ? !domain.equals(that.domain) : that.domain != null) return false;
-        if (archive != that.archive) return false;
-        if (title != null ? !title.equals(that.title) : that.title != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        return attributes != null ? attributes.equals(that.attributes) : that.attributes == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = type != null ? type.hashCode() : 0;
-        result = 31 * result + (accession != null ? accession.hashCode() : 0);
-        result = 31 * result + (alias != null ? alias.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        result = 31 * result + (domain != null ? domain.hashCode() : 0);
-        result = 31 * result + (archive != null ? archive.hashCode() : 0);
-        result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (attributes != null ? attributes.hashCode() : 0);
-        return result;
     }
 
     @Override
     public String toString() {
         return "AbstractSubsEntity{" +
-                "type='" + type + '\'' +
+                ", type='" + type + '\'' +
                 ", accession='" + accession + '\'' +
                 ", alias='" + alias + '\'' +
                 ", status='" + status + '\'' +
-                ", domain=" + domain +
                 ", archive=" + archive +
+                ", domain=" + domain +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", attributes=" + attributes +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
