@@ -10,9 +10,6 @@ import java.util.List;
 
 public class Study extends AbstractSubsEntity<Study> implements Publications, Contacts {
 
-    @Id
-    String id;
-
     List<Publication> publications = new ArrayList<>();
     List<Contact> contacts = new ArrayList<>();
 
@@ -20,16 +17,6 @@ public class Study extends AbstractSubsEntity<Study> implements Publications, Co
     ProjectRef projectRef = new ProjectRef();
 
     Date releaseDate = new Date();
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Override
     public List<Publication> getPublications() {

@@ -8,20 +8,8 @@ import uk.ac.ebi.subs.data.component.EgaDacRef;
 
 public class EgaDacPolicy extends AbstractSubsEntity<EgaDacPolicy> {
 
-    @Id
-    String id;
 
     EgaDacRef dacRef = new EgaDacRef();
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public AbstractSubsRef<EgaDac> getDacRef() {
         return dacRef;

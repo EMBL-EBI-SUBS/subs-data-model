@@ -37,7 +37,7 @@ public class SubmissionValidator implements Validator {
             errors.popNestedPath();
         }
 
-        ListValidationUtils.invokeValidatorOnList(
+/*        ListValidationUtils.invokeValidatorOnList(
                 "projects",
                 this.projectValidator,
                 submission.getProjects(),
@@ -57,7 +57,7 @@ public class SubmissionValidator implements Validator {
                 submission.getSamples(),
                 errors
         );
-
+*/
 
 
     }

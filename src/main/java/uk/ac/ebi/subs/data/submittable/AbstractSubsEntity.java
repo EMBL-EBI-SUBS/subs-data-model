@@ -2,9 +2,12 @@ package uk.ac.ebi.subs.data.submittable;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.hateoas.Identifiable;
+import uk.ac.ebi.subs.data.Submission;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
@@ -16,16 +19,33 @@ import java.util.List;
 })
 public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable, Identifiable<String> {
 
+   @DBRef(lazy = true)
+   Submission submission;
+
    String type;
    String accession;
    String alias;
    String status;
-   Domain domain;
    Archive archive;
+   Domain domain;
 
    String title;
    String description;
    List<Attribute> attributes = new ArrayList<>();
+
+    @Id
+    String id;
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
     public String getType() {
         return type;

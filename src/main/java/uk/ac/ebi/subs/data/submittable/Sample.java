@@ -10,22 +10,9 @@ import java.util.Objects;
 
 public class Sample extends AbstractSubsEntity {
 
-    @Id
-    String id;
-
     List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
     Long taxonId;
     String taxon;
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public List<SampleRelationship> getSampleRelationships() {
         return sampleRelationships;

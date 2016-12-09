@@ -8,22 +8,10 @@ import java.util.List;
 
 public class AssayData extends AbstractSubsEntity<AssayData> implements Files {
 
-    @Id
-    String id;
 
     AssayRef assayRef = new AssayRef();
     SampleRef sampleRef = new SampleRef();
     List<File> files = new ArrayList<File>();
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public SampleRef getSampleRef() {
         return sampleRef;

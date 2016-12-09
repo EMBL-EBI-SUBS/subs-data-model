@@ -9,22 +9,10 @@ import java.util.List;
 
 public class Project extends AbstractSubsEntity<Project> implements Contacts, Publications {
 
-    @Id
-    String id;
-
     List<Contact> contacts = new ArrayList<Contact>();
     List<Publication> publications = new ArrayList<Publication>();
     Date releaseDate = new Date();
 
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Override
     public List<Contact> getContacts() {

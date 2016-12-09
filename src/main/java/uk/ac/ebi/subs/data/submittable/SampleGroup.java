@@ -11,21 +11,8 @@ import java.util.List;
 
 public class SampleGroup extends AbstractSubsEntity<SampleGroup> {
 
-    @Id
-    String id;
-
     List<SampleRef> sampleRefs = new ArrayList<>();
     Date releaseDate = new Date();
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public List<SampleRef> getSampleRefs() {
         return sampleRefs;

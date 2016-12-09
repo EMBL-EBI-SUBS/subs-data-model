@@ -11,20 +11,7 @@ import java.util.List;
 
 public class EgaDac extends AbstractSubsEntity<EgaDac> implements Contacts {
 
-    @Id
-    String id;
-
     List<Contact> contacts = new ArrayList<Contact>();
-
-    @Override
-    public String getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(String id) {
-        this.id = id;
-    }
 
     @Override
     public List<Contact> getContacts() {
