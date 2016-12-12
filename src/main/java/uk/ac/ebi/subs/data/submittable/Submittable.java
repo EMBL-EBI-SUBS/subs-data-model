@@ -10,7 +10,7 @@ import java.util.List;
 public interface Submittable {
 
     String getSubmissionId();
-    void setSubmissionId();
+    void setSubmissionId(String submissionId);
 
     String getAccession();
     void setAccession(String accession);

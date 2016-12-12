@@ -7,7 +7,7 @@ import uk.ac.ebi.subs.data.component.ProtocolRef;
 public class Protocol extends AbstractSubsEntity<Protocol> {
 
     @Override
-    protected AbstractSubsRef<Protocol> newRef() {
+    protected ProtocolRef newRef() {
         return new ProtocolRef();
     }
 

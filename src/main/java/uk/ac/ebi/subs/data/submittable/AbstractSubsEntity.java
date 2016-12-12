@@ -37,6 +37,23 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
     List<Attribute> attributes = new ArrayList<>();
 
 
+    public AbstractSubsRef<T> asRef(){
+        AbstractSubsRef<T> subsLink = newRef();
+
+        subsLink.setAccession(this.accession);
+        subsLink.setDomain(this.getDomain().getName());
+        subsLink.setAlias(this.alias);
+
+        if (this.archive != null){
+            subsLink.setArchive(this.archive.name());
+        }
+        if (this.domain != null){
+            subsLink.setDomain(this.getDomain().getName());
+        }
+
+        return subsLink;
+    }
+
     @Override
     @JsonIgnore
     public boolean isAccessioned() {
@@ -53,10 +70,12 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
         this.id = id;
     }
 
+    @Override
     public String getSubmissionId() {
         return submissionId;
     }
 
+    @Override
     public void setSubmissionId(String submissionId) {
         this.submissionId = submissionId;
     }
@@ -148,4 +167,6 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
     public void setAttributes(List<Attribute> attributes) {
         this.attributes = attributes;
     }
+
+    protected abstract AbstractSubsRef<T> newRef();
 }
