@@ -9,6 +9,9 @@ import java.util.List;
 
 public interface Submittable {
 
+    String getSubmissionId();
+    void setSubmissionId();
+
     String getAccession();
     void setAccession(String accession);
 
