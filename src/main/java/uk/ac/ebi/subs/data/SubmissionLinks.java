@@ -4,7 +4,7 @@ public class SubmissionLinks {
 
     public static final String ANALYSIS = "submisionAnalyses";
     public static final String ASSAY_DATA = "submisionAssayData";
-    public static final String ASSAY = "submisionAssasy";
+    public static final String ASSAY = "submisionAssays";
     public static final String EGA_DAC_POLICY = "submisionEgaDacPolicies";
     public static final String EGA_DAC = "submisionEgaDacs";
     public static final String EGA_DATASET = "submisionEgaDatasets";
