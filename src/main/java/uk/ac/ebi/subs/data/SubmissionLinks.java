@@ -2,16 +2,16 @@ package uk.ac.ebi.subs.data;
 
 public class SubmissionLinks {
 
-    public static final String ANALYSIS = "submisionAnalyses";
-    public static final String ASSAY_DATA = "submisionAssayData";
-    public static final String ASSAY = "submisionAssays";
-    public static final String EGA_DAC_POLICY = "submisionEgaDacPolicies";
-    public static final String EGA_DAC = "submisionEgaDacs";
-    public static final String EGA_DATASET = "submisionEgaDatasets";
-    public static final String PROJECT = "submisionProjects";
-    public static final String PROTOCOL = "submisionProtocols";
-    public static final String SAMPLE_GROUP = "submisionSampleGroups";
-    public static final String SAMPLE = "submisionSamples";
-    public static final String STUDY = "submisionStudies";
+    public static final String ANALYSIS = "submissionAnalyses";
+    public static final String ASSAY_DATA = "submissionAssayData";
+    public static final String ASSAY = "submissionAssays";
+    public static final String EGA_DAC_POLICY = "submissionEgaDacPolicies";
+    public static final String EGA_DAC = "submissionEgaDacs";
+    public static final String EGA_DATASET = "submissionEgaDatasets";
+    public static final String PROJECT = "submissionProjects";
+    public static final String PROTOCOL = "submissionProtocols";
+    public static final String SAMPLE_GROUP = "submissionSampleGroups";
+    public static final String SAMPLE = "submissionSamples";
+    public static final String STUDY = "submissionStudies";
 
 }
