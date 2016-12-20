@@ -169,4 +169,44 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
     }
 
     protected abstract AbstractSubsRef<T> newRef();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractSubsEntity<?> that = (AbstractSubsEntity<?>) o;
+        return Objects.equals(id, that.id) &&
+                Objects.equals(submissionId, that.submissionId) &&
+                Objects.equals(type, that.type) &&
+                Objects.equals(accession, that.accession) &&
+                Objects.equals(alias, that.alias) &&
+                Objects.equals(status, that.status) &&
+                archive == that.archive &&
+                Objects.equals(domain, that.domain) &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(attributes, that.attributes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, submissionId, type, accession, alias, status, archive, domain, title, description, attributes);
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractSubsEntity{" +
+                "id='" + id + '\'' +
+                ", submissionId='" + submissionId + '\'' +
+                ", type='" + type + '\'' +
+                ", accession='" + accession + '\'' +
+                ", alias='" + alias + '\'' +
+                ", status='" + status + '\'' +
+                ", archive=" + archive +
+                ", domain=" + domain +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", attributes=" + attributes +
+                '}';
+    }
 }

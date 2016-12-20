@@ -43,29 +43,25 @@ public class Sample extends AbstractSubsEntity {
         return new SampleRef();
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         Sample sample = (Sample) o;
-        return Objects.equals(id, sample.id) &&
-                Objects.equals(sampleRelationships, sample.sampleRelationships) &&
+        return Objects.equals(sampleRelationships, sample.sampleRelationships) &&
                 Objects.equals(taxonId, sample.taxonId) &&
                 Objects.equals(taxon, sample.taxon);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), id, sampleRelationships, taxonId, taxon);
+        return Objects.hash(sampleRelationships, taxonId, taxon);
     }
 
     @Override
     public String toString() {
         return "Sample{" +
-                "id='" + id + '\'' +
-                ", sampleRelationships=" + sampleRelationships +
+                "sampleRelationships=" + sampleRelationships +
                 ", taxonId=" + taxonId +
                 ", taxon='" + taxon + '\'' +
                 "} " + super.toString();
