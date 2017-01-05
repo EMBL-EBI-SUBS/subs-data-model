@@ -8,9 +8,42 @@ import java.util.Optional;
 
 public class Status {
 
+    public static Status build(Enum status,String description){
+        return build(status.name(),description);
+    }
+
+    public static Status build(String statusName,String description){
+        return new Status(statusName,description);
+    }
+
     private String statusName;
     private String description;
     private List<StatusTransition> statusTransitions = new ArrayList<>();
+
+    public Status() {
+    }
+
+    public Status(String statusName, String description) {
+        this.statusName = statusName;
+        this.description = description;
+    }
+
+    public Status addTransition(Enum nextStatus){
+        return this.addTransition(nextStatus.name(),false);
+    }
+
+    public Status addTransition(Enum nextStatus, boolean transitionedBySubmitter){
+        return this.addTransition(nextStatus.name(),transitionedBySubmitter);
+    }
+
+    public Status addTransition(String nextStatusName, boolean transitionedBySubmitter){
+        StatusTransition st = new StatusTransition(nextStatusName,transitionedBySubmitter);
+        statusTransitions.add(st);
+
+        return this;
+    }
+
+
 
     public boolean isSubmitterTransitionPermitted(String newStatusName){
         Optional<StatusTransition> optionalStatusTransition = statusTransitions.stream().filter(

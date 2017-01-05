@@ -8,6 +8,14 @@ import java.util.Objects;
  */
 public class StatusTransition {
 
+    public StatusTransition() {
+    }
+
+    public StatusTransition(String nextStatusName, boolean transitionedBySubmitter) {
+        this.nextStatusName = nextStatusName;
+        this.transitionedBySubmitter = transitionedBySubmitter;
+    }
+
     private String nextStatusName;
     private boolean transitionedBySubmitter;
 
