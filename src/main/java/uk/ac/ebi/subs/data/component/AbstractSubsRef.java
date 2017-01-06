@@ -4,18 +4,21 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * A reference to another submitted item
+ *
+ *
+ *
+ * @param <T>
+ */
 public abstract  class AbstractSubsRef<T extends Submittable> {
     String alias;
     String accession;
     String archive;
     String domain;
-
-
-    public abstract T getReferencedObject();
-
-    public abstract void setReferencedObject(T referencedObject);
 
     public String getArchive() {
         return archive;
@@ -61,39 +64,70 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
                 ", accession='" + accession + '\'' +
                 ", archive='" + archive + '\'' +
                 ", domain='" + domain + '\'' +
-                ", referencedObject=" + this.getReferencedObject() +
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractSubsRef<?> that = (AbstractSubsRef<?>) o;
+        return Objects.equals(alias, that.alias) &&
+                Objects.equals(accession, that.accession) &&
+                Objects.equals(archive, that.archive) &&
+                Objects.equals(domain, that.domain);
+    }
 
-    public void fillIn(Collection<T>... itemSources) {
-        for (Collection<T> items : itemSources){
-            T match = this.findMatch(items);
-            this.setReferencedObject(match);
+    @Override
+    public int hashCode() {
+        return Objects.hash(alias, accession, archive, domain);
+    }
+
+    /**
+     * Search the item sources for a match, and update your accession based upon them
+     *
+     * @param itemSources
+     * @return
+     */
+    public T fillIn(Collection<T>... itemSources) {
+
+            T match = this.findMatch(itemSources);
 
             if (match != null && !this.isAccessioned()){
                 this.accession = match.getAccession();
             }
 
-            if (match != null) {
-                return;
+            return match;
+    }
+
+    /**
+     * Return the first match within a list of sources
+     * @param itemSources
+     * @return
+     */
+    public T findMatch(Collection<T>... itemSources){
+        for (Collection<T> items : itemSources) {
+            Optional<T> optionalSubmittable = items.stream()
+                    .filter(s -> this.isMatch(s))
+                    .findFirst();
+
+            if (optionalSubmittable.isPresent()) {
+                return optionalSubmittable.get();
             }
         }
+        return null;
     }
 
-    public T findMatch(Collection<T> items){
-        Optional<T> optionalSubmittable = items.stream()
-                .filter(s -> this.isMatch(s))
-                .findFirst();
-
-        if (optionalSubmittable.isPresent()) {
-            return optionalSubmittable.get();
-        }
-        else {
-            return null;
-        }
-    }
-
+    /**
+     * An object is a match if it meets either of these criteria
+     *
+     * <ul>
+     *     <li>ref has an accession, and the object has the same accession</li>
+     *     <li>ref has a domain and an alias, and the object has the same alias and domain</li>
+     * </ul>
+     * @param submittable
+     * @return
+     */
     public boolean isMatch(T submittable) {
         Optional<Archive> optionalArchive = Optional.ofNullable(submittable.getArchive());
         if(optionalArchive.isPresent()) {
