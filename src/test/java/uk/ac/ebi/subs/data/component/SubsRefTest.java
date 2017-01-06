@@ -16,6 +16,7 @@ public class SubsRefTest {
 
     ProjectRef subsLink;
     List<Project> candidates;
+    Project match;
 
 
     @Test
@@ -24,8 +25,8 @@ public class SubsRefTest {
 
         run();
 
-        assertThat("subs ref filled in", subsLink.getReferencedObject(), notNullValue());
-        assertThat("subs link ref", subsLink.getReferencedObject(), equalTo(candidates.get(0)));
+        assertThat("subs ref filled in", match, notNullValue());
+        assertThat("subs link ref", match, equalTo(candidates.get(0)));
     };
 
     @Test
@@ -34,8 +35,8 @@ public class SubsRefTest {
 
         run();
 
-        assertThat("subs link accession", subsLink.getAccession(), nullValue());
-        assertThat("subs link ref", subsLink.getReferencedObject(), equalTo(candidates.get(0)));
+        assertThat("subs link accession", match, notNullValue());
+        assertThat("subs link ref", match, equalTo(candidates.get(0)));
     };
 
 
@@ -45,7 +46,7 @@ public class SubsRefTest {
 
         run();
 
-        assertThat("subs ref filled in", subsLink.getReferencedObject(), nullValue());
+        assertThat("subs ref filled in", match, nullValue());
     }
 
     @Test
@@ -64,6 +65,8 @@ public class SubsRefTest {
         subsLink.setArchive(Archive.Usi.name());
         subsLink.setAlias("unclebob");
         subsLink.setDomain("testDomain");
+
+        match = null;
     };
 
     private Project addCandidate(String alias){
@@ -79,7 +82,7 @@ public class SubsRefTest {
 
 
     private void run(){
-        subsLink.fillIn(candidates);
+        match = subsLink.findMatch(candidates);
     }
 
 }
