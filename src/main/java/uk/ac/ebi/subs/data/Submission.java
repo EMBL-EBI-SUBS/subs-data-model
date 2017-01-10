@@ -34,7 +34,8 @@ public class Submission implements Identifiable<String>{
     String id;
     Submitter submitter = new Submitter();
     Domain domain = new Domain();
-    Date submissionDate = new Date();
+    Date submissionDate;
+    Date createdDate;
     String status;
 
     public String getId() {
@@ -69,6 +70,14 @@ public class Submission implements Identifiable<String>{
         this.submissionDate = submissionDate;
     }
 
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -90,12 +99,13 @@ public class Submission implements Identifiable<String>{
                 Objects.equals(submitter, that.submitter) &&
                 Objects.equals(domain, that.domain) &&
                 Objects.equals(submissionDate, that.submissionDate) &&
+                Objects.equals(createdDate, that.createdDate) &&
                 Objects.equals(status, that.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, submitter, domain, submissionDate, status);
+        return Objects.hash(id, submitter, domain, submissionDate, createdDate, status);
     }
 
     @Override
@@ -105,6 +115,7 @@ public class Submission implements Identifiable<String>{
                 ", submitter=" + submitter +
                 ", domain=" + domain +
                 ", submissionDate=" + submissionDate +
+                ", createdDate=" + createdDate +
                 ", status='" + status + '\'' +
                 '}';
     }
