@@ -7,8 +7,10 @@ import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.hateoas.Identifiable;
+import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.Submission;
 import uk.ac.ebi.subs.data.component.*;
+import uk.ac.ebi.subs.data.status.ProcessingStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,6 +113,12 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
     @Override
     public String getStatus() {
         return status;
+    }
+
+    @Override
+    public void setStatus(ProcessingStatus status){
+        Assert.notNull(status);
+        this.setStatus(status.name());
     }
 
     @Override

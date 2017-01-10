@@ -5,8 +5,10 @@ import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.hateoas.Identifiable;
+import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.annotation.CascadeSave;
 import uk.ac.ebi.subs.data.component.Domain;
+import uk.ac.ebi.subs.data.status.SubmissionStatus;
 import uk.ac.ebi.subs.data.submittable.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.submittable.*;
@@ -71,6 +73,10 @@ public class Submission implements Identifiable<String>{
         return status;
     }
 
+    public void setStatus(SubmissionStatus status) {
+        Assert.notNull(status);
+        this.setStatus(status.name());
+    }
     public void setStatus(String status) {
         this.status = status;
     }

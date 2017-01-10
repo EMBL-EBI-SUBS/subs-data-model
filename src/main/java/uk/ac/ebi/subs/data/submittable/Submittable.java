@@ -4,6 +4,7 @@ import uk.ac.ebi.subs.data.Submission;
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.component.Archive;
+import uk.ac.ebi.subs.data.status.ProcessingStatus;
 
 import java.util.List;
 
@@ -32,6 +33,7 @@ public interface Submittable {
 
     String getStatus();
     void setStatus(String status);
+    void setStatus(ProcessingStatus status);
 
     Archive getArchive();
     void setArchive(Archive archive);
