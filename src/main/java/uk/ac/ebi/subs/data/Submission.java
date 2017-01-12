@@ -27,6 +27,7 @@ public class Submission implements Identifiable<String>{
         this.submitter = s.submitter;
         this.domain = s.domain;
         this.submissionDate = s.submissionDate;
+        this.createdDate = s.createdDate;
         this.status = s.status;
     }
 
