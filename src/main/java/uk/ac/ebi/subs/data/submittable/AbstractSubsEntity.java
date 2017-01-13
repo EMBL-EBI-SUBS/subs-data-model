@@ -16,9 +16,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/*
+    Caution - Spring data does not apply indexes from parent classes
+     the index definition has to be in the child classes
+
+    The compound indexes block below should be in sync with the implementations of submittable
+ */
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
-        @CompoundIndex(name = "accession", def = "{ 'accession': 1}")
+        @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
+        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
 })
 public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable, Identifiable<String> {
 
