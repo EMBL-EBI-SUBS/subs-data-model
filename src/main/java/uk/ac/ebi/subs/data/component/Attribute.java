@@ -1,40 +1,43 @@
 package uk.ac.ebi.subs.data.component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Attribute {
-        String name;
-        String value;
-        String units;
-        Term term;
+    String name;
+    String value;
+    String units;
+    List<Term> terms = new ArrayList<>();
 
-        public String getName() {
-                return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public void setName(String name) {
-                this.name = name;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public String getValue() {
-                return value;
-        }
+    public String getValue() {
+        return value;
+    }
 
-        public void setValue(String value) {
-                this.value = value;
-        }
+    public void setValue(String value) {
+        this.value = value;
+    }
 
-        public String getUnits() {
-                return units;
-        }
+    public String getUnits() {
+        return units;
+    }
 
-        public void setUnits(String units) {
-                this.units = units;
-        }
+    public void setUnits(String units) {
+        this.units = units;
+    }
 
-        public Term getTerm() {
-                return term;
-        }
+    public List<Term> getTerms() {
+        return terms;
+    }
 
-        public void setTerm(Term term) {
-                this.term = term;
-        }
+    public void setTerms(List<Term> terms) {
+        this.terms = terms;
+    }
 }
