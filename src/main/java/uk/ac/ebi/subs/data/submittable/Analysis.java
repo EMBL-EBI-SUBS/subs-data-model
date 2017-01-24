@@ -1,5 +1,7 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -20,6 +22,8 @@ import java.util.List;
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
         @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
 })
+@ToString
+@EqualsAndHashCode
 //@Document TODO - there is a potential cyclic reference that is flagged up when you have @Document - reconsider design
 public class Analysis extends AbstractSubsEntity<Analysis> implements Files {
 

@@ -1,5 +1,7 @@
 package uk.ac.ebi.subs.data;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import uk.ac.ebi.subs.data.annotation.CascadeSave;
 import uk.ac.ebi.subs.data.submittable.*;
@@ -7,6 +9,8 @@ import uk.ac.ebi.subs.data.submittable.*;
 import java.util.*;
 import java.util.stream.Stream;
 
+@ToString
+@EqualsAndHashCode
 public class FullSubmission extends Submission{
 
     public FullSubmission(){}
@@ -139,44 +143,4 @@ public class FullSubmission extends Submission{
         return allSubmittablesLists().stream().flatMap(l -> l.stream());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        FullSubmission that = (FullSubmission) o;
-        return Objects.equals(analyses, that.analyses) &&
-                Objects.equals(assays, that.assays) &&
-                Objects.equals(assayData, that.assayData) &&
-                Objects.equals(egaDacs, that.egaDacs) &&
-                Objects.equals(egaDacPolicies, that.egaDacPolicies) &&
-                Objects.equals(egaDatasets, that.egaDatasets) &&
-                Objects.equals(projects, that.projects) &&
-                Objects.equals(samples, that.samples) &&
-                Objects.equals(sampleGroups, that.sampleGroups) &&
-                Objects.equals(studies, that.studies) &&
-                Objects.equals(protocols, that.protocols);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies, protocols);
-    }
-
-    @Override
-    public String toString() {
-        return "FullSubmission{" +
-                "analyses=" + analyses +
-                ", assays=" + assays +
-                ", assayData=" + assayData +
-                ", egaDacs=" + egaDacs +
-                ", egaDacPolicies=" + egaDacPolicies +
-                ", egaDatasets=" + egaDatasets +
-                ", projects=" + projects +
-                ", samples=" + samples +
-                ", sampleGroups=" + sampleGroups +
-                ", studies=" + studies +
-                ", protocols=" + protocols +
-                "} " + super.toString();
-    }
 }

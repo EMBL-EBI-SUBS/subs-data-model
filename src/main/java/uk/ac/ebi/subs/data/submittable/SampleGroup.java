@@ -1,6 +1,8 @@
 package uk.ac.ebi.subs.data.submittable;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -24,6 +26,8 @@ import java.util.List;
         @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
+@ToString
+@EqualsAndHashCode
 public class SampleGroup extends AbstractSubsEntity<SampleGroup> {
 
     List<SampleRef> sampleRefs = new ArrayList<>();

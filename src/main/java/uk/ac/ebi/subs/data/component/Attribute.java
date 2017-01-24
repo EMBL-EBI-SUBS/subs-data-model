@@ -1,8 +1,13 @@
 package uk.ac.ebi.subs.data.component;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@ToString
+@EqualsAndHashCode
 public class Attribute {
     String name;
     String value;

@@ -1,6 +1,11 @@
 package uk.ac.ebi.subs.data.component;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode
 public class Domain {
     String name;
 

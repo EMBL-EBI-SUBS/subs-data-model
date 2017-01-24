@@ -1,5 +1,7 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -23,6 +25,8 @@ import java.util.Objects;
         @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
+@ToString
+@EqualsAndHashCode
 public class Sample extends AbstractSubsEntity {
 
     List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
@@ -58,27 +62,4 @@ public class Sample extends AbstractSubsEntity {
         return new SampleRef();
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Sample sample = (Sample) o;
-        return Objects.equals(sampleRelationships, sample.sampleRelationships) &&
-                Objects.equals(taxonId, sample.taxonId) &&
-                Objects.equals(taxon, sample.taxon);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(sampleRelationships, taxonId, taxon);
-    }
-
-    @Override
-    public String toString() {
-        return "Sample{" +
-                "sampleRelationships=" + sampleRelationships +
-                ", taxonId=" + taxonId +
-                ", taxon='" + taxon + '\'' +
-                "} " + super.toString();
-    }
 }

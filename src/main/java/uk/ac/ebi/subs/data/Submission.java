@@ -1,5 +1,7 @@
 package uk.ac.ebi.subs.data;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -19,6 +21,8 @@ import java.util.stream.Stream;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
 })
+@ToString
+@EqualsAndHashCode
 public class Submission implements Identifiable<String>{
 
     public Submission(){}

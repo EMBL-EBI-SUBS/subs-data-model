@@ -2,6 +2,8 @@ package uk.ac.ebi.subs.data.submittable;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
@@ -27,6 +29,8 @@ import java.util.Objects;
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
         @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
 })
+@ToString
+@EqualsAndHashCode
 public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implements Attributes, Submittable, Identifiable<String> {
 
     @Id
@@ -185,43 +189,4 @@ public abstract class AbstractSubsEntity<T extends AbstractSubsEntity> implement
 
     protected abstract AbstractSubsRef<T> newRef();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AbstractSubsEntity<?> that = (AbstractSubsEntity<?>) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(submissionId, that.submissionId) &&
-                Objects.equals(type, that.type) &&
-                Objects.equals(accession, that.accession) &&
-                Objects.equals(alias, that.alias) &&
-                Objects.equals(status, that.status) &&
-                archive == that.archive &&
-                Objects.equals(domain, that.domain) &&
-                Objects.equals(title, that.title) &&
-                Objects.equals(description, that.description) &&
-                Objects.equals(attributes, that.attributes);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, submissionId, type, accession, alias, status, archive, domain, title, description, attributes);
-    }
-
-    @Override
-    public String toString() {
-        return "AbstractSubsEntity{" +
-                "id='" + id + '\'' +
-                ", submissionId='" + submissionId + '\'' +
-                ", type='" + type + '\'' +
-                ", accession='" + accession + '\'' +
-                ", alias='" + alias + '\'' +
-                ", status='" + status + '\'' +
-                ", archive=" + archive +
-                ", domain=" + domain +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", attributes=" + attributes +
-                '}';
-    }
 }

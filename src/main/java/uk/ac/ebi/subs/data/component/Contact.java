@@ -1,11 +1,13 @@
 package uk.ac.ebi.subs.data.component;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by davidr on 08/08/2016.
- */
+@ToString
+@EqualsAndHashCode
 public class Contact {
     String firstName;
     String middleInitials;

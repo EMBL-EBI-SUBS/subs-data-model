@@ -1,12 +1,17 @@
 package uk.ac.ebi.subs.data.component;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Records the use of a specific protocol, with the option to record attributes about the use of that protocol
  */
+@ToString
+@EqualsAndHashCode
 public class ProtocolUse implements Attributes {
     ProtocolRef protocolRef = new ProtocolRef();
     List<Attribute> attributes = new ArrayList<>();

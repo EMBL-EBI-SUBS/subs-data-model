@@ -1,6 +1,8 @@
 package uk.ac.ebi.subs.data.component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
@@ -14,6 +16,7 @@ import java.util.Optional;
  *
  * @param <T>
  */
+@ToString @EqualsAndHashCode
 public abstract  class AbstractSubsRef<T extends Submittable> {
     String alias;
     String accession;
@@ -55,32 +58,6 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     @JsonIgnore
     public boolean isAccessioned() {
         return (accession != null && accession.isEmpty());
-    }
-
-    @Override
-    public String toString() {
-        return "AbstractSubsRef{" +
-                "alias='" + alias + '\'' +
-                ", accession='" + accession + '\'' +
-                ", archive='" + archive + '\'' +
-                ", domain='" + domain + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AbstractSubsRef<?> that = (AbstractSubsRef<?>) o;
-        return Objects.equals(alias, that.alias) &&
-                Objects.equals(accession, that.accession) &&
-                Objects.equals(archive, that.archive) &&
-                Objects.equals(domain, that.domain);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(alias, accession, archive, domain);
     }
 
     /**

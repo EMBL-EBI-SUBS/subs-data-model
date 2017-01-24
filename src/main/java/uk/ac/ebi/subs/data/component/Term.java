@@ -1,5 +1,8 @@
 package uk.ac.ebi.subs.data.component;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.net.URL;
 
 /**
@@ -11,6 +14,8 @@ import java.net.URL;
  * the LBO term for Texel has the URL  http://purl.obolibrary.org/obo/LBO_0000640
  *
  */
+@ToString
+@EqualsAndHashCode
 public class Term {
     private String url;
 
