@@ -1,39 +1,71 @@
 package uk.ac.ebi.subs.data.submittable;
 
-
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.hateoas.Identifiable;
+import uk.ac.ebi.subs.data.component.*;
 
-/*
-    Caution - Spring data does not apply indexes from parent classes
-     the index definition has to be in the child classes
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-    The compound indexes block below should in sync with the reference copy in AbstractSubsEntity
- */
-@CompoundIndexes({
-        @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
-        @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
-})
-@Document
 @ToString
 @EqualsAndHashCode
-public class Study extends uk.ac.ebi.subs.data.core.Study implements Identifiable<String> {
+public class Study extends BaseSubmittable implements Submittable, Publications, Contacts {
 
-    @Id
-    private String id;
+    private List<Publication> publications = new ArrayList<>();
+    private List<Contact> contacts = new ArrayList<>();
+
+    private List<ProtocolRef> protocolRefs = new ArrayList<>();
+    private ProjectRef projectRef = new ProjectRef();
+
+    private Date releaseDate;
 
     @Override
-    public String getId() {
-        return id;
+    protected StudyRef newRef() {
+        return new StudyRef();
     }
 
-    public void setId(String id) {
-        this.id = id;
+    @Override
+    public List<Publication> getPublications() {
+        return publications;
+    }
+
+    @Override
+    public void setPublications(List<Publication> publications) {
+        this.publications = publications;
+    }
+
+    @Override
+    public List<Contact> getContacts() {
+        return contacts;
+    }
+
+    @Override
+    public void setContacts(List<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
+    public List<ProtocolRef> getProtocolRefs() {
+        return protocolRefs;
+    }
+
+    public void setProtocolRefs(List<ProtocolRef> protocolRefs) {
+        this.protocolRefs = protocolRefs;
+    }
+
+    public ProjectRef getProjectRef() {
+        return projectRef;
+    }
+
+    public void setProjectRef(ProjectRef projectRef) {
+        this.projectRef = projectRef;
+    }
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

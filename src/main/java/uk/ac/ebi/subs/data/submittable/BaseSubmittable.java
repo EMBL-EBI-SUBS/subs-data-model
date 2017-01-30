@@ -1,22 +1,20 @@
-package uk.ac.ebi.subs.data.core;
+package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.springframework.hateoas.Identifiable;
 import org.springframework.util.Assert;
-import uk.ac.ebi.subs.data.component.AbstractSubsRef;
-import uk.ac.ebi.subs.data.component.Archive;
-import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Domain;
+import uk.ac.ebi.subs.data.component.*;
 import uk.ac.ebi.subs.data.status.ProcessingStatus;
-import uk.ac.ebi.subs.data.submittable.AbstractSubsEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @ToString
 @EqualsAndHashCode
-public abstract class BaseSubmittable<T extends BaseSubmittable> implements Submittable{
+public abstract class BaseSubmittable<T extends BaseSubmittable> implements Submittable, Attributes, Identifiable<String>{
 
+    private String id;
     private String accession;
     private String alias;
     private String status;
@@ -46,6 +44,16 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
 
     protected abstract AbstractSubsRef<T> newRef();
 
+
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public String getAccession() {

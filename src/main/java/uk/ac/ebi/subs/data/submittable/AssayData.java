@@ -2,35 +2,49 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.mapping.Document;
+import uk.ac.ebi.subs.data.component.*;
 
-/*
-    Caution - Spring data does not apply indexes from parent classes
-     the index definition has to be in the child classes
+import java.util.ArrayList;
+import java.util.List;
 
-    The compound indexes block below should in sync with the reference copy in AbstractSubsEntity
- */
-@CompoundIndexes({
-        @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
-        @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
-})
-@Document
 @ToString
 @EqualsAndHashCode
-public class AssayData extends uk.ac.ebi.subs.data.core.AssayData {
+public class AssayData extends BaseSubmittable<AssayData> implements Files  {
 
-    @Id
-    private String id;
+    private AssayRef assayRef = new AssayRef();
+    private SampleRef sampleRef = new SampleRef();
+    private List<File> files = new ArrayList<File>();
 
-    public String getId() {
-        return id;
+    @Override
+    protected AssayDataRef newRef() {
+        return new AssayDataRef();
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public AssayRef getAssayRef() {
+        return assayRef;
+    }
+
+    public void setAssayRef(AssayRef assayRef) {
+        this.assayRef = assayRef;
+    }
+
+    public SampleRef getSampleRef() {
+        return sampleRef;
+    }
+
+    public void setSampleRef(SampleRef sampleRef) {
+        this.sampleRef = sampleRef;
+    }
+
+    @Override
+    public List<File> getFiles() {
+        return files;
+    }
+
+    @Override
+    public void setFiles(List<File> files) {
+        this.files = files;
     }
 }
+
+

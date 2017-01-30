@@ -3,7 +3,7 @@ package uk.ac.ebi.subs.data.component;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import uk.ac.ebi.subs.data.core.Submittable;
+import uk.ac.ebi.subs.data.submittable.Submittable;
 
 import java.util.Collection;
 import java.util.Optional;

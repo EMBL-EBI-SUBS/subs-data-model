@@ -5,7 +5,7 @@ import lombok.ToString;
 
 @ToString
 @EqualsAndHashCode
-public class AssayData extends uk.ac.ebi.subs.data.core.AssayData implements PartOfSubmission {
+public class AssayData extends uk.ac.ebi.subs.data.submittable.AssayData implements PartOfSubmission {
 
     private String submission;
 

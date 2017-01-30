@@ -3,7 +3,7 @@ package uk.ac.ebi.subs.data.client;
 /**
  * Created by davidr on 30/01/2017.
  */
-public class Protocol extends uk.ac.ebi.subs.data.core.Protocol implements PartOfSubmission {
+public class Protocol extends uk.ac.ebi.subs.data.submittable.Protocol implements PartOfSubmission {
 
     private String submission;
 

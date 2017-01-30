@@ -1,7 +1,7 @@
 package uk.ac.ebi.subs.data.client;
 
 
-public class EgaDataset extends uk.ac.ebi.subs.data.core.EgaDataset implements PartOfSubmission {
+public class EgaDataset extends uk.ac.ebi.subs.data.submittable.EgaDataset implements PartOfSubmission {
     private String submission;
 
     @Override

@@ -1,7 +1,7 @@
 package uk.ac.ebi.subs.data.client;
 
 
-public class SampleGroup extends uk.ac.ebi.subs.data.core.SampleGroup implements PartOfSubmission {
+public class SampleGroup extends uk.ac.ebi.subs.data.submittable.SampleGroup implements PartOfSubmission {
 
     private String submission;
 

@@ -2,18 +2,22 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import uk.ac.ebi.subs.data.annotation.CascadeSave;
-import uk.ac.ebi.subs.data.core.Submittable;
+import uk.ac.ebi.subs.data.submittable.Submittable;
 import uk.ac.ebi.subs.data.submittable.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 
 @ToString
 @EqualsAndHashCode
-public class FullSubmission extends Submission{
+public class FullSubmission extends Submission {
 
-    public FullSubmission(){}
+    public FullSubmission() {
+    }
+
     public FullSubmission(Submission s) {
         this.id = s.id;
         this.submitter = s.submitter;
@@ -22,17 +26,17 @@ public class FullSubmission extends Submission{
         this.status = s.status;
     }
 
-    List<Analysis> analyses = new ArrayList<>();
-    List<Assay> assays = new ArrayList<>();
-    List<AssayData> assayData = new ArrayList<>();
-    List<EgaDac> egaDacs = new ArrayList<>();
-    List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
-    List<EgaDataset> egaDatasets = new ArrayList<>();
-    List<Project> projects = new ArrayList<>();
-    List<Sample> samples = new ArrayList<>();
-    List<SampleGroup> sampleGroups = new ArrayList<>();
-    List<Study> studies = new ArrayList<>();
-    List<Protocol> protocols = new ArrayList<>();
+    private List<Analysis> analyses = new ArrayList<>();
+    private List<Assay> assays = new ArrayList<>();
+    private List<AssayData> assayData = new ArrayList<>();
+    private List<EgaDac> egaDacs = new ArrayList<>();
+    private List<EgaDacPolicy> egaDacPolicies = new ArrayList<>();
+    private List<EgaDataset> egaDatasets = new ArrayList<>();
+    private List<Project> projects = new ArrayList<>();
+    private List<Sample> samples = new ArrayList<>();
+    private List<SampleGroup> sampleGroups = new ArrayList<>();
+    private List<Study> studies = new ArrayList<>();
+    private List<Protocol> protocols = new ArrayList<>();
 
     public List<Analysis> getAnalyses() {
         return analyses;
@@ -124,11 +128,12 @@ public class FullSubmission extends Submission{
 
     /**
      * get a list of all the lists of objects implementing Submittable within the submission.
+     *
      * @return
      */
-    private List<List<Submittable>> allSubmittablesLists(){
+    private List<List<Submittable>> allSubmittablesLists() {
         List lists = Arrays.asList(analyses, assays, assayData, egaDacs, egaDacPolicies, egaDatasets, projects, samples, sampleGroups, studies);
-        return (List<List<Submittable>>)lists;
+        return (List<List<Submittable>>) lists;
     }
 
     public List<Submittable> allSubmissionItems() {
@@ -139,7 +144,7 @@ public class FullSubmission extends Submission{
         return Collections.unmodifiableList(submittables);
     }
 
-    public Stream<Submittable> allSubmissionItemsStream(){
+    public Stream<Submittable> allSubmissionItemsStream() {
         return allSubmittablesLists().stream().flatMap(l -> l.stream());
     }
 

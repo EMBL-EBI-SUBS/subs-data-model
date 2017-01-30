@@ -2,42 +2,45 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.CompoundIndex;
-import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-    Caution - Spring data does not apply indexes from parent classes
-     the index definition has to be in the child classes
+@EqualsAndHashCode @ToString
+public class Sample extends BaseSubmittable<Sample> {
 
-    The compound indexes block below should in sync with the reference copy in AbstractSubsEntity
- */
-@CompoundIndexes({
-        @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
-        @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
-})
-@Document
-@ToString
-@EqualsAndHashCode
-public class Sample extends uk.ac.ebi.subs.data.core.Sample implements Identifiable<String> {
-
-    @Id
-    private String id;
+    private List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
+    private Long taxonId;
+    private String taxon;
 
     @Override
-    public String getId() {
-        return id;
+    protected SampleRef newRef() {
+        return new SampleRef();
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public List<SampleRelationship> getSampleRelationships() {
+        return sampleRelationships;
+    }
+
+    public void setSampleRelationships(List<SampleRelationship> sampleRelationships) {
+        this.sampleRelationships = sampleRelationships;
+    }
+
+    public Long getTaxonId() {
+        return taxonId;
+    }
+
+    public void setTaxonId(Long taxonId) {
+        this.taxonId = taxonId;
+    }
+
+    public String getTaxon() {
+        return taxon;
+    }
+
+    public void setTaxon(String taxon) {
+        this.taxon = taxon;
     }
 }
