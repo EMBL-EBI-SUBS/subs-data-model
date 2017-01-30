@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.component.Archive;
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Domain;
@@ -46,6 +47,7 @@ public interface Submittable {
 
     void setArchive(Archive archive);
 
+    @JsonIgnore
     default boolean isAccessioned(){
         return (this.getAccession() != null && !this.getAccession().isEmpty());
     }
