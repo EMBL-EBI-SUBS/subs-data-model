@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.AbstractSubsRef;
+import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.component.ProtocolRef;
 
 /*
@@ -18,16 +18,22 @@ import uk.ac.ebi.subs.data.component.ProtocolRef;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class Protocol extends AbstractSubsEntity<Protocol> {
+public class Protocol extends uk.ac.ebi.subs.data.core.Protocol implements Identifiable<String> {
+
+    @Id
+    private String id;
 
     @Override
-    protected ProtocolRef newRef() {
-        return new ProtocolRef();
+    public String getId() {
+        return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

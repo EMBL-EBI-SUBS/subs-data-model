@@ -7,12 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.Contact;
-import uk.ac.ebi.subs.data.component.Contacts;
-import uk.ac.ebi.subs.data.component.EgaDacRef;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.hateoas.Identifiable;
 
 /*
     Caution - Spring data does not apply indexes from parent classes
@@ -23,27 +18,22 @@ import java.util.List;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class EgaDac extends AbstractSubsEntity<EgaDac> implements Contacts {
+public class EgaDac extends uk.ac.ebi.subs.data.core.EgaDac implements Identifiable<String> {
 
-    List<Contact> contacts = new ArrayList<Contact>();
+    @Id
+    private String id;
 
     @Override
-    public List<Contact> getContacts() {
-        return contacts;
+    public String getId() {
+        return id;
     }
 
-    @Override
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
-    @Override
-    protected EgaDacRef newRef() {
-        return new EgaDacRef();
+    public void setId(String id) {
+        this.id = id;
     }
 }

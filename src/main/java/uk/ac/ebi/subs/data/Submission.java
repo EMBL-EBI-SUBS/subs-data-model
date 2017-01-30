@@ -5,27 +5,25 @@ import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.hateoas.Identifiable;
 import org.springframework.util.Assert;
-import uk.ac.ebi.subs.data.annotation.CascadeSave;
 import uk.ac.ebi.subs.data.component.Domain;
-import uk.ac.ebi.subs.data.status.SubmissionStatus;
-import uk.ac.ebi.subs.data.submittable.Protocol;
 import uk.ac.ebi.subs.data.component.Submitter;
-import uk.ac.ebi.subs.data.submittable.*;
+import uk.ac.ebi.subs.data.status.SubmissionStatus;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.Date;
+import java.util.Objects;
 
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
 })
 @ToString
 @EqualsAndHashCode
-public class Submission implements Identifiable<String>{
+public class Submission implements Identifiable<String> {
 
-    public Submission(){}
+    public Submission() {
+    }
+
     public Submission(Submission s) {
         this.id = s.id;
         this.submitter = s.submitter;
@@ -91,6 +89,7 @@ public class Submission implements Identifiable<String>{
         Assert.notNull(status);
         this.setStatus(status.name());
     }
+
     public void setStatus(String status) {
         this.status = status;
     }

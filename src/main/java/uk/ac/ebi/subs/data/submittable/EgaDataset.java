@@ -6,10 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.hateoas.Identifiable;
 
 /*
     Caution - Spring data does not apply indexes from parent classes
@@ -20,37 +17,22 @@ import java.util.List;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class EgaDataset extends AbstractSubsEntity<EgaDataset> {
+public class EgaDataset extends uk.ac.ebi.subs.data.core.EgaDataset implements Identifiable<String> {
 
-
-
-    List<AssayDataRef> dataRefs = new ArrayList<>();
-    List<AnalysisRef> analysisRefs = new ArrayList<>();
-    EgaDacPolicyRef egaDacPolicyRef = new EgaDacPolicyRef();
-
-    public List<AssayDataRef> getDataRefs() {
-        return dataRefs;
-    }
-
-    public void setDataRefs(List<AssayDataRef> dataRefs) {
-        this.dataRefs = dataRefs;
-    }
-
-    public List<AnalysisRef> getAnalysisRefs() {
-        return analysisRefs;
-    }
-
-    public void setAnalysisRefs(List<AnalysisRef> analysisRefs) {
-        this.analysisRefs = analysisRefs;
-    }
+    @Id
+    private String id;
 
     @Override
-    protected EgaDatasetRef newRef() {
-        return new EgaDatasetRef();
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

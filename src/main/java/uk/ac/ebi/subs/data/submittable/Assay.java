@@ -6,11 +6,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.*;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 /*
     Caution - Spring data does not apply indexes from parent classes
@@ -21,45 +16,22 @@ import java.util.Objects;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class Assay extends AbstractSubsEntity<Assay> {
+public class Assay extends uk.ac.ebi.subs.data.core.Assay {
 
+    @Id
+    private String id;
 
-    StudyRef studyRef = new StudyRef();
-    List<SampleUse> sampleUses = new ArrayList<>();
-    List<ProtocolUse> protocolUses = new ArrayList<>();
-
-    public StudyRef getStudyRef() {
-        return studyRef;
+    public String getId() {
+        return id;
     }
 
-    public void setStudyRef(StudyRef studyRef) {
-        this.studyRef = studyRef;
-    }
-
-    public List<SampleUse> getSampleUses() {
-        return sampleUses;
-    }
-
-    public void setSampleUses(List<SampleUse> sampleUses) {
-        this.sampleUses = sampleUses;
-    }
-
-    public List<ProtocolUse> getProtocolUses() {
-        return protocolUses;
-    }
-
-    public void setProtocolUses(List<ProtocolUse> protocolUses) {
-        this.protocolUses = protocolUses;
-    }
-
-    @Override
-    protected AssayRef newRef() {
-        return new AssayRef();
+    public void setId(String id) {
+        this.id = id;
     }
 
 }

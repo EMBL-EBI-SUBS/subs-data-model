@@ -6,11 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.*;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import org.springframework.hateoas.Identifiable;
 
 /*
     Caution - Spring data does not apply indexes from parent classes
@@ -21,48 +17,22 @@ import java.util.List;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class Project extends AbstractSubsEntity<Project> implements Contacts, Publications {
+public class Project extends uk.ac.ebi.subs.data.core.Project implements Identifiable<String> {
 
-    List<Contact> contacts = new ArrayList<Contact>();
-    List<Publication> publications = new ArrayList<Publication>();
-    Date releaseDate = new Date();
-
+    @Id
+    private String id;
 
     @Override
-    public List<Contact> getContacts() {
-        return contacts;
+    public String getId() {
+        return id;
     }
 
-    @Override
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
-    }
-
-    @Override
-    public List<Publication> getPublications() {
-        return publications;
-    }
-
-    @Override
-    public void setPublications(List<Publication> publications) {
-        this.publications = publications;
-    }
-
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    @Override
-    protected ProjectRef newRef() {
-        return new ProjectRef();
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -7,9 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import uk.ac.ebi.subs.data.component.AbstractSubsRef;
-import uk.ac.ebi.subs.data.component.EgaDacPolicyRef;
-import uk.ac.ebi.subs.data.component.EgaDacRef;
+import org.springframework.hateoas.Identifiable;
 
 /*
     Caution - Spring data does not apply indexes from parent classes
@@ -20,26 +18,22 @@ import uk.ac.ebi.subs.data.component.EgaDacRef;
 @CompoundIndexes({
         @CompoundIndex(name = "domain_alias", def = "{ 'domain.name': 1, 'alias': 1 }"),
         @CompoundIndex(name = "accession", def = "{ 'accession': 1}"),
-        @CompoundIndex(name = "submissionId_status", def= "{ 'submissionId': 1, 'status': 1}")
+        @CompoundIndex(name = "submissionId_status", def = "{ 'submissionId': 1, 'status': 1}")
 })
 @Document
 @ToString
 @EqualsAndHashCode
-public class EgaDacPolicy extends AbstractSubsEntity<EgaDacPolicy> {
+public class EgaDacPolicy extends uk.ac.ebi.subs.data.core.EgaDacPolicy implements Identifiable<String> {
 
-
-    EgaDacRef dacRef = new EgaDacRef();
-
-    public AbstractSubsRef<EgaDac> getDacRef() {
-        return dacRef;
-    }
-
-    public void setDacRef(EgaDacRef dacRef) {
-        this.dacRef = dacRef;
-    }
+    @Id
+    private String id;
 
     @Override
-    protected EgaDacPolicyRef newRef() {
-        return new EgaDacPolicyRef();
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

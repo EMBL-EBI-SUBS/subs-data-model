@@ -2,8 +2,8 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import uk.ac.ebi.subs.data.annotation.CascadeSave;
+import uk.ac.ebi.subs.data.core.Submittable;
 import uk.ac.ebi.subs.data.submittable.*;
 
 import java.util.*;
