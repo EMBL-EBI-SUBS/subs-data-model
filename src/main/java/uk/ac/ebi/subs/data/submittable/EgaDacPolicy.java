@@ -5,8 +5,8 @@ import lombok.ToString;
 import uk.ac.ebi.subs.data.component.EgaDacPolicyRef;
 import uk.ac.ebi.subs.data.component.EgaDacRef;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class EgaDacPolicy extends BaseSubmittable<EgaDacPolicy> {
 
     EgaDacRef dacRef = new EgaDacRef();

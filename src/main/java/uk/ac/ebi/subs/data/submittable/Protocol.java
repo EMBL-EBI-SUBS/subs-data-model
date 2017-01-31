@@ -4,8 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import uk.ac.ebi.subs.data.component.ProtocolRef;
 
-@EqualsAndHashCode
-@ToString
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Protocol extends BaseSubmittable<Protocol> {
 
     @Override

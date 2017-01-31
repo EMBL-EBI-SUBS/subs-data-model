@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@EqualsAndHashCode
-@ToString
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class SampleGroup extends BaseSubmittable<SampleGroup> {
 
     private List<SampleRef> sampleRefs = new ArrayList<>();

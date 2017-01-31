@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Project extends BaseSubmittable<Project> implements Contacts, Publications {
 
     private List<Contact> contacts = new ArrayList<Contact>();

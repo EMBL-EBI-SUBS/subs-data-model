@@ -7,8 +7,8 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class EgaDataset extends BaseSubmittable<EgaDataset> {
 
     private List<AssayDataRef> dataRefs = new ArrayList<>();

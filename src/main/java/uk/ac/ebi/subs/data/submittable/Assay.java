@@ -10,8 +10,9 @@ import uk.ac.ebi.subs.data.component.StudyRef;
 import java.util.ArrayList;
 import java.util.List;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+
 public class Assay extends BaseSubmittable<Assay> {
 
     private StudyRef studyRef = new StudyRef();

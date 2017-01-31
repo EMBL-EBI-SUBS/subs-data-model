@@ -10,8 +10,8 @@ import uk.ac.ebi.subs.data.component.EgaDacRef;
 import java.util.ArrayList;
 import java.util.List;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class EgaDac extends BaseSubmittable<EgaDac> implements Contacts{
 
     private List<Contact> contacts = new ArrayList<Contact>();

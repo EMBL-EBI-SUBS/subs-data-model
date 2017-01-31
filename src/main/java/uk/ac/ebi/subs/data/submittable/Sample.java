@@ -8,7 +8,8 @@ import uk.ac.ebi.subs.data.component.SampleRelationship;
 import java.util.ArrayList;
 import java.util.List;
 
-@EqualsAndHashCode @ToString
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Sample extends BaseSubmittable<Sample> {
 
     private List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();

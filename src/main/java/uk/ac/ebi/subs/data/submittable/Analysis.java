@@ -7,8 +7,8 @@ import uk.ac.ebi.subs.data.component.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Analysis extends BaseSubmittable<Analysis> implements Files {
 
     private List<AnalysisRef> analysisRefs = new ArrayList<>();
