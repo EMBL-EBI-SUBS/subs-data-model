@@ -2,7 +2,6 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import uk.ac.ebi.subs.data.submittable.Submittable;
 import uk.ac.ebi.subs.data.submittable.*;
 
 import java.util.ArrayList;
