@@ -1,8 +1,10 @@
 package uk.ac.ebi.subs.data.client;
 
-/**
- * Created by davidr on 30/01/2017.
- */
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class Project extends uk.ac.ebi.subs.data.submittable.Project implements PartOfSubmission {
 
     private String submission;
