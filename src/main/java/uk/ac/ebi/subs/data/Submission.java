@@ -93,34 +93,4 @@ public class Submission implements Identifiable<String> {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Submission that = (Submission) o;
-        return Objects.equals(id, that.id) &&
-                Objects.equals(submitter, that.submitter) &&
-                Objects.equals(domain, that.domain) &&
-                Objects.equals(submissionDate, that.submissionDate) &&
-                Objects.equals(createdDate, that.createdDate) &&
-                Objects.equals(status, that.status);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, submitter, domain, submissionDate, createdDate, status);
-    }
-
-    @Override
-    public String toString() {
-        return "Submission{" +
-                "id='" + id + '\'' +
-                ", submitter=" + submitter +
-                ", domain=" + domain +
-                ", submissionDate=" + submissionDate +
-                ", createdDate=" + createdDate +
-                ", status='" + status + '\'' +
-                '}';
-    }
 }

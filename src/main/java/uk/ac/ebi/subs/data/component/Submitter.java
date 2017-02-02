@@ -17,27 +17,4 @@ public class Submitter {
         this.email = email;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Submitter submitter = (Submitter) o;
-
-        return email != null ? email.equals(submitter.email) : submitter.email == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        return email != null ? email.hashCode() : 0;
-    }
-
-
-    @Override
-    public String toString() {
-        return "Submitter{" +
-                "email='" + email + '\'' +
-                '}';
-    }
 }

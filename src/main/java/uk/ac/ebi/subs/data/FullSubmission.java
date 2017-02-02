@@ -10,8 +10,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
-@ToString
-@EqualsAndHashCode
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 public class FullSubmission extends Submission {
 
     public FullSubmission() {
