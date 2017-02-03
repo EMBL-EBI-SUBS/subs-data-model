@@ -12,7 +12,7 @@ import java.util.List;
 
 @ToString
 @EqualsAndHashCode
-public abstract class BaseSubmittable<T extends BaseSubmittable> implements Submittable, Attributes, Identifiable<String>{
+public abstract class BaseSubmittable<T extends BaseSubmittable> implements Submittable, Attributes {
 
     private String id;
     private String accession;

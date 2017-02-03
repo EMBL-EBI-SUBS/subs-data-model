@@ -10,7 +10,7 @@ import java.util.List;
 
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Study extends BaseSubmittable implements Submittable, Publications, Contacts {
+public class Study extends BaseSubmittable<Study> implements Submittable, Publications, Contacts {
 
     private List<Publication> publications = new ArrayList<>();
     private List<Contact> contacts = new ArrayList<>();

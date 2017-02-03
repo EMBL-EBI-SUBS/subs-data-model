@@ -1,6 +1,7 @@
 package uk.ac.ebi.subs.data.submittable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.component.Archive;
 import uk.ac.ebi.subs.data.component.Attribute;
 import uk.ac.ebi.subs.data.component.Domain;
@@ -8,9 +9,8 @@ import uk.ac.ebi.subs.data.status.ProcessingStatus;
 
 import java.util.List;
 
-public interface Submittable {
+public interface Submittable extends Identifiable<String>{
 
-    String getId();
     void setId(String id);
 
     String getAccession();
