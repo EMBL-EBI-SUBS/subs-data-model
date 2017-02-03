@@ -5,6 +5,7 @@ import lombok.ToString;
 import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.hateoas.Identifiable;
 import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.component.Domain;
@@ -18,6 +19,7 @@ import java.util.Date;
 })
 @ToString
 @EqualsAndHashCode
+@Document
 public class Submission implements Identifiable<String> {
 
     public Submission() {
