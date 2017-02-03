@@ -2,7 +2,7 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.hateoas.Identifiable;
@@ -12,7 +12,6 @@ import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.status.SubmissionStatus;
 
 import java.util.Date;
-import java.util.Objects;
 
 @CompoundIndexes({
         @CompoundIndex(name = "domain_rev_submission_date", def = "{ 'domain.name': 1, 'submissionDate': -1 }")
@@ -34,13 +33,29 @@ public class Submission implements Identifiable<String> {
     }
 
     @Id
-    String id;
-    Submitter submitter = new Submitter();
-    Domain domain = new Domain();
-    Date submissionDate;
-    Date createdDate;
-    String status;
+    private String id;
+    private Submitter submitter = new Submitter();
+    private Domain domain = new Domain();
+    private Date submissionDate;
+    private String status;
 
+    @Version
+    private Long version;
+    @CreatedDate
+    private Date createdDate;
+    @LastModifiedDate
+    private Date lastModifiedDate;
+    @CreatedBy
+    private String createdBy;
+    @LastModifiedBy
+    private String lastModifiedBy;
+
+    public void setStatus(SubmissionStatus status) {
+        Assert.notNull(status);
+        this.setStatus(status.name());
+    }
+
+    @Override
     public String getId() {
         return id;
     }
@@ -73,6 +88,22 @@ public class Submission implements Identifiable<String> {
         this.submissionDate = submissionDate;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Long getVersion() {
+        return version;
+    }
+
+    public void setVersion(Long version) {
+        this.version = version;
+    }
+
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -81,16 +112,11 @@ public class Submission implements Identifiable<String> {
         this.createdDate = createdDate;
     }
 
-    public String getStatus() {
-        return status;
+    public Date getLastModifiedDate() {
+        return lastModifiedDate;
     }
 
-    public void setStatus(SubmissionStatus status) {
-        Assert.notNull(status);
-        this.setStatus(status.name());
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+    public void setLastModifiedDate(Date lastModifiedDate) {
+        this.lastModifiedDate = lastModifiedDate;
     }
 }
