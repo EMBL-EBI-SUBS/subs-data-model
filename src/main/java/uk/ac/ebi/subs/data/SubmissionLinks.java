@@ -15,5 +15,5 @@ public class SubmissionLinks {
     public static final String STUDY = "studies";
 
     public static final String HISTORY = "history";
-
+    public static final String LATEST_VERSION = "latestVersion";
 }
