@@ -2,6 +2,8 @@ package uk.ac.ebi.subs.data;
 
 public class SubmissionLinks {
 
+    public static final String SUBMISSION = "submission";
+
     public static final String ANALYSIS = "analyses";
     public static final String ASSAY_DATA = "assayData";
     public static final String ASSAY = "assays";
