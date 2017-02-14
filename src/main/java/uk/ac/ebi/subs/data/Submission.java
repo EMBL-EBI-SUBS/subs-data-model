@@ -7,10 +7,8 @@ import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.hateoas.Identifiable;
-import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.component.Domain;
 import uk.ac.ebi.subs.data.component.Submitter;
-import uk.ac.ebi.subs.data.status.SubmissionStatus;
 
 import java.util.Date;
 
@@ -31,7 +29,6 @@ public class Submission implements Identifiable<String> {
         this.domain = s.domain;
         this.submissionDate = s.submissionDate;
         this.createdDate = s.createdDate;
-        this.status = s.status;
     }
 
     @Id
@@ -39,7 +36,6 @@ public class Submission implements Identifiable<String> {
     private Submitter submitter = new Submitter();
     private Domain domain = new Domain();
     private Date submissionDate;
-    private String status;
 
     @Version
     private Long version;
@@ -51,11 +47,6 @@ public class Submission implements Identifiable<String> {
     private String createdBy;
     @LastModifiedBy
     private String lastModifiedBy;
-
-    public void setStatus(SubmissionStatus status) {
-        Assert.notNull(status);
-        this.setStatus(status.name());
-    }
 
     @Override
     public String getId() {
@@ -88,14 +79,6 @@ public class Submission implements Identifiable<String> {
 
     public void setSubmissionDate(Date submissionDate) {
         this.submissionDate = submissionDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public Long getVersion() {

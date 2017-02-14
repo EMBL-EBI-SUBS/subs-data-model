@@ -1,6 +1,6 @@
 package uk.ac.ebi.subs.data.status;
 
-public enum ProcessingStatus {
+public enum ProcessingStatusEnum {
     Draft, /* exists in the usi system */
     Submitted, /* user has Submitted document */
     Dispatched, /* usi has dispatched object to archive */

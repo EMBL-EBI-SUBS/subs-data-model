@@ -2,10 +2,9 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.hateoas.Identifiable;
 import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.component.*;
-import uk.ac.ebi.subs.data.status.ProcessingStatus;
+import uk.ac.ebi.subs.data.status.ProcessingStatusEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +85,7 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     }
 
     @Override
-    public void setStatus(ProcessingStatus status) {
+    public void setStatus(ProcessingStatusEnum status) {
         Assert.notNull(status);
         this.status = status.name();
     }

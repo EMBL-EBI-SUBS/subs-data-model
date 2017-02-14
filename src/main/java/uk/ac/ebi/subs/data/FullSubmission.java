@@ -22,7 +22,6 @@ public class FullSubmission extends Submission {
         this.setSubmitter(s.getSubmitter());
         this.setDomain(s.getDomain());
         this.setSubmissionDate(s.getSubmissionDate());
-        this.setStatus(s.getStatus());
     }
 
     private List<Analysis> analyses = new ArrayList<>();

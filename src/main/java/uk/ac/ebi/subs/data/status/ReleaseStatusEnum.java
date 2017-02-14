@@ -4,7 +4,7 @@ package uk.ac.ebi.subs.data.status;
 /**
  * Release status describes how visible
  */
-public enum ReleaseStatus {
+public enum ReleaseStatusEnum {
     Draft, /* exists in the USI system*/
     Private, /* exists in an archive system, but is not released yet */
     Cancelled, /* exists in an archive system, but should not be released */
