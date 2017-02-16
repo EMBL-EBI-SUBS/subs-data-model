@@ -22,6 +22,7 @@ public class StatusDescription {
     private String description;
     private Set<String> systemTransitions = new TreeSet<>();
     private Set<String> userTransitions = new TreeSet<>();
+    private boolean acceptingUpdates = false;
 
     public StatusDescription() {
     }
@@ -83,5 +84,23 @@ public class StatusDescription {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isAcceptingUpdates() {
+        return acceptingUpdates;
+    }
+
+    public StatusDescription acceptUpdates(){
+        this.acceptingUpdates = true;
+        return this;
+    }
+
+    public StatusDescription rejectUpdates(){
+        this.acceptingUpdates = false;
+        return this;
+    }
+
+    public void setAcceptingUpdates(boolean acceptingUpdates) {
+        this.acceptingUpdates = acceptingUpdates;
     }
 }
