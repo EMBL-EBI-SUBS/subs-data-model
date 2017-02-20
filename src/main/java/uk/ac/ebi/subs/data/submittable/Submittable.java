@@ -37,12 +37,6 @@ public interface Submittable extends Identifiable<String>{
 
     void setAttributes(List<Attribute> attributes);
 
-    String getStatus();
-
-    void setStatus(String status);
-
-    void setStatus(ProcessingStatusEnum status);
-
     Archive getArchive();
 
     void setArchive(Archive archive);

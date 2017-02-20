@@ -16,7 +16,7 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     private String id;
     private String accession;
     private String alias;
-    private String status;
+
     private Archive archive;
     private Domain domain;
 
@@ -72,22 +72,6 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     @Override
     public void setAlias(String alias) {
         this.alias = alias;
-    }
-
-    @Override
-    public String getStatus() {
-        return status;
-    }
-
-    @Override
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public void setStatus(ProcessingStatusEnum status) {
-        Assert.notNull(status);
-        this.status = status.name();
     }
 
     @Override
