@@ -9,6 +9,7 @@ public enum ProcessingStatusEnum {
     ActionRequired, /* curator has requested changes from user*/
     Accepted, /* archive has accepted object */
     Processing, /* archive is processing object */
-    Done /* archive has processed object */
+    Done, /* archive has processed object */
+    Error /* archive has rejected the submitted document */
     ;
 }
