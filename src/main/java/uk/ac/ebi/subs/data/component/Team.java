@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @ToString
 @EqualsAndHashCode
-public class Domain {
+public class Team {
     String name;
 
     public String getName() {

@@ -2,9 +2,7 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.util.Assert;
 import uk.ac.ebi.subs.data.component.*;
-import uk.ac.ebi.subs.data.status.ProcessingStatusEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     private String alias;
 
     private Archive archive;
-    private Domain domain;
+    private Team team;
 
     private String title;
     private String description;
@@ -28,14 +26,14 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
         AbstractSubsRef<T> subsLink = newRef();
 
         subsLink.setAccession(this.accession);
-        subsLink.setDomain(this.getDomain().getName());
+        subsLink.setTeam(this.getTeam().getName());
         subsLink.setAlias(this.alias);
 
         if (this.archive != null){
             subsLink.setArchive(this.archive.name());
         }
-        if (this.domain != null){
-            subsLink.setDomain(this.getDomain().getName());
+        if (this.team != null){
+            subsLink.setTeam(this.getTeam().getName());
         }
 
         return subsLink;
@@ -84,14 +82,12 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
         this.archive = archive;
     }
 
-    @Override
-    public Domain getDomain() {
-        return domain;
+    public Team getTeam() {
+        return team;
     }
 
-    @Override
-    public void setDomain(Domain domain) {
-        this.domain = domain;
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
     @Override
