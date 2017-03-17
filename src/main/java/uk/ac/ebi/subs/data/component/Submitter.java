@@ -17,4 +17,10 @@ public class Submitter {
         this.email = email;
     }
 
+    public static Submitter build(String email){
+        Submitter submitter = new Submitter();
+        submitter.setEmail(email);
+        return submitter;
+    }
+
 }

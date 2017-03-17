@@ -16,4 +16,10 @@ public class Team {
     public void setName(String name) {
         this.name = name;
     }
+
+    public static Team build(String name){
+        Team team = new Team();
+        team.setName(name);
+        return team;
+    }
 }
