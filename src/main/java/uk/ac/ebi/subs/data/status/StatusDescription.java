@@ -1,45 +1,51 @@
 package uk.ac.ebi.subs.data.status;
 
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import java.util.*;
 
-public class Status {
+@EqualsAndHashCode
+@ToString
+public class StatusDescription {
 
-    public static Status build(Enum status,String description){
+    public static StatusDescription build(Enum status, String description){
         return build(status.name(),description);
     }
 
-    public static Status build(String statusName,String description){
-        return new Status(statusName,description);
+    public static StatusDescription build(String statusName, String description){
+        return new StatusDescription(statusName,description);
     }
 
     private String statusName;
     private String description;
     private Set<String> systemTransitions = new TreeSet<>();
     private Set<String> userTransitions = new TreeSet<>();
+    private boolean acceptingUpdates = false;
 
-    public Status() {
+    public StatusDescription() {
     }
 
-    public Status(String statusName, String description) {
+    public StatusDescription(String statusName, String description) {
         this.statusName = statusName;
         this.description = description;
     }
 
-    public Status addUserTransition(Enum status){
+    public StatusDescription addUserTransition(Enum status){
         return addUserTransition(status.name());
     }
 
-    public Status addUserTransition(String statusName){
+    public StatusDescription addUserTransition(String statusName){
         userTransitions.add(statusName);
         return this;
     }
 
-    public Status addSystemTransition(Enum status){
+    public StatusDescription addSystemTransition(Enum status){
         return addSystemTransition(status.name());
     }
 
-    public Status addSystemTransition(String statusName){
+    public StatusDescription addSystemTransition(String statusName){
         systemTransitions.add(statusName);
         return this;
     }
@@ -80,29 +86,21 @@ public class Status {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Status status = (Status) o;
-        return Objects.equals(statusName, status.statusName) &&
-                Objects.equals(description, status.description) &&
-                Objects.equals(systemTransitions, status.systemTransitions) &&
-                Objects.equals(userTransitions, status.userTransitions);
+    public boolean isAcceptingUpdates() {
+        return acceptingUpdates;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(statusName, description, systemTransitions, userTransitions);
+    public StatusDescription acceptUpdates(){
+        this.acceptingUpdates = true;
+        return this;
     }
 
-    @Override
-    public String toString() {
-        return "Status{" +
-                "statusName='" + statusName + '\'' +
-                ", description='" + description + '\'' +
-                ", systemTransitions=" + systemTransitions +
-                ", userTransitions=" + userTransitions +
-                '}';
+    public StatusDescription rejectUpdates(){
+        this.acceptingUpdates = false;
+        return this;
+    }
+
+    public void setAcceptingUpdates(boolean acceptingUpdates) {
+        this.acceptingUpdates = acceptingUpdates;
     }
 }

@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.hateoas.Identifiable;
 import uk.ac.ebi.subs.data.component.Archive;
 import uk.ac.ebi.subs.data.component.Attribute;
-import uk.ac.ebi.subs.data.component.Domain;
-import uk.ac.ebi.subs.data.status.ProcessingStatus;
+import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.List;
 
@@ -21,9 +20,9 @@ public interface Submittable extends Identifiable<String>{
 
     void setAlias(String alias);
 
-    Domain getDomain();
+    Team getTeam();
 
-    void setDomain(Domain domain);
+    void setTeam(Team team);
 
     String getTitle();
 
@@ -36,12 +35,6 @@ public interface Submittable extends Identifiable<String>{
     List<Attribute> getAttributes();
 
     void setAttributes(List<Attribute> attributes);
-
-    String getStatus();
-
-    void setStatus(String status);
-
-    void setStatus(ProcessingStatus status);
 
     Archive getArchive();
 

@@ -20,9 +20,8 @@ public class FullSubmission extends Submission {
     public FullSubmission(Submission s) {
         this.setId(s.getId());
         this.setSubmitter(s.getSubmitter());
-        this.setDomain(s.getDomain());
+        this.setTeam(s.getTeam());
         this.setSubmissionDate(s.getSubmissionDate());
-        this.setStatus(s.getStatus());
     }
 
     private List<Analysis> analyses = new ArrayList<>();

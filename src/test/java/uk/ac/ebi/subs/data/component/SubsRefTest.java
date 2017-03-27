@@ -64,7 +64,7 @@ public class SubsRefTest {
 
         subsLink.setArchive(Archive.Usi.name());
         subsLink.setAlias("unclebob");
-        subsLink.setDomain("testDomain");
+        subsLink.setTeam("testTeam");
 
         match = null;
     };
@@ -73,8 +73,8 @@ public class SubsRefTest {
         Project p = new Project();
         p.setAlias(alias);
         p.setArchive(Archive.Usi);
-        p.setDomain(new Domain());
-        p.getDomain().setName("testDomain");
+        p.setTeam(new Team());
+        p.getTeam().setName("testTeam");
         candidates.add(p);
         return p;
     }

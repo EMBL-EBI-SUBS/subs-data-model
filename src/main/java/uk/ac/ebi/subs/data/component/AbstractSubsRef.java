@@ -20,7 +20,7 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
     private String alias;
     private String accession;
     private String archive;
-    private String domain;
+    private String team;
 
     public String getArchive() {
         return archive;
@@ -30,12 +30,12 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
         this.archive = archive;
     }
 
-    public String getDomain() {
-        return domain;
+    public String getTeam() {
+        return team;
     }
 
-    public void setDomain(String domain) {
-        this.domain = domain;
+    public void setTeam(String team) {
+        this.team = team;
     }
 
     public String getAlias() {
@@ -99,7 +99,7 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
      *
      * <ul>
      *     <li>ref has an accession, and the object has the same accession</li>
-     *     <li>ref has a domain and an alias, and the object has the same alias and domain</li>
+     *     <li>ref has a team and an alias, and the object has the same alias and team</li>
      * </ul>
      * @param submittable
      * @return
@@ -120,7 +120,7 @@ public abstract  class AbstractSubsRef<T extends Submittable> {
                                     (
                                             submittable.getAlias().equals(this.getAlias()) &&
                                                     this.getArchive().equals(submittable.getArchive().name()) &&
-                                                    this.getDomain().equals(submittable.getDomain().getName())
+                                                    this.getTeam().equals(submittable.getTeam().getName())
                                     )
                             );
         }

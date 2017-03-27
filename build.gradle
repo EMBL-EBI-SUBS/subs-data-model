@@ -1,6 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "uk.ac.ebi.subs.DataApplication"
 
 dependencies {
     compileOnly("org.projectlombok:lombok:1.16.12")
@@ -9,3 +7,5 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile project(':subs-test-categories')
 }
+
+bootRepackage.enabled = false
