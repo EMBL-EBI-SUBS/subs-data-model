@@ -8,7 +8,7 @@ import java.util.List;
 
 @ToString
 @EqualsAndHashCode
-public class Attribute {
+public class Attribute implements Comparable<Attribute> {
     String name;
     String value;
     String units;
@@ -44,5 +44,14 @@ public class Attribute {
 
     public void setTerms(List<Term> terms) {
         this.terms = terms;
+    }
+
+    @Override
+    public int compareTo(Attribute o) {
+        if (o.getName() != getName()) {
+            return getValue().compareTo(o.getValue());
+        } else {
+            return getName().compareTo(o.getName());
+        }
     }
 }
