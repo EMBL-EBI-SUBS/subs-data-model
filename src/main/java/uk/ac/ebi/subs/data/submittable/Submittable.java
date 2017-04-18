@@ -9,7 +9,6 @@ import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.List;
 
-@EqualsAndHashCode(exclude = {"id"})
 public interface Submittable extends Identifiable<String>{
 
     void setId(String id);
