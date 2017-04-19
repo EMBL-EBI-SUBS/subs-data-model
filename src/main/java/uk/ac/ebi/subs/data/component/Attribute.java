@@ -49,9 +49,9 @@ public class Attribute implements Comparable<Attribute> {
     @Override
     public int compareTo(Attribute o) {
         if (o.getName() != getName()) {
-            return getValue().compareTo(o.getValue());
+            return o.getValue().compareTo(getValue());
         } else {
-            return getName().compareTo(o.getName());
+            return o.getName().compareTo(getName());
         }
     }
 }
