@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ToString
-@EqualsAndHashCode (exclude = {"id"})
+@EqualsAndHashCode
 public abstract class BaseSubmittable<T extends BaseSubmittable> implements Submittable, Attributes {
 
     private String id;
@@ -112,6 +112,7 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
 
     @Override
     public List<Attribute> getAttributes() {
+
         return attributes;
     }
 
