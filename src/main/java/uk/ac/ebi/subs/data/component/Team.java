@@ -20,4 +20,9 @@ public class Team {
         this.name = name;
     }
 
+    public static Team build(String name){
+        Team team = new Team();
+        team.setName(name);
+        return team;
+    }
 }
