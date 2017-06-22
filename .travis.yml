@@ -1,22 +1,21 @@
 sudo: false
-
 language: java
-
 jdk:
-  - oraclejdk8
-
-install: ./gradlew assemble
-
+- oraclejdk8
+install: "./gradlew assemble"
 before_script:
-  - sleep 15
-
+- sleep 15
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
   apt: true
   directories:
-    - $HOME/.m2
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+  - "$HOME/.m2"
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+before_install:
+- openssl aes-256-cbc -K $encrypted_f22204d2151b_key -iv $encrypted_f22204d2151b_iv
+  -in gradle.properties.enc -out gradle.properties -d
+after_success:
+  - test $TRAVIS_BRANCH = "master" && ./gradlew uploadArchives
