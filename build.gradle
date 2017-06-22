@@ -50,6 +50,20 @@ artifacts {
     archives sourceJar
 }
 
+task('externalCiTest', type: Test) {
+    useJUnit {
+        excludeCategories 'uk.ac.ebi.subs.RabbitMQDependentTest', 'uk.ac.ebi.subs.BioSamplesDependentTest'
+    }
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
+configure(externalCiTest) {
+    group = "verification"
+    description = 'Run tests appropriate for our external CI environment'
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
