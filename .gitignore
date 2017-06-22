@@ -1,0 +1,11 @@
+.idea
+.idea/*
+*.iml
+build
+.gradle
+.gradle/*
+.DS_Store
+classes
+gradle.properties
+*/application.pid
+**/application.pid
