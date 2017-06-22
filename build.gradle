@@ -50,18 +50,6 @@ artifacts {
     archives sourceJar
 }
 
-task('externalCiTest', type: Test) {
-    useJUnit
-    testLogging {
-        exceptionFormat = 'full'
-    }
-}
-
-configure(externalCiTest) {
-    group = "verification"
-    description = 'Run tests appropriate for our external CI environment'
-}
-
 uploadArchives {
     repositories {
         mavenDeployer {

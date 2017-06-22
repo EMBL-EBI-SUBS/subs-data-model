@@ -10,8 +10,6 @@ install: ./gradlew assemble
 before_script:
   - sleep 15
 
-script: ./gradlew externalCiTest
-
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
