@@ -51,9 +51,7 @@ artifacts {
 }
 
 task('externalCiTest', type: Test) {
-    useJUnit {
-        excludeCategories 'uk.ac.ebi.subs.RabbitMQDependentTest', 'uk.ac.ebi.subs.BioSamplesDependentTest'
-    }
+    useJUnit
     testLogging {
         exceptionFormat = 'full'
     }
