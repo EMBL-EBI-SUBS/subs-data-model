@@ -9,7 +9,7 @@ buildscript {
     }
 }
 
-version '1.0.1-SNAPSHOT'
+version '1.0.3-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -37,17 +37,13 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compile("org.springframework.boot:spring-boot-starter-data-rest")
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("uk.ac.ebi.subs:subs-test-categories:1.0.0-SNAPSHOT")
 }
 
 task sourceJar(type: Jar) { from sourceSets.main.allJava }
 
-task bootJar(type: BootRepackage) {
-}
-
 artifacts {
     archives jar
-    archives sourceJar
+    archives sourceJar { classifier "sources" }
 }
 
 uploadArchives {
