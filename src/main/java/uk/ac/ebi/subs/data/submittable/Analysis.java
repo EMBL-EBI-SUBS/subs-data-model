@@ -17,7 +17,6 @@ public class Analysis extends BaseSubmittable<Analysis> implements Files {
     private List<SampleRef> sampleRefs = new ArrayList<>();
     private List<AssayRef> assayRefs = new ArrayList<>();
 
-    private List<uk.ac.ebi.subs.data.submittable.Analysis> embeddedEntities  =  new ArrayList<>();
     private List<File> files = new ArrayList<File>();
 
     @Override
@@ -63,14 +62,6 @@ public class Analysis extends BaseSubmittable<Analysis> implements Files {
 
     public void setAssayRefs(List<AssayRef> assayRefs) {
         this.assayRefs = assayRefs;
-    }
-
-    public List<uk.ac.ebi.subs.data.submittable.Analysis> getEmbeddedEntities() {
-        return embeddedEntities;
-    }
-
-    public void setEmbeddedEntities(List<uk.ac.ebi.subs.data.submittable.Analysis> embeddedEntities) {
-        this.embeddedEntities = embeddedEntities;
     }
 
     @Override
