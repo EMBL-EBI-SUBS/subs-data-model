@@ -29,9 +29,6 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
         subsLink.setTeam(this.getTeam().getName());
         subsLink.setAlias(this.alias);
 
-        if (this.archive != null){
-            subsLink.setArchive(this.archive.name());
-        }
         if (this.team != null){
             subsLink.setTeam(this.getTeam().getName());
         }
@@ -72,16 +69,6 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
         this.alias = alias;
     }
 
-    @Override
-    public Archive getArchive() {
-        return archive;
-    }
-
-    @Override
-    public void setArchive(Archive archive) {
-        this.archive = archive;
-    }
-
     public Team getTeam() {
         return team;
     }
@@ -112,7 +99,6 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
 
     @Override
     public List<Attribute> getAttributes() {
-
         return attributes;
     }
 

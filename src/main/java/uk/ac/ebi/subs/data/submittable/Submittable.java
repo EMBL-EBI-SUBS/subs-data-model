@@ -37,10 +37,6 @@ public interface Submittable extends Identifiable<String>{
 
     void setAttributes(List<Attribute> attributes);
 
-    Archive getArchive();
-
-    void setArchive(Archive archive);
-
     @JsonIgnore
     default boolean isAccessioned(){
         return (this.getAccession() != null && !this.getAccession().isEmpty());
