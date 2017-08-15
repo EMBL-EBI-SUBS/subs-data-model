@@ -62,7 +62,6 @@ public class SubsRefTest {
         subsLink = new ProjectRef();
         candidates = new LinkedList<>();
 
-        subsLink.setArchive(Archive.Usi.name());
         subsLink.setAlias("unclebob");
         subsLink.setTeam("testTeam");
 
@@ -72,7 +71,7 @@ public class SubsRefTest {
     private Project addCandidate(String alias){
         Project p = new Project();
         p.setAlias(alias);
-        p.setArchive(Archive.Usi);
+
         p.setTeam(new Team());
         p.getTeam().setName("testTeam");
         candidates.add(p);
