@@ -17,7 +17,7 @@ public class Study extends BaseSubmittable<Study> implements Submittable, Public
 
     private List<ProtocolRef> protocolRefs = new ArrayList<>();
     private ProjectRef projectRef = new ProjectRef();
-    private StudyDataTypeEnum studyType;
+    private StudyDataType studyType;
 
     private Date releaseDate;
 
@@ -70,11 +70,11 @@ public class Study extends BaseSubmittable<Study> implements Submittable, Public
         this.releaseDate = releaseDate;
     }
 
-    public StudyDataTypeEnum getStudyType() {
+    public StudyDataType getStudyType() {
         return studyType;
     }
 
-    public void setStudyType(StudyDataTypeEnum studyType) {
+    public void setStudyType(StudyDataType studyType) {
         this.studyType = studyType;
     }
 }

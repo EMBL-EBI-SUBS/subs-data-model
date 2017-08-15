@@ -1,11 +1,10 @@
 package uk.ac.ebi.subs.data.component;
 
-public enum StudyDataTypeEnum {
+public enum StudyDataType {
 
     Sequencing,
     FunctionalGenomics,
-    Metabolomics;
-
-
+    Metabolomics,
+    Proteomics;
 
 }
