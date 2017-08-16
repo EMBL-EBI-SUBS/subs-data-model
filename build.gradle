@@ -1,3 +1,6 @@
+group 'uk.ac.ebi.subs'
+version '0.1.0-SNAPSHOT'
+
 buildscript {
     repositories {
         mavenCentral()
@@ -9,8 +12,6 @@ buildscript {
     }
 }
 
-version '1.0.5-SNAPSHOT'
-
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
@@ -18,8 +19,6 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'maven-publish'
 apply plugin: 'org.hidetake.ssh'
-
-group 'uk.ac.ebi.subs'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -65,11 +64,10 @@ uploadArchives {
 
             pom.project {
                 packaging 'jar'
-                // optionally artifactId can be defined here
-                url 'https://github.com/EMBL-EBI-SUBS'
+                url 'https://github.com/EMBL-EBI-SUBS/subs-data-model'
 
                 scm {
-                    url 'https://github.com/EMBL-EBI-SUBS'
+                    url 'https://github.com/EMBL-EBI-SUBS/subs-data-model.git'
                 }
 
                 licenses {
@@ -81,9 +79,9 @@ uploadArchives {
 
                 developers {
                     developer {
-                        id 'neilg'
-                        name 'Neil Goodgame'
-                        email 'neilg@ebi.ac.uk'
+                        id 'subs-internal'
+                        name 'EMBL-EBI-SUBS'
+                        email 'subs-internal@ebi.ac.uk'
                     }
                 }
             }
