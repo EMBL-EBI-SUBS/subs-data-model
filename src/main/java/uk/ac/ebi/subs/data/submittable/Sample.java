@@ -5,6 +5,7 @@ import lombok.ToString;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Sample extends BaseSubmittable<Sample> {
     private List<SampleRelationship> sampleRelationships = new ArrayList<SampleRelationship>();
     private Long taxonId;
     private String taxon;
+    private LocalDate releaseDate;
 
     @Override
     protected SampleRef newRef() {
@@ -43,5 +45,13 @@ public class Sample extends BaseSubmittable<Sample> {
 
     public void setTaxon(String taxon) {
         this.taxon = taxon;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }
