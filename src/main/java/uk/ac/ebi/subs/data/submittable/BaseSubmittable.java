@@ -2,7 +2,10 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import uk.ac.ebi.subs.data.component.*;
+import uk.ac.ebi.subs.data.component.AbstractSubsRef;
+import uk.ac.ebi.subs.data.component.Attribute;
+import uk.ac.ebi.subs.data.component.Attributes;
+import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +18,6 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     private String accession;
     private String alias;
 
-    private Archive archive;
     private Team team;
 
     private String title;
