@@ -6,8 +6,8 @@ import lombok.ToString;
 import uk.ac.ebi.subs.data.component.SampleGroupRef;
 import uk.ac.ebi.subs.data.component.SampleRef;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @ToString(callSuper = true)
@@ -15,7 +15,7 @@ import java.util.List;
 public class SampleGroup extends BaseSubmittable<SampleGroup> {
 
     private List<SampleRef> sampleRefs = new ArrayList<>();
-    private Date releaseDate;
+    private LocalDate releaseDate;
 
     @Override
     protected SampleGroupRef newRef() {
@@ -30,11 +30,11 @@ public class SampleGroup extends BaseSubmittable<SampleGroup> {
         this.sampleRefs = sampleRefs;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 }
