@@ -4,8 +4,8 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import uk.ac.ebi.subs.data.component.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @ToString(callSuper = true)
@@ -19,7 +19,7 @@ public class Study extends BaseSubmittable<Study> implements Submittable, Public
     private ProjectRef projectRef = new ProjectRef();
     private StudyDataType studyType;
 
-    private Date releaseDate;
+    private LocalDate releaseDate;
 
     @Override
     protected StudyRef newRef() {
@@ -62,11 +62,11 @@ public class Study extends BaseSubmittable<Study> implements Submittable, Public
         this.projectRef = projectRef;
     }
 
-    public Date getReleaseDate() {
+    public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 
