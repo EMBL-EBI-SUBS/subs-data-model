@@ -2,7 +2,6 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.Id;
 import uk.ac.ebi.subs.data.component.Submitter;
 import uk.ac.ebi.subs.data.component.Team;
 
@@ -21,12 +20,11 @@ public class Submission {
         this.team = s.team;
     }
 
-    @Id
     private String id;
     private Submitter submitter = new Submitter();
     private Team team = new Team();
     private Date submissionDate;
-    
+
     public String getId() {
         return id;
     }

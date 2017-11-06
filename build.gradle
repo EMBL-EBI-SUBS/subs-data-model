@@ -33,7 +33,6 @@ repositories {
 
 dependencies {
     compileOnly("org.projectlombok:lombok:1.16.12")
-    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
     compile("com.fasterxml.jackson.core:jackson-databind")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
