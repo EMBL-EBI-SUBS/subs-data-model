@@ -10,40 +10,16 @@ import java.util.List;
 
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Study extends BaseSubmittable<Study> implements Submittable, Publications, Contacts {
+public class Study extends BaseSubmittable<Study> implements Submittable {
 
-    private List<Publication> publications = new ArrayList<>();
-    private List<Contact> contacts = new ArrayList<>();
 
     private List<ProtocolRef> protocolRefs = new ArrayList<>();
     private ProjectRef projectRef = new ProjectRef();
     private StudyDataType studyType;
 
-    private LocalDate releaseDate;
-
     @Override
     protected StudyRef newRef() {
         return new StudyRef();
-    }
-
-    @Override
-    public List<Publication> getPublications() {
-        return publications;
-    }
-
-    @Override
-    public void setPublications(List<Publication> publications) {
-        this.publications = publications;
-    }
-
-    @Override
-    public List<Contact> getContacts() {
-        return contacts;
-    }
-
-    @Override
-    public void setContacts(List<Contact> contacts) {
-        this.contacts = contacts;
     }
 
     public List<ProtocolRef> getProtocolRefs() {
@@ -60,14 +36,6 @@ public class Study extends BaseSubmittable<Study> implements Submittable, Public
 
     public void setProjectRef(ProjectRef projectRef) {
         this.projectRef = projectRef;
-    }
-
-    public LocalDate getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(LocalDate releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public StudyDataType getStudyType() {
