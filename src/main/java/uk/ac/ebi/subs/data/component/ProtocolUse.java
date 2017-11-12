@@ -5,7 +5,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Records the use of a specific protocol, with the option to record attributes about the use of that protocol
@@ -14,7 +16,7 @@ import java.util.List;
 @EqualsAndHashCode
 public class ProtocolUse implements Attributes {
     ProtocolRef protocolRef = new ProtocolRef();
-    List<Attribute> attributes = new ArrayList<>();
+    Map<String,List<Attribute>> attributes = new LinkedHashMap<>();
 
     public ProtocolRef getProtocolRef() {
         return protocolRef;
@@ -24,13 +26,14 @@ public class ProtocolUse implements Attributes {
         this.protocolRef = protocolRef;
     }
 
+
     @Override
-    public List<Attribute> getAttributes() {
+    public Map<String, List<Attribute>> getAttributes() {
         return attributes;
     }
 
     @Override
-    public void setAttributes(List<Attribute> attributes) {
+    public void setAttributes(Map<String, List<Attribute>> attributes) {
         this.attributes = attributes;
     }
 }

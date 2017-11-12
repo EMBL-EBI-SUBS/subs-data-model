@@ -4,7 +4,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Records the use of a sample
@@ -22,7 +24,7 @@ public class SampleUse implements Attributes {
     }
 
     SampleRef sampleRef = new SampleRef();
-    List<Attribute> attributes = new ArrayList<>();
+    Map<String,List<Attribute>> attributes = new LinkedHashMap<>();
 
     public SampleRef getSampleRef() {
         return sampleRef;
@@ -33,12 +35,12 @@ public class SampleUse implements Attributes {
     }
 
     @Override
-    public List<Attribute> getAttributes() {
+    public Map<String, List<Attribute>> getAttributes() {
         return attributes;
     }
 
     @Override
-    public void setAttributes(List<Attribute> attributes) {
+    public void setAttributes(Map<String, List<Attribute>> attributes) {
         this.attributes = attributes;
     }
 }

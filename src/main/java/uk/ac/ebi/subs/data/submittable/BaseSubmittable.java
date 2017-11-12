@@ -8,7 +8,9 @@ import uk.ac.ebi.subs.data.component.Attributes;
 import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @ToString
 @EqualsAndHashCode
@@ -22,7 +24,7 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
 
     private String title;
     private String description;
-    private List<Attribute> attributes = new ArrayList<>();
+    private Map<String,List<Attribute>> attributes = new LinkedHashMap<>();
 
     public AbstractSubsRef<T> asRef(){
         AbstractSubsRef<T> subsLink = newRef();
@@ -100,12 +102,14 @@ public abstract class BaseSubmittable<T extends BaseSubmittable> implements Subm
     }
 
     @Override
-    public List<Attribute> getAttributes() {
-        return attributes;
+    public void setAttributes(Map<String, List<Attribute>> attributes) {
+        this.attributes = attributes;
     }
 
     @Override
-    public void setAttributes(List<Attribute> attributes) {
-        this.attributes = attributes;
+    public Map<String, List<Attribute>> getAttributes() {
+        return attributes;
     }
+
+
 }

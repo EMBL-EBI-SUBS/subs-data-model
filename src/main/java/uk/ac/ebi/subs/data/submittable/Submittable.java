@@ -2,11 +2,12 @@ package uk.ac.ebi.subs.data.submittable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import uk.ac.ebi.subs.data.component.Attribute;
+import uk.ac.ebi.subs.data.component.Attributes;
 import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.List;
 
-public interface Submittable {
+public interface Submittable extends Attributes{
 
     String getId();
 
@@ -31,10 +32,6 @@ public interface Submittable {
     String getDescription();
 
     void setDescription(String description);
-
-    List<Attribute> getAttributes();
-
-    void setAttributes(List<Attribute> attributes);
 
     @JsonIgnore
     default boolean isAccessioned(){

@@ -14,14 +14,6 @@ public class Attribute implements Comparable<Attribute> {
     String units;
     List<Term> terms = new ArrayList<>();
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getValue() {
         return value;
     }
@@ -48,10 +40,7 @@ public class Attribute implements Comparable<Attribute> {
 
     @Override
     public int compareTo(Attribute o) {
-        if (o.getName() != getName()) {
-            return o.getValue().compareTo(getValue());
-        } else {
-            return o.getName().compareTo(getName());
-        }
+        return o.getValue().compareTo(getValue());
     }
+
 }
