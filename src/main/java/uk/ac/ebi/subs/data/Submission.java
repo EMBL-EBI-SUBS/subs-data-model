@@ -2,16 +2,14 @@ package uk.ac.ebi.subs.data;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.springframework.data.annotation.*;
-import org.springframework.hateoas.Identifiable;
-import uk.ac.ebi.subs.data.component.Team;
 import uk.ac.ebi.subs.data.component.Submitter;
+import uk.ac.ebi.subs.data.component.Team;
 
 import java.util.Date;
 
 @ToString
 @EqualsAndHashCode
-public class Submission implements Identifiable<String> {
+public class Submission {
 
     public Submission() {
     }
@@ -22,13 +20,11 @@ public class Submission implements Identifiable<String> {
         this.team = s.team;
     }
 
-    @Id
     private String id;
     private Submitter submitter = new Submitter();
     private Team team = new Team();
     private Date submissionDate;
 
-    @Override
     public String getId() {
         return id;
     }
