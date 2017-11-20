@@ -1,29 +1,19 @@
 package uk.ac.ebi.subs.data.component;
 
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.Data;
 
-@ToString
-@EqualsAndHashCode
+@Data
 public class Publication {
-    String pubmedId;
-    String doi;
-
-    public String getPubmedId() {
-        return pubmedId;
-    }
-
-    public void setPubmedId(String pubmedId) {
-        this.pubmedId = pubmedId;
-    }
-
-    public String getDoi() {
-        return doi;
-    }
-
-    public void setDoi(String doi) {
-        this.doi = doi;
-    }
+    private String pubmedId;
+    private String doi;
+    private String articleTitle;
+    private String journalTitle;
+    private String authors;
+    private String journalIssn;
+    private String issue;
+    private String year;
+    private String volume;
+    private String pageInfo;
 
 }
