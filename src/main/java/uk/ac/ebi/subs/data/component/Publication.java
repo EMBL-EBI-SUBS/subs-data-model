@@ -15,5 +15,5 @@ public class Publication {
     private String year;
     private String volume;
     private String pageInfo;
-
+    private PublicationStatus status;
 }
