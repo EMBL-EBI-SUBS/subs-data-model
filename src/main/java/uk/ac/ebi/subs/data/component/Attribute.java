@@ -6,13 +6,13 @@ import lombok.ToString;
 import java.util.ArrayList;
 import java.util.List;
 
-@ToString
 @EqualsAndHashCode
+@ToString
 public class Attribute implements Comparable<Attribute> {
-    String name;
-    String value;
-    String units;
-    List<Term> terms = new ArrayList<>();
+
+    private String value;
+    private String units;
+    private List<Term> terms = new ArrayList<>();
 
     public String getValue() {
         return value;
