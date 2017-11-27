@@ -1,16 +1,15 @@
 package uk.ac.ebi.subs.data.component;
 
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Records the use of a sample
  */
-@ToString
-@EqualsAndHashCode
+@Data
 public class SampleUse implements Attributes {
 
     public SampleUse() {
@@ -21,8 +20,8 @@ public class SampleUse implements Attributes {
         this.sampleRef = sampleRef;
     }
 
-    SampleRef sampleRef = new SampleRef();
-    List<Attribute> attributes = new ArrayList<>();
+    private SampleRef sampleRef = new SampleRef();
+    private Map<String, Collection<Attribute>> attributes = new LinkedHashMap<>();
 
     public SampleRef getSampleRef() {
         return sampleRef;
@@ -33,12 +32,12 @@ public class SampleUse implements Attributes {
     }
 
     @Override
-    public List<Attribute> getAttributes() {
+    public Map<String, Collection<Attribute>> getAttributes() {
         return attributes;
     }
 
     @Override
-    public void setAttributes(List<Attribute> attributes) {
+    public void setAttributes(Map<String, Collection<Attribute>> attributes) {
         this.attributes = attributes;
     }
 }
