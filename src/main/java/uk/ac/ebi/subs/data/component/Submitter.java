@@ -7,7 +7,8 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class Submitter {
-    String email;
+    private String email;
+    private String name;
 
     public String getEmail() {
         return email;
