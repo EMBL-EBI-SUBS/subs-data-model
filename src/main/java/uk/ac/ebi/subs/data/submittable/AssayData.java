@@ -12,29 +12,12 @@ import java.util.List;
 
 public class AssayData extends BaseSubmittable<AssayData> implements Files  {
 
-    private AssayRef assayRef = new AssayRef();
-    private SampleRef sampleRef = new SampleRef();
+    private List<AssayRef> assayRefs;
     private List<File> files = new ArrayList<File>();
 
     @Override
     protected AssayDataRef newRef() {
         return new AssayDataRef();
-    }
-
-    public AssayRef getAssayRef() {
-        return assayRef;
-    }
-
-    public void setAssayRef(AssayRef assayRef) {
-        this.assayRef = assayRef;
-    }
-
-    public SampleRef getSampleRef() {
-        return sampleRef;
-    }
-
-    public void setSampleRef(SampleRef sampleRef) {
-        this.sampleRef = sampleRef;
     }
 
     @Override
@@ -45,6 +28,14 @@ public class AssayData extends BaseSubmittable<AssayData> implements Files  {
     @Override
     public void setFiles(List<File> files) {
         this.files = files;
+    }
+
+    public List<AssayRef> getAssayRefs() {
+        return assayRefs;
+    }
+
+    public void setAssayRefs(List<AssayRef> assayRefs) {
+        this.assayRefs = assayRefs;
     }
 }
 

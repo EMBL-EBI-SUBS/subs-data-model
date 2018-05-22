@@ -5,7 +5,11 @@ import lombok.ToString;
 import uk.ac.ebi.subs.data.component.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
@@ -16,6 +20,8 @@ public class Analysis extends BaseSubmittable<Analysis> implements Files {
     private List<StudyRef> studyRefs = new ArrayList<>();
     private List<SampleRef> sampleRefs = new ArrayList<>();
     private List<AssayRef> assayRefs = new ArrayList<>();
+
+    private List<ProtocolUse> protocolUses = new ArrayList<>();
 
     private List<File> files = new ArrayList<File>();
 
@@ -73,4 +79,14 @@ public class Analysis extends BaseSubmittable<Analysis> implements Files {
     public void setFiles(List<File> files) {
         this.files = files;
     }
+
+    public List<ProtocolUse> getProtocolUses() {
+        return protocolUses;
+    }
+
+    public void setProtocolUses(List<ProtocolUse> protocolUses) {
+        this.protocolUses = protocolUses;
+    }
+
+
 }
