@@ -4,7 +4,7 @@ public enum StudyDataType {
 
     Sequencing,
     FunctionalGenomics,
-    Metabolomics,
+    Metabolomics_MS,
+    Metabolomics_NMR,
     Proteomics;
-
 }
