@@ -15,7 +15,6 @@ import java.util.stream.Stream;
 @EqualsAndHashCode(callSuper = true)
 public class Analysis extends BaseSubmittable<Analysis> implements Files {
 
-    private String analysisType;
     private List<AnalysisRef> analysisRefs = new ArrayList<>();
     private List<AssayDataRef> assayDataRefs = new ArrayList<>();
     private List<StudyRef> studyRefs = new ArrayList<>();
@@ -88,11 +87,4 @@ public class Analysis extends BaseSubmittable<Analysis> implements Files {
         this.protocolUses = protocolUses;
     }
 
-    public String getAnalysisType() {
-        return analysisType;
-    }
-
-    public void setAnalysisType(String analysisType) {
-        this.analysisType = analysisType;
-    }
 }

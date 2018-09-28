@@ -15,7 +15,6 @@ public class Study extends BaseSubmittable<Study> implements Submittable {
 
     private List<ProtocolRef> protocolRefs = new ArrayList<>();
     private ProjectRef projectRef = new ProjectRef();
-    private StudyDataType studyType;
 
     @Override
     protected StudyRef newRef() {
@@ -38,11 +37,4 @@ public class Study extends BaseSubmittable<Study> implements Submittable {
         this.projectRef = projectRef;
     }
 
-    public StudyDataType getStudyType() {
-        return studyType;
-    }
-
-    public void setStudyType(StudyDataType studyType) {
-        this.studyType = studyType;
-    }
 }
