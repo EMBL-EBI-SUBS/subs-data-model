@@ -1,5 +1,6 @@
 package uk.ac.ebi.subs.data.submittable;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import uk.ac.ebi.subs.data.component.*;
@@ -10,16 +11,12 @@ import java.util.List;
 
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class Project extends BaseSubmittable<Project> implements Contacts, Publications {
+public class Project extends BaseSubmittable<Project> implements Contacts, Publications, Fundings {
 
-    private List<Contact> contacts = new ArrayList<Contact>();
-    private List<Publication> publications = new ArrayList<Publication>();
+    private List<Contact> contacts = new ArrayList<>();
+    private List<Publication> publications = new ArrayList<>();
+    private List<Funding> fundings = new ArrayList<>();
     private LocalDate releaseDate;
-
-    @Override
-    protected ProjectRef newRef() {
-        return new ProjectRef();
-    }
 
     @Override
     public List<Contact> getContacts() {
@@ -41,11 +38,26 @@ public class Project extends BaseSubmittable<Project> implements Contacts, Publi
         this.publications = publications;
     }
 
+    @Override
+    public List<Funding> getFundings() {
+        return fundings;
+    }
+
+    @Override
+    public void setFundings(List<Funding> fundings) {
+        this.fundings = fundings;
+    }
+
     public LocalDate getReleaseDate() {
         return releaseDate;
     }
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    @Override
+    protected ProjectRef newRef() {
+        return new ProjectRef();
     }
 }
