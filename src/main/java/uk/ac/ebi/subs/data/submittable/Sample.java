@@ -2,6 +2,7 @@ package uk.ac.ebi.subs.data.submittable;
 
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import uk.ac.ebi.subs.data.component.SampleExternalReference;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;
 
@@ -17,6 +18,7 @@ public class Sample extends BaseSubmittable<Sample> {
     private Long taxonId;
     private String taxon;
     private LocalDate releaseDate;
+    private List<SampleExternalReference> externalReference;
 
     @Override
     protected SampleRef newRef() {
@@ -53,5 +55,13 @@ public class Sample extends BaseSubmittable<Sample> {
 
     public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<SampleExternalReference> getSampleExternalReference() {
+        return externalReference;
+    }
+
+    public void setSampleExternalReference(SampleExternalReference externalRefrence) {
+        this.externalReference = externalReference;
     }
 }
