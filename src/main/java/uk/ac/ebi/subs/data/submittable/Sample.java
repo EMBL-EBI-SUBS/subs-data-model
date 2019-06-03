@@ -18,7 +18,7 @@ public class Sample extends BaseSubmittable<Sample> {
     private Long taxonId;
     private String taxon;
     private LocalDate releaseDate;
-    private List<SampleExternalReference> externalReference;
+    private List<SampleExternalReference> externalReferences;
 
     @Override
     protected SampleRef newRef() {
@@ -57,11 +57,15 @@ public class Sample extends BaseSubmittable<Sample> {
         this.releaseDate = releaseDate;
     }
 
-    public List<SampleExternalReference> getSampleExternalReference() {
-        return externalReference;
+    public List<SampleExternalReference> getSampleExternalReferences() {
+        return externalReferences;
     }
 
-    public void setSampleExternalReference(SampleExternalReference externalRefrence) {
-        this.externalReference = externalReference;
+    public void setSampleExternalReferences(List<SampleExternalReference> externalReferences) {
+        this.externalReferences = externalReferences;
+    }
+
+    public void addSampleExternalReference(SampleExternalReference externalReference) {
+        externalReferences.add(externalReference);
     }
 }
