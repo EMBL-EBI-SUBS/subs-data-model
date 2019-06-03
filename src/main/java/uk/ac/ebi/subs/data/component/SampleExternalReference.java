@@ -4,9 +4,9 @@ package uk.ac.ebi.subs.data.component;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class SampleExternalReference extends SampleRef {
+@ToString
+@EqualsAndHashCode
+public class SampleExternalReference {
     private String url;
 
     public String getUrl() {
