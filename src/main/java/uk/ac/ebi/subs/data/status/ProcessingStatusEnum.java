@@ -11,6 +11,7 @@ public enum ProcessingStatusEnum {
     Processing, /* archive is processing object */
     Completed, /* archive has processed object */
     Rejected, /* archive has rejected the data because is unsuitable*/
-    Error /* archive has rejected the submitted document because it should not have been acceptted by the validation system*/
+    Error, /* archive has rejected the submitted document because it should not have been acceptted by the validation system*/
+    ArchiveDisabled /* archive has benn turned off to dispatch submittables to them */
     ;
 }
