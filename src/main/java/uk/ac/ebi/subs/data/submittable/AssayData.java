@@ -13,7 +13,8 @@ import java.util.List;
 public class AssayData extends BaseSubmittable<AssayData> implements Files  {
 
     private List<AssayRef> assayRefs;
-    private List<File> files = new ArrayList<File>();
+    private List<File> files = new ArrayList<>();
+    private List<ProtocolUse> protocolUses = new ArrayList<>();
 
     @Override
     protected AssayDataRef newRef() {
@@ -36,6 +37,14 @@ public class AssayData extends BaseSubmittable<AssayData> implements Files  {
 
     public void setAssayRefs(List<AssayRef> assayRefs) {
         this.assayRefs = assayRefs;
+    }
+
+    public List<ProtocolUse> getProtocolUses() {
+        return protocolUses;
+    }
+
+    public void setProtocolUses(List<ProtocolUse> protocolUses) {
+        this.protocolUses = protocolUses;
     }
 }
 
