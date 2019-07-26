@@ -5,5 +5,6 @@ public enum SubmissionStatusEnum {
     Draft,
     Submitted,
     Processing,
-    Completed;
+    Completed,
+    Failed;
 }
