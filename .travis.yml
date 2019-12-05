@@ -1,7 +1,7 @@
 language: java
 jdk:
 - openjdk11
-install: "./gradlew assemble"
+install: "./gradlew assemble publish"
 before_script:
 - sleep 15
 before_cache:
