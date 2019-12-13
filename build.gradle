@@ -3,24 +3,20 @@ buildscript {
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.1.RELEASE")
-    }
 }
 
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.2.1.RELEASE'
     id 'maven-publish'
 }
 
-apply plugin: 'io.spring.dependency-management'
-
 group 'uk.ac.ebi.subs'
-version '2.14.0-SNAPSHOT'
+version '2.14.1-SNAPSHOT'
 
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 
 repositories {
     mavenCentral()
@@ -29,17 +25,16 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
 
-
 dependencies {
-    implementation("com.fasterxml.jackson.core:jackson-databind")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.10.0")
 
     compileOnly("org.projectlombok:lombok:1.18.10")
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.2.1.RELEASE")
 }
 
-task fatJar(type: Jar) {
+task jarWithAddedManifest(type: Jar) {
     manifest {
         attributes(
                 'Implementation-Title': project.name,
@@ -48,29 +43,18 @@ task fatJar(type: Jar) {
                 'Built-Date': new Date(),
                 'Source-Compatibility': project.sourceCompatibility)
     }
-    from {
-        configurations.compile.collect {
-            it.isDirectory() ? it : zipTree(it)
-        }
-    }
     with jar
 }
 
 task sourceJar(type: Jar) {
+    archiveClassifier.set("sources")
     from sourceSets.main.allSource
-    archiveClassifier = 'sources'
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             artifactId = 'subs-data-model'
-
-            artifact(sourceJar) {
-                classifier 'sources'
-            }
-
-            artifact fatJar
 
             pom {
                 name = 'subs-data-model'
@@ -95,6 +79,8 @@ publishing {
                     url = 'https://github.com/EMBL-EBI-SUBS/subs-data-model.git'
                 }
             }
+
+            from components.java
         }
     }
     repositories {
@@ -108,8 +94,4 @@ publishing {
             }
         }
     }
-}
-
-bootJar {
-    enabled = false
 }
