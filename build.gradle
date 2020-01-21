@@ -9,12 +9,7 @@ buildscript {
 }
 
 plugins {
-    id 'java-library'
-    id 'com.sourcemuse.mongo' version '1.0.0'
-    id 'org.hidetake.ssh' version "2.10.1"
-    id 'org.springframework.boot' version '1.5.21.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'application'
+    id 'java'
     id 'maven-publish'
 }
 
@@ -34,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    compile("com.fasterxml.jackson.core:jackson-databind")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.10.0")
 
     compileOnly("org.projectlombok:lombok:1.18.10")
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
@@ -42,11 +37,21 @@ dependencies {
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
-task sourceJar(type: Jar) { from sourceSets.main.allJava }
+task jarWithAddedManifest(type: Jar) {
+    manifest {
+        attributes(
+                'Implementation-Title': project.name,
+                'Implementation-Version': project.version,
+                'Built-By': System.getProperty('user.name'),
+                'Built-Date': new Date(),
+                'Source-Compatibility': project.sourceCompatibility)
+    }
+    with jar
+}
 
-artifacts {
-    archives jar
-    archives sourceJar { classifier "sources" }
+task sourceJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.allSource
 }
 
 publishing {
