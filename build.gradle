@@ -100,5 +100,3 @@ publishing {
         }
     }
 }
-
-bootRepackage.enabled = false
