@@ -1,15 +1,13 @@
-sudo: false
 language: java
 jdk:
-- openjdk8
-install: "./gradlew assemble"
+- openjdk11
+install: "./gradlew assemble publish"
 before_script:
 - sleep 15
 before_cache:
 - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
 - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 cache:
-  apt: true
   directories:
   - "$HOME/.m2"
   - "$HOME/.gradle/caches/"
@@ -18,4 +16,4 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_301e841bc4fc_key -iv $encrypted_301e841bc4fc_iv
   -in gradle.properties.enc -out gradle.properties -d
 after_success:
-  - test $TRAVIS_BRANCH = "dev" && ./gradlew uploadArchives
+  - test $TRAVIS_BRANCH = "dev" && ./gradlew publish
