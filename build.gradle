@@ -23,6 +23,8 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+bootRepackage.enabled = false
+
 repositories {
     mavenCentral()
     maven { url "https://plugins.gradle.org/m2/" }
