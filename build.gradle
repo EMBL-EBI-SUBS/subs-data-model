@@ -11,6 +11,8 @@ buildscript {
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'org.springframework.boot' version '1.5.21.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
 group 'uk.ac.ebi.subs'
