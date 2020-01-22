@@ -3,20 +3,27 @@ buildscript {
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
     }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.21.RELEASE")
+    }
 }
 
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'org.springframework.boot' version '1.5.21.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
 group 'uk.ac.ebi.subs'
-version '2.14.1-SNAPSHOT'
+version '2.15.0-SNAPSHOT'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
 }
+
+bootRepackage.enabled = false
 
 repositories {
     mavenCentral()
@@ -31,7 +38,7 @@ dependencies {
     compileOnly("org.projectlombok:lombok:1.18.10")
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
-    testImplementation("org.springframework.boot:spring-boot-starter-test:2.2.1.RELEASE")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 task jarWithAddedManifest(type: Jar) {
@@ -58,8 +65,9 @@ publishing {
 
             pom {
                 name = 'subs-data-model'
-                description = 'Data Submission Portal - data model'
+                description = 'Data Submission Portal - common library for data models'
                 url = 'https://github.com/EMBL-EBI-SUBS/subs-data-model'
+
                 licenses {
                     license {
                         name = 'The Apache License, Version 2.0'
@@ -83,6 +91,7 @@ publishing {
             from components.java
         }
     }
+
     repositories {
         maven {
             def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2"
