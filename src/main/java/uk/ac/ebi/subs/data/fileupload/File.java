@@ -32,4 +32,6 @@ public class File {
     private FileStatus status;
 
     private String checksum;
+
+    private String source;
 }
