@@ -11,5 +11,5 @@ public class TermSource {
 
     private String name;
     private String uri;
-    private String sourceVersion;
+    private String version;
 }

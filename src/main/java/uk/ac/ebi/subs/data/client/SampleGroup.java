@@ -7,15 +7,15 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class SampleGroup extends uk.ac.ebi.subs.data.submittable.SampleGroup implements PartOfSubmission {
 
-    private String submission;
+    private String submissionUrl;
 
     @Override
-    public String getSubmission() {
-        return submission;
+    public String getSubmissionUrl() {
+        return submissionUrl;
     }
 
     @Override
-    public void setSubmission(String submission) {
-        this.submission = submission;
+    public void setSubmissionUrl(String submissionUrl) {
+        this.submissionUrl = submissionUrl;
     }
 }
