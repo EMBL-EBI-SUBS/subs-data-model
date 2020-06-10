@@ -1,4 +1,4 @@
-package uk.ac.ebi.subs.data.submittable.sample.msi;
+package uk.ac.ebi.subs.data.submittable.sample;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,10 +12,7 @@ import java.time.LocalDate;
 public class Submission {
 
     private String title;
-    private String identifier;
     private String description;
-    private String version;
-    private Boolean referenceLayer;
     private LocalDate updateDate;
     private LocalDate releaseDate;
 }

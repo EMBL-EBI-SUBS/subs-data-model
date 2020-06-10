@@ -1,4 +1,4 @@
-package uk.ac.ebi.subs.data.submittable.sample.msi;
+package uk.ac.ebi.subs.data.submittable.sample;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

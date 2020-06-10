@@ -1,4 +1,4 @@
-package uk.ac.ebi.subs.data.submittable.sample.msi;
+package uk.ac.ebi.subs.data.submittable.sample;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,9 +7,9 @@ import lombok.ToString;
 @Data
 @ToString
 @EqualsAndHashCode
-public class TermSource {
+public class Database {
 
     private String name;
+    private String id;
     private String uri;
-    private String version;
 }
