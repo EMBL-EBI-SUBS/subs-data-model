@@ -5,6 +5,6 @@ package uk.ac.ebi.subs.data.client;
  */
 public interface PartOfSubmission {
 
-    String getSubmission();
-    void setSubmission(String submission);
+    String getSubmissionUrl();
+    void setSubmissionUrl(String submissionUrl);
 }

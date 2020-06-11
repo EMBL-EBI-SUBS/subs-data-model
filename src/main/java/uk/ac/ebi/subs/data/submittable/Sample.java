@@ -5,6 +5,12 @@ import lombok.ToString;
 import uk.ac.ebi.subs.data.component.SampleExternalReference;
 import uk.ac.ebi.subs.data.component.SampleRef;
 import uk.ac.ebi.subs.data.component.SampleRelationship;
+import uk.ac.ebi.subs.data.submittable.sample.Database;
+import uk.ac.ebi.subs.data.submittable.sample.Organization;
+import uk.ac.ebi.subs.data.submittable.sample.Person;
+import uk.ac.ebi.subs.data.submittable.sample.Publication;
+import uk.ac.ebi.subs.data.submittable.sample.Submission;
+import uk.ac.ebi.subs.data.submittable.sample.TermSource;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,6 +25,13 @@ public class Sample extends BaseSubmittable<Sample> {
     private String taxon;
     private LocalDate releaseDate;
     private List<SampleExternalReference> externalReferences;
+
+    private Submission submission;
+    private List<Person> persons;
+    private List<Organization> organizations;
+    private List<Publication> publications;
+    private List<Database> databases;
+    private List<TermSource> termSources;
 
     @Override
     protected SampleRef newRef() {
@@ -67,5 +80,53 @@ public class Sample extends BaseSubmittable<Sample> {
 
     public void addSampleExternalReference(SampleExternalReference externalReference) {
         externalReferences.add(externalReference);
+    }
+
+    public Submission getSubmission() {
+        return submission;
+    }
+
+    public void setSubmission(Submission submission) {
+        this.submission = submission;
+    }
+
+    public List<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(List<Person> persons) {
+        this.persons = persons;
+    }
+
+    public List<Organization> getOrganizations() {
+        return organizations;
+    }
+
+    public void setOrganizations(List<Organization> organizations) {
+        this.organizations = organizations;
+    }
+
+    public List<Publication> getPublications() {
+        return publications;
+    }
+
+    public void setPublications(List<Publication> publications) {
+        this.publications = publications;
+    }
+
+    public List<Database> getDatabases() {
+        return databases;
+    }
+
+    public void setDatabases(List<Database> databases) {
+        this.databases = databases;
+    }
+
+    public List<TermSource> getTermSources() {
+        return termSources;
+    }
+
+    public void setTermSources(List<TermSource> termSources) {
+        this.termSources = termSources;
     }
 }

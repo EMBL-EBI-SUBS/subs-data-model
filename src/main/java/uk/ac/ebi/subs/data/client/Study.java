@@ -7,13 +7,13 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class Study extends uk.ac.ebi.subs.data.submittable.Study implements PartOfSubmission {
 
-    private String submission; //URL for submission
+    private String submissionUrl;
 
-    public String getSubmission() {
-        return submission;
+    public String getSubmissionUrl() {
+        return submissionUrl;
     }
 
-    public void setSubmission(String submission) {
-        this.submission = submission;
+    public void setSubmissionUrl(String submissionUrl) {
+        this.submissionUrl = submissionUrl;
     }
 }
