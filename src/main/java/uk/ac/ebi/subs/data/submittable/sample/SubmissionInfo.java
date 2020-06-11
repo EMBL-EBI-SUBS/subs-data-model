@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @ToString
 @EqualsAndHashCode
-public class Submission {
+public class SubmissionInfo {
 
     private String title;
     private String description;

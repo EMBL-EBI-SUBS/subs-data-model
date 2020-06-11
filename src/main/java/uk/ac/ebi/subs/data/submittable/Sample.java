@@ -9,7 +9,7 @@ import uk.ac.ebi.subs.data.submittable.sample.Database;
 import uk.ac.ebi.subs.data.submittable.sample.Organization;
 import uk.ac.ebi.subs.data.submittable.sample.Person;
 import uk.ac.ebi.subs.data.submittable.sample.Publication;
-import uk.ac.ebi.subs.data.submittable.sample.Submission;
+import uk.ac.ebi.subs.data.submittable.sample.SubmissionInfo;
 import uk.ac.ebi.subs.data.submittable.sample.TermSource;
 
 import java.time.LocalDate;
@@ -26,7 +26,7 @@ public class Sample extends BaseSubmittable<Sample> {
     private LocalDate releaseDate;
     private List<SampleExternalReference> externalReferences;
 
-    private Submission submission;
+    private SubmissionInfo submissionInfo;
     private List<Person> persons;
     private List<Organization> organizations;
     private List<Publication> publications;
@@ -82,12 +82,12 @@ public class Sample extends BaseSubmittable<Sample> {
         externalReferences.add(externalReference);
     }
 
-    public Submission getSubmission() {
-        return submission;
+    public SubmissionInfo getSubmissionInfo() {
+        return submissionInfo;
     }
 
-    public void setSubmission(Submission submission) {
-        this.submission = submission;
+    public void setSubmissionInfo(SubmissionInfo submissionInfo) {
+        this.submissionInfo = submissionInfo;
     }
 
     public List<Person> getPersons() {
