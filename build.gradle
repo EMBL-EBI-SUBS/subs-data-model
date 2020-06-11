@@ -17,7 +17,7 @@ plugins {
 }
 
 group 'uk.ac.ebi.subs'
-version '2.17.0-SNAPSHOT'
+version '2.18.0-SNAPSHOT'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_11
